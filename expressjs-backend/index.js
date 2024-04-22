@@ -20,7 +20,7 @@ const users = {
         [
             {
                 id: 'xyz789',
-                name: 'Charlie',
+                name: 'CharlieXCX',
                 job: 'Janitor',
 
             },
@@ -46,7 +46,39 @@ const users = {
             }
         ]
 }
+
+const findUserByName = (name) => {
+    return users['users_list'].filter((user) =>
+        user['name'] === name);
+}
+
 app.get('/users', (req, res) => {
-    res.json(users);
+    const name = req.query.name;
+    if (name != undefined) {
+        let result = findUserByName(name);
+        result = {users_list: result};
+        res.send(result);
+    }else{
+        res.send(users);
     }
-);
+});
+
+app.get('/users/:id', (req, res) => {
+    const id = req.params.id;
+    let result = findUserById(id);
+    if(result === undefined || result.length < 1) {
+        res.status(404).send('User not found');
+    }else{
+        result = {user_list: result};
+        res.send(result);
+    }
+});
+
+
+
+function findUserById(id){
+    // find() returns the first match; in this case use find bc all ids are unique
+    // filter() returns all matches
+    return users['users_list'].find( (user) =>
+        user['id'] === id);
+}
