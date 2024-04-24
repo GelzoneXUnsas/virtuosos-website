@@ -20,7 +20,7 @@ const users = {
         [
             {
                 id: 'xyz789',
-                name: 'CharlieXCX',
+                name: 'Charlie',
                 job: 'Janitor',
 
             },
@@ -74,11 +74,48 @@ app.get('/users/:id', (req, res) => {
     }
 });
 
-
-
 function findUserById(id){
     // find() returns the first match; in this case use find bc all ids are unique
     // filter() returns all matches
     return users['users_list'].find( (user) =>
         user['id'] === id);
 }
+
+
+// POST REQUESTS
+
+
+function addUser(user) {
+    users['users_list'].push(user);
+}
+
+//how 
+app.post('/users', (req, res) => {
+    const userToAdd = req.body;
+    dataLength = Object.keys(req.body).length;
+    if (dataLength === 0) {
+        res.status(400).send('Empty body');
+    }else{
+        addUser(userToAdd);
+        res.status(200).send(res.body);
+    }
+});
+
+
+function deleteUser(user) {
+    const index = users['users_list'].indexOf(user);
+    users['users_list'].splice(index, 1);
+
+}
+
+
+app.delete('/users/:id', (req, res) => {
+    const id = req.params.id;
+    let user = findUserById(id);
+    if(user === undefined) {
+        res.status(404).send('User not found');
+    }else{
+        deleteUser(user);
+        res.status(200).end();
+    }
+});
