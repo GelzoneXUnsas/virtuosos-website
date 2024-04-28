@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const port = 5001;
 
+// allow backend to respond to calls co,ing from a different origin
+const cors = require('cors');
+app.use(cors());
+
 app.use(express.json());
 
 //get(first parameter is the path, second parameter is the callback function)
