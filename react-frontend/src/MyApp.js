@@ -29,7 +29,16 @@ function MyApp() {
         });
     }, []);
 
-
+    async function makePostCall(person) {
+        try {
+            const response = await axios.post('http://localhost:5001/users', person);
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
 
     function removeOneCharacter(index) {
         const updated = characters.filter((character, i) => {
@@ -38,8 +47,12 @@ function MyApp() {
         setCharacters(updated);
     }
 
-    function updateList(person) {
-        setCharacters([...characters, person]);
+    //make a post call everytime we want to add someone to the table and then if response is sucessful, update the list
+    function updateList(person) { 
+        makePostCall(person).then( result => {
+            if (result && result.status === 200)
+                setCharacters([...characters, person]);
+        });
     }
 
     return (
