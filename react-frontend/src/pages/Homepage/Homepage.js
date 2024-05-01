@@ -6,8 +6,10 @@ import React from "react";
 
 import headerBackground from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
+import logoIcon from '../../assets/icons/logoIcon.svg';
 
 import demoVideo from "../../assets/videos/VirtuososDemo_1.mp4";
+
 import appleDownloadIcon from "../../assets/icons/appleDownloadIcon.svg";
 import googlePlayDownloadIcon from "../../assets/icons/googlePlayDownloadIcon.svg";
 import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
@@ -15,6 +17,10 @@ import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
 import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
+
+import instragramIcon from "../../assets/icons/instagramIcon.svg";
+import xIcon from "../../assets/icons/xIcon.svg";
+import tiktokIcon from "../../assets/icons/tiktokIcon.svg";
 
 const getFeaturedArtists = () => {
   return [{
@@ -153,7 +159,39 @@ const Homepage = () => {
           </p>
         </div>
       </div>
-
+      <div className={styles.footerContainer}>
+        <div className={styles.footerSections}>
+          <div className={styles.footerSectionPageItem}>
+            Beatmaps
+          </div>
+          <div className={styles.footerSectionPageItem}>
+            Artists
+          </div>
+          <div className={styles.footerSectionPageItem}>
+            Community
+          </div>
+          <div className={styles.footerSectionPageItem}>
+            Art
+          </div>
+        </div>
+        <div className={styles.footerSocials}>
+          <div className={styles.footerSocialsItem}>
+            <img src={logoIcon} alt="Virtuosos Logo" />
+          </div>
+          <div className={styles.footerSocialsItem}>
+            <img src={instragramIcon} alt="Instagram Logo" />
+          </div>
+          <div className={styles.footerSocialsItem}>
+            <img src={xIcon} alt="X (Twitter) Logo" />
+          </div>
+          <div className={styles.footerSocialsItem}>
+            <img src={tiktokIcon} alt="Tiktok Logo" />
+          </div>
+        </div>
+        <div className={styles.footerEmail}>
+          contact hello@gmail.com for support
+        </div>
+      </div>
     </div>
   );
 };

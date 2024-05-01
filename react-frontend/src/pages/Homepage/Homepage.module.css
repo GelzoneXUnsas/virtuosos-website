@@ -169,4 +169,65 @@
 .aboutUsSection {
   background-color: var(--page-accent-gray);
   color: var(--white);
+  padding-top: 2rem;
+}
+
+.aboutUsTitle {
+  font-size: var(--title-lexend-medium-size);
+  line-height: 1rem;
+  font-family: var(--title-lexend-large);
+  text-align: left;
+  display: inline-block;
+  margin:auto;
+  padding: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.aboutUsDescription {
+  line-height: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 2rem;
+  padding-top: 0.5rem;
+}
+
+
+.footerContainer {
+  background-color: var(--page-background);
+  color: var(--white);
+  padding-top: 1rem;
+  justify-content: space-evenly;
+}
+
+.footerSections {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.footerSectionPageItem{
+  padding: 0.5rem;
+}
+
+.footerSocials {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+
+.footerSocialsItem {
+  padding: 1rem;
+}
+
+.footerEmail {
+  color: var(--icon-color, #FFF);
+  text-align: center;
+  font-family: "Overpass Mono";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 200% */
+  padding-bottom: 1rem;
 }
