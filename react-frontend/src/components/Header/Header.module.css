@@ -1,0 +1,41 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color:  var(--page-background);
+  background: linear-gradient(180deg, #2D2C5F 70.9%, rgba(45, 44, 95, 0.00) 100%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 4rem;
+  padding-bottom: 0.5rem;
+}
+.headerLogo {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.headerLogoIcon {
+  width: 100%;
+  height: auto;
+}
+
+.headerMenu {
+  font-size: var(--title-lexend-large-size);
+  color: var(--white);
+  font-family: var(--title-lexend-large);
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.headerMenuButton {
+  font-size: 1rem;
+}
+
+.headerMenuButtonText {
+  color: var(--lilac);
+}

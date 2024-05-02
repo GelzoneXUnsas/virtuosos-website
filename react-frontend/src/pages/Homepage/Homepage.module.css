@@ -1,0 +1,233 @@
+
+
+.homepage {
+  width: 100%;
+  background-color:  var(--page-background);
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--body-overpass-base-size);
+  color: var(--white);
+  font-family: var(--body-overpass-base);
+}
+
+.titleContainer{
+  position: relative;
+  background: linear-gradient(0deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 50.03%);
+  /* display: inline-block; */
+  top: 0;
+  left: 0;
+}
+
+.headerBackground {
+  /* background-color: var(--page-background); */
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+  /* background: linear-gradient(0deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 97.03%); */
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.virtuososTitle {
+  position: absolute;
+  width: 40%;
+  height: auto;
+  top: 130px;
+  left: 115px;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.visionAndDownloadBackground {
+  background-color: var(--page-accent-gray);
+  background: linear-gradient(180deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 97.03%);
+  color: var(--white);
+  display: block;
+  overflow: auto;
+}
+
+.visionSection {
+  background-color: var(--page-accent-gray);
+  background: linear-gradient(0deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 97.03%);
+  color: var(--white);
+  display: block;
+  overflow: auto;
+}
+
+.visionSectionTitle {
+  font-size: var(--title-lexend-large-size);
+  line-height: 2rem;
+  font-family: var(--title-lexend-large);
+  text-align: left;
+  display: inline-block;
+  margin:auto;
+  padding: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.visionSectionBody {
+  line-height: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 2rem;
+  padding-top: 0.5rem;
+}
+.demoVideoContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.demoVideo {
+  width: 90%;
+  height: auto;
+  padding: 5vw 0;
+}
+
+.downloadSection {
+  background-color: var(--page-accent-gray);
+  background: linear-gradient(180deg, #232323 50.59%, rgba(35, 35, 35, 0.00) 98.03%);
+  color: var(--white);
+  padding-top: 1rem;
+  height: 8rem;
+}
+
+.downloadText {
+  line-height: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.downloadLinks {
+  display: flex;
+  justify-content: space-evenly
+}
+
+.downloadIcon {
+  border-radius: var(--br-8xs);
+  overflow: hidden;
+  object-fit: contain;
+  mix-blend-mode: normal;
+}
+
+.featuredArtistsSection {
+  background-color: var(--page-background);
+  color: var(--white);
+}
+
+.featuredArtistsSectionTitle {
+  font-size: var(--title-lexend-medium-size);
+  line-height: 2rem;
+  font-family: var(--title-lexend-large);
+  text-align: left;
+  display: inline-block;
+  margin:auto;
+  padding: 1rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0;
+
+}
+
+.artistDetails {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  flex-direction: row;
+}
+
+.artistTitleContainer {
+  display: flex;
+  flex-direction:  row;
+  align-self: center;
+  justify-content:left;
+  width: 100%;
+}
+
+
+.artistName {
+  color: var(--icon-color, #FFF);
+  width: 100%;
+  font-family: "Overpass Mono";
+  font-size: var(--body-overpass-base);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1rem; /* 150% */
+}
+
+.artistImage {
+  width: 25%;
+  flex-shrink: 0;
+  border-radius: 52px;
+  background: lightgray 0px 0px / 100% 100% no-repeat;
+}
+
+.aboutUsSection {
+  background-color: var(--page-accent-gray);
+  color: var(--white);
+  padding-top: 2rem;
+}
+
+.aboutUsTitle {
+  font-size: var(--title-lexend-medium-size);
+  line-height: 1rem;
+  font-family: var(--title-lexend-large);
+  text-align: left;
+  display: inline-block;
+  margin:auto;
+  padding: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.aboutUsDescription {
+  line-height: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 2rem;
+  padding-top: 0.5rem;
+}
+
+
+.footerContainer {
+  background-color: var(--page-background);
+  color: var(--white);
+  padding-top: 1rem;
+  justify-content: space-evenly;
+}
+
+.footerSections {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.footerSectionPageItem{
+  padding: 0.5rem;
+}
+
+.footerSocials {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+
+.footerSocialsItem {
+  padding: 1rem;
+}
+
+.footerEmail {
+  color: var(--icon-color, #FFF);
+  text-align: center;
+  font-family: "Overpass Mono";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 200% */
+  padding-bottom: 1rem;
+}
