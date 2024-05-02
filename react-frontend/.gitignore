@@ -26,3 +26,7 @@ yarn-error.log*
 # ignoring video files (too large to upload to github)
 /src/assets/videos/
 .mp4
+
+#packages
+package-lock.json
+package.json
