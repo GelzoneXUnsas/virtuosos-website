@@ -159,7 +159,7 @@ const Homepage = () => {
           </p>
         </div>
       </div>
-      <div className={styles.footerContainer}>
+      {/* <div className={styles.footerContainer}>
         <div className={styles.footerSections}>
           <div className={styles.footerSectionPageItem}>
             Beatmaps
@@ -191,7 +191,7 @@ const Homepage = () => {
         <div className={styles.footerEmail}>
           contact hello@gmail.com for support
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
