@@ -3,11 +3,14 @@ import React from 'react';
 import Homepage from './pages/Homepage/Homepage';
 import Header from './components/Header/Header';
 
+import GalleryPage from './pages/GalleryPage/GalleryPage';
+import ArtScreenArt from './pages/GalleryPage/ArtScreenArt';
 function Router() {
     return (
         <div>
             <Header />
         <Routes>
+            <Route path="gallery" element={<ArtScreenArt />} />
             <Route path="/" element={<Homepage />} />
             <Route path="*" element={<Navigate to="/" />} />
         </Routes>
