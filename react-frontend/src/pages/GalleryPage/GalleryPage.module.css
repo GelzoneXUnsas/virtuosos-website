@@ -1,0 +1,9 @@
+.gallerypage {
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--body-overpass-base-size);
+    color: var(--white);
+    font-family: var(--body-overpass-base);
+}

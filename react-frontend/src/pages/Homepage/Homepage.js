@@ -18,7 +18,7 @@ import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
 
-import instragramIcon from "../../assets/icons/instagramIcon.svg";
+import instagramIcon from "../../assets/icons/instagramIcon.svg";
 import xIcon from "../../assets/icons/xIcon.svg";
 import tiktokIcon from "../../assets/icons/tiktokIcon.svg";
 
@@ -159,7 +159,7 @@ const Homepage = () => {
           </p>
         </div>
       </div>
-      <div className={styles.footerContainer}>
+      {/* <div className={styles.footerContainer}>
         <div className={styles.footerSections}>
           <div className={styles.footerSectionPageItem}>
             Beatmaps
@@ -179,7 +179,7 @@ const Homepage = () => {
             <img src={logoIcon} alt="Virtuosos Logo" />
           </div>
           <div className={styles.footerSocialsItem}>
-            <img src={instragramIcon} alt="Instagram Logo" />
+            <img src={instagramIcon} alt="Instagram Logo" />
           </div>
           <div className={styles.footerSocialsItem}>
             <img src={xIcon} alt="X (Twitter) Logo" />
@@ -191,7 +191,7 @@ const Homepage = () => {
         <div className={styles.footerEmail}>
           contact hello@gmail.com for support
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
