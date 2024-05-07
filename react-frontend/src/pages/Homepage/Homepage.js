@@ -58,7 +58,8 @@ const Homepage = () => {
   return (
     <div className={styles.homepage}>
       <div className={styles.titleContainer}>
-        <img src={headerBackground} className={styles.headerBackground} alt="" />
+        <div className= {styles.headerBackgroundDark}/>
+        {/* <img src={headerBackground} className={styles.headerBackground} alt="" /> */}
         <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
       </div>
       <div className={styles.visionAndDownloadBackground}> 
