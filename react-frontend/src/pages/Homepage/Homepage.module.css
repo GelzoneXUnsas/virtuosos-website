@@ -1,5 +1,4 @@
 
-
 .homepage {
   width: 100%;
   background-color:  var(--page-background);
@@ -22,6 +21,18 @@
   /* background-color: var(--page-background); */
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
   /* background: linear-gradient(0deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 97.03%); */
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.headerBackgroundDark {
+  /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/headerBackground.png');
+  /* background-color: --var(page-background); */
   width: 100%;
   height: auto;
   position: relative;

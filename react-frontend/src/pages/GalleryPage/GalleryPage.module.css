@@ -7,3 +7,32 @@
     color: var(--white);
     font-family: var(--body-overpass-base);
 }
+
+.headerBackground {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.titleText{
+    position: absolute;
+    width: 40%;
+    height: auto;
+    top: 130px;
+    left: 115px;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    color: var(--icon-color, #FFF);
+    text-align: center;
+    /* title/lexend xlarge */
+    font-family: "Lexend Exa";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 125% */
+}

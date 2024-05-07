@@ -18,10 +18,6 @@ import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
 
-import instagramIcon from "../../assets/icons/instagramIcon.svg";
-import xIcon from "../../assets/icons/xIcon.svg";
-import tiktokIcon from "../../assets/icons/tiktokIcon.svg";
-
 const getFeaturedArtists = () => {
   return [{
     name: "Techno Maestro",
@@ -62,7 +58,8 @@ const Homepage = () => {
   return (
     <div className={styles.homepage}>
       <div className={styles.titleContainer}>
-        <img src={headerBackground} className={styles.headerBackground} alt="" />
+        <div className= {styles.headerBackgroundDark}/>
+        {/* <img src={headerBackground} className={styles.headerBackground} alt="" /> */}
         <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
       </div>
       <div className={styles.visionAndDownloadBackground}> 
@@ -159,39 +156,6 @@ const Homepage = () => {
           </p>
         </div>
       </div>
-      {/* <div className={styles.footerContainer}>
-        <div className={styles.footerSections}>
-          <div className={styles.footerSectionPageItem}>
-            Beatmaps
-          </div>
-          <div className={styles.footerSectionPageItem}>
-            Artists
-          </div>
-          <div className={styles.footerSectionPageItem}>
-            Community
-          </div>
-          <div className={styles.footerSectionPageItem}>
-            Art
-          </div>
-        </div>
-        <div className={styles.footerSocials}>
-          <div className={styles.footerSocialsItem}>
-            <img src={logoIcon} alt="Virtuosos Logo" />
-          </div>
-          <div className={styles.footerSocialsItem}>
-            <img src={instagramIcon} alt="Instagram Logo" />
-          </div>
-          <div className={styles.footerSocialsItem}>
-            <img src={xIcon} alt="X (Twitter) Logo" />
-          </div>
-          <div className={styles.footerSocialsItem}>
-            <img src={tiktokIcon} alt="Tiktok Logo" />
-          </div>
-        </div>
-        <div className={styles.footerEmail}>
-          contact hello@gmail.com for support
-        </div>
-      </div> */}
     </div>
   );
 };

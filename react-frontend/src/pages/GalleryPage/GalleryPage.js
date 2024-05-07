@@ -19,9 +19,10 @@ const GalleryPage = () => {
         <div className={styles.gallerypage}>
             <div className={styles.titleContainer}>
                 <img src={headerBackground} className={styles.headerBackground} alt="" />
+                <div className={styles.titleText}>GALLERY</div>
             </div>
         </div>
-        
+
     );
 };
 
