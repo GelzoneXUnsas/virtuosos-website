@@ -31,6 +31,13 @@ const BeatmapListingPage = () => {
                     </select>
                 </div>
             </div>
+            <div className={styles.bmListingDisplayMode}>
+                <div className={styles.bmListingDisplayModeContainter}>
+                    <div className={styles.bmListinDisplayModeItem}>songs</div>
+                    <div className={styles.bmListinDisplayModeItem}>artists</div>
+                </div>
+                <hr></hr>
+            </div>
         </div>
     );
 };
