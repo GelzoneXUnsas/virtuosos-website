@@ -42,7 +42,7 @@
 
 .beatmapListingSearchFilter {
     width: auto;
-    height: 6rem;
+    height: 5rem;
     padding-left: 1rem;
     padding-right: 1rem;
     flex-shrink: 0;
@@ -64,7 +64,7 @@
     display: flex;
     justify-content: left;
     width: 100%;
-    height: 2rem;
+    height: 1.5rem;
     align-items: center;
     flex-shrink: 0;
     border-radius: 5px;
@@ -81,6 +81,7 @@
 
 .beatmapListingSearchItem input{
     background: transparent;
+    width: 75%;
     flex: 1;
     border: 0;
     outline: none;
@@ -103,4 +104,36 @@
     outline: #FFF;
     cursor: pointer;
     padding-top: 0.25rem;
+    align-content: right;
+}
+
+
+.beatmapListingFilterItem {
+    display: flex;
+    justify-content: left;
+    width: 50%;
+    height: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    
+    background: #FFF;
+    /* padding-left: 0.5rem; */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    font-size: small;
+}
+
+.beatmapListingFilterItem select {
+    background: transparent;
+    width: 75%;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* padding: 0.5rem 0.25rem; */
+    color: #B2B2B2;
+    font-family: "Overpass Mono";
 }
