@@ -102,10 +102,10 @@
 
 .downloadSection {
   background-color: var(--page-accent-gray);
-  background: linear-gradient(180deg, #232323 50.59%, rgba(35, 35, 35, 0.00) 98.03%);
+  /* background: linear-gradient(180deg, #232323 50.59%, rgba(35, 35, 35, 0.00) 98.03%); */
   color: var(--white);
-  padding-top: 1rem;
-  height: 8rem;
+  padding-top: 2rem;
+  height: 6rem;
 }
 
 .downloadText {
@@ -127,15 +127,23 @@
 }
 
 .featuredArtistsSection {
-  background-color: var(--page-background);
+  background: linear-gradient(0deg, #2D2C5F 78.72%, rgba(45, 44, 95, 0.40) 84.07%, rgba(45, 44, 95, 0.00) 95.68%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--page-accent-gray);
   color: var(--white);
+  padding-top: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .featuredArtistsSectionTitle {
   font-size: var(--title-lexend-medium-size);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
   line-height: 2rem;
   font-family: var(--title-lexend-large);
-  text-align: left;
+  text-align: center;
   display: inline-block;
   margin:auto;
   padding: 1rem;
@@ -147,7 +155,7 @@
 .artistDetails {
   display: flex;
   justify-content: space-around;
-  padding: 1rem;
+  padding: 0.5rem;
   flex-direction: row;
 }
 
@@ -156,7 +164,6 @@
   flex-direction:  row;
   align-self: center;
   justify-content:left;
-  width: 100%;
 }
 
 
@@ -168,10 +175,19 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1rem; /* 150% */
+  padding-top: 0.25rem;
+  text-align: left;
+  padding-right: 0.5rem;
+}
+
+.verifiedIcon{
+  width: 1rem;
+  height: 1rem;
+  padding: 0.25rem;
 }
 
 .artistImage {
-  width: 25%;
+  width: 20%;
   flex-shrink: 0;
   border-radius: 52px;
   background: lightgray 0px 0px / 100% 100% no-repeat;
@@ -202,43 +218,36 @@
   padding-top: 0.5rem;
 }
 
-
-.footerContainer {
-  background-color: var(--page-background);
-  color: var(--white);
-  padding-top: 1rem;
-  justify-content: space-evenly;
-}
-
-.footerSections {
+.artistSongcount {
   display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  align-self: stretch;
-}
-
-.footerSectionPageItem{
-  padding: 0.5rem;
-}
-
-.footerSocials {
-  display: flex;
-  justify-content: center;
   flex-direction: row;
-  padding: 0.5rem;
-}
-
-.footerSocialsItem {
-  padding: 1rem;
-}
-
-.footerEmail {
-  color: var(--icon-color, #FFF);
-  text-align: center;
+  justify-content: right;
   font-family: "Overpass Mono";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 200% */
-  padding-bottom: 1rem;
+}
+
+.songcountText {
+  text-align: right;
+  padding-right: 2rem;
+  color: var(--white);
+}
+
+.songcountValue {
+  color: var(--lilac);
+}
+
+.artistPlaycount {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-family: "Overpass Mono";
+}
+
+.playcountText {
+  text-align: right;
+  padding-right: 2rem;
+  color: var(--white);
+}
+
+.playcountValue {
+  color: var(--lilac);
 }
