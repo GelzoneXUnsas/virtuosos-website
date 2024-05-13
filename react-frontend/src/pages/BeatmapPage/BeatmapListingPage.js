@@ -16,18 +16,18 @@ const BeatmapListingPage = () => {
                 <div className={styles.titleText}>BEATMAPS</div>
             </div>
             <div className={styles.beatmapListingSearchFilter}>
-                <div className={styles.beatmapListingSearchItem}>
-                    <form action="">
+                <div className= {styles.beatmapListingSearchItem}>
+                    <form action="" className={styles.beatmapListingSearchItem}>
                         <input type="text" placeholder="song, album, artist" />
                         <button type="submit"><img src={searchIcon} alt="" /></button>
                     </form>
                 </div>
                 <div className={styles.beatmapListingFilterItem}>
-                    <select className={styles.beatmapListingSearchFilterSelect}>
-                        <option value="1">Sort by: Newest</option>
-                        <option value="2">Sort by: Oldest</option>
-                        <option value="3">Sort by: Most Played</option>
-                        <option value="4">Sort by: Least Played</option>
+                    <select className={styles.beatmapListingFilterItem} placeholder="sort by">
+                        <option value="1">sort by: newest</option>
+                        <option value="2">sort by: oldest</option>
+                        <option value="3">sort by: most played</option>
+                        <option value="4">sort by: least played</option>
                     </select>
                 </div>
             </div>
