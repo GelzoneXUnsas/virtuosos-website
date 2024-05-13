@@ -137,3 +137,45 @@
     color: #B2B2B2;
     font-family: "Overpass Mono";
 }
+
+.bmListingDisplayMode {
+    display: flex;
+    flex-direction: column;
+    background-color: #232323;
+    color: white;
+}
+
+
+.bmListingDisplayModeContainter {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    color: var(--icon-color, #FFF);
+    background-color: #232323;
+    /* title/lexend base */
+    font-family: "Lexend Exa";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    justify-content: space-evenly;
+}
+
+
+
+.bmListinDisplayModeItem {
+    width: 25%;
+    color: white;
+    text-align: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+hr {
+    color: white;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 75%;
+    /* margin: 1em auto; */
+}
