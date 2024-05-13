@@ -58,8 +58,8 @@ const Homepage = () => {
   return (
     <div className={styles.homepage}>
       <div className={styles.titleContainer}>
-        <div className= {styles.headerBackgroundDark}/>
-        {/* <img src={headerBackground} className={styles.headerBackground} alt="" /> */}
+        {/* <div className= {styles.headerBackgroundDark}/> */}
+        <img src={headerBackground} className={styles.headerBackground} alt="" />
         <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
       </div>
       <div className={styles.visionAndDownloadBackground}> 
@@ -105,29 +105,28 @@ const Homepage = () => {
           featuredArtists.map((artist) => {
             return (
               <div className={styles.featuredArtistDetails}>
-                <div className={styles.artistDetails}s>
+                <div className={styles.artistDetails}>
                   <img className={styles.artistImage} src={artist.image}/>
                   <div className={styles.artistTitleContainer}>
                     <div className={styles.artistName}>
                       {artist.name}
                     </div>
                     <img className={styles.verifiedIcon} src={verifiedIcon}/>
-                </div>
+                  </div>
                 </div>
                 <div className={styles.artistRelatedInfo}>
                   <div className={styles.artistLinks}>
-
                   </div>
-                  {/* <div className={styles.artistStatistics}>
-                    <div className={styles.artistPlaycount}>
-                      <div className={styles.totalPlaycount}>total playcount</div>
-                      <div className={styles.div3}>538</div>
-                    </div>
+                  <div className={styles.artistStatistics}>
                     <div className={styles.artistSongcount}>
-                      <div className={styles.totalPlaycount}>songs</div>
-                      <div className={styles.div4}>25</div>
+                      <div className={styles.songcountText}>songs</div>
+                      <div className={styles.songcountValue}>25</div>
                     </div>
-                  </div> */}
+                    <div className={styles.artistPlaycount}>
+                      <div className={styles.playcountText}>total playcount</div>
+                      <div className={styles.playcountValue}>538</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             );

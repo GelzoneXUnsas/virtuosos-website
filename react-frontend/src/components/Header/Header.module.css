@@ -10,18 +10,21 @@
   justify-content: flex-end;
   align-items: center;
   height: 4rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .headerLogo {
-  width: 100%;
+  width: 200%;
   height: auto;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .headerLogoIcon {
-  width: 100%;
-  height: auto;
+  width: 200%;
+  height: 1rem;
 }
 
 .headerMenu {
@@ -34,8 +37,25 @@
 
 .headerMenuButton {
   font-size: 1rem;
+  color: var(--white);
+  display: flex;
+  padding: 3px 9.418px 4px 3px;
+  align-items: center;
+  gap: 7.462px;
 }
 
 .headerMenuButtonText {
-  color: var(--lilac);
+  font-family: "Lexend Exa";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1rem; /* 133.333% */
+}
+
+.menubuttonIcon {
+  display: flex;
+  /* padding: 3px 9.418px 4px 3px; */
+  padding-top: 0.75rem;
+  align-items: center;
+  gap: 7.462px;
 }

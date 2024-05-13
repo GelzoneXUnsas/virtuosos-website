@@ -1,0 +1,106 @@
+.beatmaplistingPage {
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--body-overpass-base-size);
+    color: var(--white);
+    font-family: var(--body-overpass-base);
+}
+
+.headerBackground {
+    width: 100%;
+    height: 11rem;
+    background-image: linear-gradient(rgba(6, 8, 21, 0.8), rgba(16, 17, 24, 0.8)), url(../../assets/images/headerBackground.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.titleText{
+    position: fixed;
+    width: 40%;
+    height: auto; 
+    top: 130px;
+    left: 115px;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    color: var(--icon-color, #FFF);
+    text-align: center;
+    /* title/lexend xlarge */
+    font-family: "Lexend Exa";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    /* line-height: 40px; 125% */
+}
+
+.beatmapListingSearchFilter {
+    width: auto;
+    height: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    background: #232323;
+    justify-content: space-around;
+
+    color: #B2B2B2;
+    /* body/overpass base */
+    font-family: "Overpass Mono";
+    font-size: var(--body-overpass-base-size);
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 24px; 150% */
+    }
+
+.beatmapListingSearchItem {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 2rem;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    
+    background: #FFF;
+    /* padding-left: 0.5rem; */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+::placeholder {
+    color: #B2B2B2;
+}
+
+.beatmapListingSearchItem input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* padding: 0.5rem 0.25rem; */
+    color: #B2B2B2;
+    font-family: "Overpass Mono";
+}
+
+.beatmapListingSearchItem button img {
+    width: 1rem;
+}
+
+.beatmapListingSearchItem button {
+    background: transparent;
+    border: 0;
+    width: 2rem; 
+    height: 2rem;
+    outline: #FFF;
+    cursor: pointer;
+    padding-top: 0.25rem;
+}
