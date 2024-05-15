@@ -84,13 +84,25 @@
   transform: rotate(45deg);
 }
 
-.dropdownMenu ul li {
-  font-size: var(--body-overpass-base-size);
-  padding: 0.5rem;
-  border-top: 0.25rem solid rgba(255, 255, 255, 0.5);
+.dropdownMenu ul {
+  margin: 0;
 }
 
-.dropdownMenu ul li:hover {
+.dropdownMenu ul button {
+  font-size: var(--title-lexend-medium-size);
+  font-family: var(--title-lexend-large);
+  padding: 0.5rem;
+  border-top: 0.25rem solid rgba(255, 255, 255, 0.5);
+  width: 90%;
+  background-color: transparent;
+  color: var(--white);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdownMenu ul button:hover {
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
@@ -111,11 +123,11 @@
 
 .dropdownItem {
   display: flex;
-  margin: 1rem auto;
+  /* margin: 5px auto; */
 
 }
 .dropdownItem a {
   max-width: 6rem;
-  margin-left: 1rem;
+  margin-left: 0.25rem;
   transition: 0.3s;
 }
