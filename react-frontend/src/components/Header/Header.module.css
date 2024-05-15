@@ -33,6 +33,7 @@
   font-family: var(--title-lexend-large);
   margin: 0;
   padding: 0.5rem;
+  height: auto
 }
 
 .headerMenuButton {
@@ -42,6 +43,9 @@
   padding: 3px 9.418px 4px 3px;
   align-items: center;
   gap: 7.462px;
+  height: 2rem;
+  width: 6rem;
+  cursor: pointer;
 }
 
 .headerMenuButtonText {
@@ -58,4 +62,60 @@
   padding-top: 0.75rem;
   align-items: center;
   gap: 7.462px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.dropdownMenu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  border: 10px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  transform: rotate(45deg);
+}
+
+.dropdownMenu ul li {
+  font-size: var(--body-overpass-base-size);
+  padding: 0.5rem;
+  border-top: 0.25rem solid rgba(255, 255, 255, 0.5);
+}
+
+.dropdownMenu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.dropdownMenu:active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 0.3s ease;
+}
+
+.dropdownMenu:not(:active){
+  /* opacity: 0;
+  visibility: hidden; */
+  transform: translateY(-1rem);
+  transition: 0.3s ease;
+}
+
+.dropdownItem {
+  display: flex;
+  margin: 1rem auto;
+
+}
+.dropdownItem a {
+  max-width: 6rem;
+  margin-left: 1rem;
+  transition: 0.3s;
 }
