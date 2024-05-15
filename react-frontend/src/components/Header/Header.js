@@ -41,7 +41,7 @@ const Header = () => {
                         <DropdownItem text={"Login"} link="/" />
                         <DropdownItem text={"Music"} link="/beatmaplisting" />
                         <DropdownItem text={"Art"} link="/gallery" />
-                        <DropdownItem text={"Community"} link="/" />
+                        <DropdownItem text={"Community"} link="/comingsoon" />
                     </ul>
                 </div>
             </div>
