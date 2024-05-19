@@ -6,7 +6,7 @@ import React from "react";
 
 import headerBackground from '../../assets/images/headerBackground.png';
 import searchIcon from '../../assets/icons/searchIcon.svg';
-
+import Form from "../../Form";
 
 const BeatmapListingPage = () => { 
     return (

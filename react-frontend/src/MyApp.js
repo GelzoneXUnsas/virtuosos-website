@@ -3,7 +3,7 @@ import Table from './Table'
 import Form from './Form'
 import axios from 'axios';
 
-
+import styles from './MyApp.module.css';
 
 function MyApp() {
     //start with empty states
@@ -21,7 +21,7 @@ function MyApp() {
 
         }
     }
-
+    // if we want to fetch all the characters from the database, we need to make a get call to the server
     useEffect(() => {
         fetchAll().then(result => {
             if (result)
@@ -55,8 +55,10 @@ function MyApp() {
         });
     }
 
+    console.log(characters);
+
     return (
-        <div className="container">
+        <div className={styles.myapp}>
             <Table characterData={characters} removeCharacter={removeOneCharacter} />
             <Form handleSubmit={updateList} />
         </div>

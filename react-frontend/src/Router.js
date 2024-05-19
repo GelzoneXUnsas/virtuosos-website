@@ -8,6 +8,7 @@ import GalleryPage from './pages/GalleryPage/GalleryPage';
 // import ArtScreenArt from './pages/GalleryPage/ArtScreenArt';
 import BeatmapListingPage from './pages/BeatmapPage/BeatmapListingPage';
 import ComingSoonPage from './pages/ComingSoonPage/ComingSoonPage';
+import MyApp from './MyApp';
 
 function Router() {
     return (
@@ -19,6 +20,7 @@ function Router() {
                 <Route path="beatmaplisting" element={<BeatmapListingPage />} />
                 <Route path="comingsoon" element={<ComingSoonPage />} />
                 <Route path="*" element={<Navigate to="/" />} />
+                <Route path="myapp" element={<MyApp />} />
             </Routes>
             <Footer />
         </div>
