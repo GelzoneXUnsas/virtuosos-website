@@ -10,18 +10,21 @@
   justify-content: flex-end;
   align-items: center;
   height: 4rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .headerLogo {
-  width: 100%;
+  width: 200%;
   height: auto;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .headerLogoIcon {
-  width: 100%;
-  height: auto;
+  width: 200%;
+  height: 1rem;
 }
 
 .headerMenu {
@@ -30,12 +33,101 @@
   font-family: var(--title-lexend-large);
   margin: 0;
   padding: 0.5rem;
+  height: auto
 }
 
 .headerMenuButton {
   font-size: 1rem;
+  color: var(--white);
+  display: flex;
+  padding: 3px 9.418px 4px 3px;
+  align-items: center;
+  gap: 7.462px;
+  height: 2rem;
+  width: 6rem;
+  cursor: pointer;
 }
 
 .headerMenuButtonText {
-  color: var(--lilac);
+  font-family: "Lexend Exa";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1rem; /* 133.333% */
+}
+
+.menubuttonIcon {
+  display: flex;
+  /* padding: 3px 9.418px 4px 3px; */
+  padding-top: 0.75rem;
+  align-items: center;
+  gap: 7.462px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.dropdownMenu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  border: 10px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  transform: rotate(45deg);
+}
+
+.dropdownMenu ul {
+  margin: 0;
+}
+
+.dropdownMenu ul button {
+  font-size: var(--title-lexend-medium-size);
+  font-family: var(--title-lexend-large);
+  padding: 0.5rem;
+  border-top: 0.25rem solid rgba(255, 255, 255, 0.5);
+  width: 90%;
+  background-color: transparent;
+  color: var(--white);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdownMenu ul button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.dropdownMenu:active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 0.3s ease;
+}
+
+.dropdownMenu:not(:active){
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-1rem);
+  transition: 0.3s ease;
+}
+
+.dropdownItem {
+  display: flex;
+  /* margin: 5px auto; */
+
+}
+.dropdownItem a {
+  max-width: 6rem;
+  margin-left: 0.25rem;
+  transition: 0.3s;
 }
