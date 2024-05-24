@@ -96,6 +96,9 @@
 }
 
 .musicCoverMenuTitleText{
+    background-color: transparent;
+    background: transparent;
+    border: 0;
     color: var(--icon-color, #FFF);
     font-family: "Lexend Exa";
     font-size: 16px;

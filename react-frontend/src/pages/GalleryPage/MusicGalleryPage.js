@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+
 import GalleryGrid from "../../GalleryGrid";
 
 import styles from "./GalleryPage.module.css";
@@ -8,14 +9,14 @@ import headerBackground from '../../assets/images/headerBackground.png';
 
 
 
-function GalleryPage() {
+function MusicGalleryPage() {
     const [galleryImages, setGalleryImages] = useState([]);
 
     async function fetchAll() {
         try {
             const response = await axios.get('http://localhost:5001/gallery');
             console.log(response.data);
-            return response.data.screenart_list;
+            return response.data.musiccovers_list;
         }
         catch (error) {
             //We're not handling errors. Just logging into the console.
@@ -32,8 +33,6 @@ function GalleryPage() {
                 setGalleryImages(result);
         });
     }, []);
-
-    const navigate = useNavigate();
 
     return (
         <div className={styles.gallerypage}>
@@ -60,6 +59,7 @@ function GalleryPage() {
     );
 }
 
+
 function ArtTypeButton(props) {
     const navigate = useNavigate();
 
@@ -75,4 +75,4 @@ function ArtTypeButton(props) {
     );
 }
 
-export default GalleryPage;
+export default MusicGalleryPage;
