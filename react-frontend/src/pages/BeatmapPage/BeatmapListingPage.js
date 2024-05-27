@@ -6,7 +6,14 @@ import React from "react";
 
 import headerBackground from '../../assets/images/headerBackground.png';
 import searchIcon from '../../assets/icons/searchIcon.svg';
-import Form from "../../Form";
+
+import cover1 from '../../assets/images/musicCovers/celticwhispersballad.png';
+import bmDiffIcon from '../../assets/icons/bmDifficultyIcon.svg';
+import easyDiffIcon from '../../assets/icons/easyCircleIcon.svg';
+import normalDiffIcon from '../../assets/icons/normalCircleIcon.svg';
+import hardDiffIcon from '../../assets/icons/hardCircleIcon.svg';
+import playIcon from '../../assets/icons/playIcon.svg';
+import heartIcon from '../../assets/icons/heartIcon.svg';
 
 const BeatmapListingPage = () => { 
     return (
@@ -37,9 +44,43 @@ const BeatmapListingPage = () => {
                     <div className={styles.bmListinDisplayModeItem}>artists</div>
                 </div>
                 <hr></hr>
+                <div className={styles.bmListContainer}>
+                    <div className={styles.bmListItem}>
+                        <div className={styles.musiccoverIcon}>
+                            <img src={cover1} alt="" />
+                        </div>
+                        <div className={styles.musiccoverInfo}>
+                            <div className={styles.songTitleText}>Celtic Whispers Ballad</div>
+                            <div className={styles.songArtistText}>Folklore Minstrel</div>
+                            <div className={styles.mappedByText}>mapped by Folklore Minstrel</div>
+                            <div className={styles.gameInfoSection}>
+                                <div className={styles.difficultySection}>
+                                    <img src={bmDiffIcon} alt="" />
+                                    <img src={easyDiffIcon} alt="" />
+                                    <img src={normalDiffIcon} alt="" />
+                                    <img src={hardDiffIcon} alt="" />
+                                </div>
+                                <div className= {styles.countInfoSection}>
+                                    <div className={styles.playCountInfo}>
+                                        <img src={playIcon} alt="" />
+                                        <b>504</b>
+                                    </div>
+                                    <div className={styles.heartCountInfo}>
+                                        <img src={heartIcon} alt="" />
+                                        <b>104</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
 };
 
 export default BeatmapListingPage;
+
+
+
+

@@ -45,6 +45,7 @@
     height: 5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 1rem;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -178,4 +179,143 @@ hr {
     padding-bottom: 0;
     width: 75%;
     /* margin: 1em auto; */
+}
+
+.bmListContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.bmListItem{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* justify-content: center; */
+    background-color: var(--white);
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    max-width: 90%;
+    overflow: hidden;
+    height: 8rem;
+    mix-blend-mode: normal;
+    padding: 0.5rem;
+
+}
+
+.musiccoverIcon {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    /* width: 100%; */
+    padding: 0.5rem;
+    /* position: relative; */
+    border-radius: 15px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 100px;
+    object-fit: cover;
+}
+
+.musiccoverInfo{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.songTitleText{
+    width: 100%;
+    font-weight: 700;
+    position: relative;
+    font-size: var(--body-overpass-base-size);
+    line-height: 24px;
+    display: flex;
+    font-family: 'Overpass Mono';
+    color: #000;
+    text-align: left;
+    align-items: center;
+}
+
+.songArtistText{
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Overpass Mono';
+    color: #000;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.mappedByText {
+    padding-top: 0.75rem;
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Overpass Mono';
+    color: #000;
+    text-align: left;
+    display: inline-block;
+
+}
+
+.gameInfoSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.difficultySection{
+    display: flex;
+    flex-direction: row;
+    justify-items: space-around;
+    /* width: 10rem; */
+}
+
+.countInfoSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 0.5rem;
+    /* width: 6rem; */
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem; */
+
+}
+
+.playCountInfo {
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    /* width: 26px; */
+    position: relative;
+    font-size: 14px;
+    /* line-height: 24px; */
+    font-weight: 500;
+    font-family: 'Overpass Mono';
+    color: #000;
+    /* text-align: left; */
+    /* display: inline-block; */
+}
+
+.heartCountInfo {
+    display: flex;
+    justify-content: space-between;
+    /* width: 26px; */
+    position: relative;
+    font-size: 14px;
+    /* line-height: 24px; */
+    font-weight: 500;
+    font-family: 'Overpass Mono';
+    color: #000;
+    /* text-align: left; */
+    /* display: inline-block; */
 }
