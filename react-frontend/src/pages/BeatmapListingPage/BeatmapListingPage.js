@@ -8,13 +8,23 @@ import axios from "axios";
 import headerBackground from '../../assets/images/headerBackground.png';
 import searchIcon from '../../assets/icons/searchIcon.svg';
 
-import cover1 from '../../assets/images/musicCovers/celticwhispersballad.png';
+
 import bmDiffIcon from '../../assets/icons/bmDifficultyIcon.svg';
 import easyDiffIcon from '../../assets/icons/easyCircleIcon.svg';
 import normalDiffIcon from '../../assets/icons/normalCircleIcon.svg';
 import hardDiffIcon from '../../assets/icons/hardCircleIcon.svg';
 import playIcon from '../../assets/icons/playIcon.svg';
 import heartIcon from '../../assets/icons/heartIcon.svg';
+
+
+//images for beatmap covers 
+import cover1 from '../../assets/images/musicCovers/celticwhispersballad.png';
+import cover2 from '../../assets/images/musicCovers/neonpulsesym.png';
+import cover3 from '../../assets/images/musicCovers/celestialechoes.png';
+import cover4 from '../../assets/images/musicCovers/nocturnalpursuit.png';
+
+const albumCovers = [cover1, cover2, cover3, cover4];
+
 
 function BeatmapListingPage() {
     const [beatmapList, setBeatmapList] = useState([]);
@@ -89,7 +99,7 @@ function BeatmapList (props) {
             <div key={index}>
                 <button type="button" className={styles.bmListItem} onClick={handleClick}>
                     <div className={styles.musiccoverIcon}>
-                        <img src={cover1} alt="" />
+                        <img src={albumCovers[beatmap.id-1]} alt="" />
                     </div>
                     <div className={styles.musiccoverInfo}>
                         <div className={styles.songTitleText}>
