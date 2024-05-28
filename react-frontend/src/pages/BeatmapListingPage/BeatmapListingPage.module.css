@@ -21,7 +21,7 @@
 }
 
 .titleText{
-    position: fixed;
+    position: absolute;
     width: 40%;
     height: auto; 
     top: 130px;
@@ -186,24 +186,29 @@ hr {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: space-between;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    /* margin-bottom: 2rem; */
+    width: 100%;
+
 }
 
 .bmListItem{
     display: flex;
-    /* flex-direction: column; */
+    margin: 0.5rem;
     align-items: center;
     /* justify-content: center; */
     background-color: var(--white);
-    width: 100%;
+    width: 25rem;
     position: relative;
     border-radius: 10px;
-    max-width: 90%;
+    /* max-width: 100%; */
     overflow: hidden;
     height: 8rem;
     mix-blend-mode: normal;
     padding: 0.5rem;
+    height: 9rem;
 
 }
 
@@ -269,7 +274,7 @@ hr {
 
 .gameInfoSection {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -283,7 +288,8 @@ hr {
 .countInfoSection {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
+
     padding-left: 0.5rem;
     /* width: 6rem; */
     /* padding-top: 0.5rem;

@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 import GalleryGrid from "../../GalleryGrid";
+import searchIcon from '../../assets/icons/searchIcon.svg';
 
 import styles from "./GalleryPage.module.css";
 import headerBackground from '../../assets/images/headerBackground.png';
-
 
 
 function MusicGalleryPage() {
@@ -28,34 +28,37 @@ function MusicGalleryPage() {
 
     useEffect(() => {
         fetchAll().then(result => {
-            console.log('RESULT', result);
             if (result)
                 setGalleryImages(result);
+                console.log('RESULT', result);
         });
     }, []);
 
     return (
         <div className={styles.gallerypage}>
-            <div className={styles.titleContainer}>
-                <img src={headerBackground} className={styles.headerBackground} alt="" />
-                <div className={styles.titleText}>GALLERY</div>
-            </div>
-            <div className="searchBar">
-
-            </div>
-            <div className="menuContainer">
-                <div className={styles.menuTitle}>
-                    <ArtTypeButton text="screen art" artType="/gallery" />
-                    <ArtTypeButton text="music covers" artType="/musicgallery" />
-                </div>
-                <div className={styles.menuDivider}></div>
-            </div>
-            <div className={styles.imageParent}>
-                <div className={styles.imageGrid}>
-                    <GalleryGrid galleryData={galleryImages} />
-                </div>
+        <div className={styles.titleContainer}>
+            <img src={headerBackground} className={styles.headerBackground} alt="" />
+            <div className={styles.titleText}>GALLERY</div>
+        </div>
+        <div className={styles.gallerySearchContainer}>
+            <div className= {styles.gallerySearchItem}>
+                <form action="" className={styles.gallerySearchItem}>
+                    <input type="text" placeholder="search" />
+                    <button type="submit"><img src={searchIcon} alt="" /></button>
+                </form>
             </div>
         </div>
+        <div className={styles.galleryDisplayMode}>
+            <div className={styles.galleryDisplayModeContainter}>
+                <ArtTypeButton text="screen art" artType="/gallery" />
+                <ArtTypeButton text="music covers" artType="/musicgallery" />
+            </div>
+            <hr></hr>
+            <div className={styles.imageGrid}>
+                <GalleryGrid galleryData={galleryImages} />
+            </div>
+        </div>
+    </div>
     );
 }
 

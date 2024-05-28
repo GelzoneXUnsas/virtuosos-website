@@ -6,7 +6,7 @@ const gallery_images = {
     screenart_list:
         [
             {
-                id: '1',
+                id: 1,
                 name: 'art1',
                 artType: 'screenart',
                 imagePath: '/../assets/images/galleryArt/art1.png',
@@ -14,7 +14,7 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             },
             {
-                id: '2',
+                id: 2,
                 name: 'art2',
                 artType: 'screenart',
                 imagePath: '../../assets/images/galleryArt/art2.png',
@@ -22,7 +22,7 @@ const gallery_images = {
                 dateAdded : '2024-05-11'
             },
             {
-                id: '3',
+                id: 3,
                 name: 'art3',
                 artType: 'screenart',
                 imagePath: '/../assets/images/galleryArt/art3.png',
@@ -30,7 +30,7 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             },
             {
-                id: '4',
+                id: 4,
                 name: 'art4',
                 artType: 'screenart',
                 imagePath: '/../assets/images/galleryArt/art4.png',
@@ -38,7 +38,7 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             },
             {
-                id: '5',
+                id: 5,
                 name: 'art5',
                 artType: 'screenart',
                 imagePath: '/../assets/images/galleryArt/art5.png',
@@ -46,7 +46,7 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             },
             {
-                id: '6',
+                id: 6,
                 name: 'art6',
                 artType: 'screenart',
                 imagePath: '/../assets/images/galleryArt/art6.png',
@@ -54,7 +54,7 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             },
             {
-                id: '7',
+                id: 7,
                 name: 'art7',
                 artType: 'screenart',
                 imagePath: '/../assets/images/galleryArt/art7.png',
@@ -62,7 +62,7 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             },
             {
-                id: '8',
+                id: 8,
                 name: 'art8',
                 artType: 'screenart',
                 imagePath: '/../assets/images/galleryArt/art8.png',
@@ -72,7 +72,7 @@ const gallery_images = {
         ],
         musiccovers_list: [
             {
-                id: '3',
+                id: 1,
                 name: 'art3',
                 artType: 'musiccovers',
                 imagePath: '../../assets/images/galleryArt/art3.png',
