@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./BeatmapPage.module.css";
-
 import React from "react";
 
 import headerBackground from '../../assets/images/headerBackground.png';
@@ -10,10 +9,10 @@ import headerBackground from '../../assets/images/headerBackground.png';
 import cover1 from '../../assets/images/musicCovers/celticwhispersballad.png';
 
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
-// import bmDiffIcon from '../../assets/icons/bmDifficultyIcon.svg';
-// import easyDiffIcon from '../../assets/icons/easyCircleIcon.svg';
-// import normalDiffIcon from '../../assets/icons/normalCircleIcon.svg';
-// import hardDiffIcon from '../../assets/icons/hardCircleIcon.svg';
+import durationIcon from '../../assets/icons/durationicon.svg';
+
+import bmDifficultyBar from '../../assets/icons/bm-difficultyBar.svg';
+
 import playIcon from '../../assets/icons/playIcon.svg';
 import heartIcon from '../../assets/icons/heartIcon.svg';
 import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
@@ -59,15 +58,38 @@ function BeatmapPage() {
                                     released 1/8/24
                                 </div>    
                             </div>
-                            <div className= {styles.bmDifficultyInfoSection}>
-                                <img src={easyIcon} className={styles.diffIcon} />
-                                <div className={styles.difficultyScore}>
-                                    2.3
+                            <div className={styles.bmDifficultySection}>
+                                <div className= {styles.bmDifficultyInfoSection}>
+                                    <img src={easyIcon} className={styles.diffIcon} />
+                                    <div className={styles.difficultyScore}>
+                                        2.3
+                                    </div>
+                                </div>
+                                <div className= {styles.bmDiffBar}>
+                                    <img src={bmDifficultyBar} className={styles.diffBar} />
                                 </div>
                             </div>
-        
-                            
                         </div>
+                    </div>
+                    <hr></hr>
+                    <div className={styles.beatmapGameInfoSection}>
+                        <div className={styles.beatmapInfo}>
+                            <img src={cover1} className={styles.coverImg}></img>
+                            <div className= {styles.bmInfoSection}>
+                                <div className={styles.mapperInfo}>
+                                    mapped by Folklore Minstrel
+                                </div>
+                                <div className={styles.bmData}>
+                                    <div className={styles.bmDataItem}>
+                                        <img src={durationIcon} className={styles.infoSvg} alt="" />
+                                        <b>
+                                            3:47
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

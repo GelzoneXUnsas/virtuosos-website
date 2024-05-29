@@ -46,10 +46,24 @@ const beatmap_list = {
         ]
 }
 
+
 router.get('/', (req, res) => {
-    const name = req.query.name;
-    res.send(beatmap_list);
+    const title = req.query.title;
+    console.log("title:", title)
+    if (title != undefined) {
+        let result = findSongByTitle(title);
+        result = {beatmap_info: result};
+        res.send(result);
+    } else{
+        res.send(beatmap_list);
+    }
+    
     }
 );
+
+const findSongByTitle = (title) => {
+    return beatmap_list['beatmap_info'].filter((beatmap) =>
+        beatmap['songName'] === title);
+}
 
 module.exports = router;
