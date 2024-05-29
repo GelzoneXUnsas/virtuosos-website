@@ -213,6 +213,11 @@ hr {
     line-height: 24px; /* 150% */
 }
 
+.musicCoverMenuTitleText:hover{
+    color: #d5a6ed;
+    transition: 0.2s;
+}
+
 .menuDivider{
     width: 350px;
     height: 30px;

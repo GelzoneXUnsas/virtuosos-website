@@ -15,7 +15,7 @@ const Header = () => {
         let handler = (e)=>{
             if(!menuRef.current.contains(e.target)){
                 setOpen(false);
-                console.log(menuRef.current);
+                // console.log(menuRef.current);
             }
         };
         document.addEventListener("mousedown", handler);
@@ -36,7 +36,7 @@ const Header = () => {
                     <img className={styles.menubuttonIcon} alt="" src={closedMenuIcon } />
                 </div>
                 
-                <div className={`${styles.dropdownMenu} ${open? "active" : ""}`}>
+                <div className={`${styles.dropdownMenu} ${open? styles.dropdownMenuActive: styles.dropdownMenuInactive}`} hidden={!open}>
                     <ul>
                         <DropdownItem text={"Login"} link="/" />
                         <DropdownItem text={"Music"} link="/beatmaplisting" />
