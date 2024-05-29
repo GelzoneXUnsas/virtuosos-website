@@ -10,7 +10,10 @@
 
 .headerBackground {
     width: 100%;
-    height: auto;
+    height: 11rem;
+    background-image: linear-gradient(rgba(6, 8, 21, 0.8), rgba(16, 17, 24, 0.8)), url(../../assets/images/headerBackground.png);
+    background-position: center;
+    background-size: cover;
     position: relative;
     top: 0;
     left: 0;
@@ -20,7 +23,7 @@
 .titleText{
     position: absolute;
     width: 40%;
-    height: auto;
+    height: auto; 
     top: 130px;
     left: 115px;
     bottom: 0;
@@ -34,27 +37,130 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px; /* 125% */
+    /* line-height: 40px; 125% */
 }
 
-.imageParent{
-    padding-top: 20px;
+.gallerySearchContainer{
+    width: auto;
+    height: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    flex-shrink: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    background: #232323;
+    justify-content: space-around;
+    color: #B2B2B2;
+    font-family: "Overpass Mono";
+    font-size: var(--body-overpass-base-size);
+    font-style: normal;
+    font-weight: 500;
 }
 
+.gallerySearchItem {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FFF;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+::placeholder {
+    color: #B2B2B2;
+}
+
+.gallerySearchItem input{
+    background: transparent;
+    width: 75%;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* padding: 0.5rem 0.25rem; */
+    color: #B2B2B2;
+    font-family: "Overpass Mono";
+}
+
+.gallerySearchItem button img {
+    width: 1rem;
+}
+
+.gallerySearchItem button {
+    background: transparent;
+    border: 0;
+    width: 2rem; 
+    height: 2rem;
+    outline: #FFF;
+    cursor: pointer;
+    padding-top: 0.25rem;
+    align-content: right;
+}
+
+
+.galleryDisplayMode {
+    display: flex;
+    flex-direction: column;
+    background-color: #232323;
+    color: white;
+}
+
+
+.galleryDisplayModeContainter {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    color: var(--icon-color, #FFF);
+    background-color: #232323;
+    /* title/lexend base */
+    font-family: "Lexend Exa";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    justify-content: space-evenly;
+}
+
+.galleryDisplayModeItem {
+    width: 25%;
+    color: white;
+    text-align: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+hr {
+    color: white;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 75%;
+    /* margin: 1em auto; */
+}
 .imageGrid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+    grid-row-gap: 0.5rem;
+    grid-column-gap: 0.5rem;
+    padding-top: 1rem;
+    justify-content: center;
+    padding: 1rem; 
+    width: 95%;
 }
+
+
+
 
 .artImage {
     object-fit: cover;
-    width: 172px;
-    height: 128px;
+    width: 12rem;
+    height: 10rem;
     flex-shrink: 0;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -105,6 +211,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 24px; /* 150% */
+}
+
+.musicCoverMenuTitleText:hover{
+    color: #d5a6ed;
+    transition: 0.2s;
 }
 
 .menuDivider{
