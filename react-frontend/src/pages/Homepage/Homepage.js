@@ -8,7 +8,7 @@ import headerBackground from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
 import logoIcon from '../../assets/icons/logoIcon.svg';
 
-import demoVideo from "../../assets/videos/VirtuososDemo_1.mp4";
+// import demoVideo from "../../assets/videos/VirtuososDemo_1.mp4";
 
 import appleDownloadIcon from "../../assets/icons/appleDownloadIcon.svg";
 import googlePlayDownloadIcon from "../../assets/icons/googlePlayDownloadIcon.svg";
@@ -74,7 +74,7 @@ const Homepage = () => {
           <div className={styles.bgimage} />
         </div>
         <div className={styles.demoVideoContainer}>
-          <iframe width="1124" height="632" src="https://www.youtube.com/embed/BBJa32lCaaY?autoplay=1" title="Rick Rolled (Short Version)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe width="562" height="316" src="https://www.youtube.com/embed/BBJa32lCaaY?autoplay=1" title="Rick Rolled (Short Version)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </div>
         <div className={styles.downloadSection}>
