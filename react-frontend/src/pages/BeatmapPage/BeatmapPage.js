@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useCallback, useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import styles from "./BeatmapPage.module.css";
 import React from "react";
 
@@ -21,6 +21,7 @@ import playIcon from '../../assets/icons/playIcon.svg';
 import heartIcon from '../../assets/icons/heartIcon.svg';
 import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
 import easyIcon from "../../assets/icons/bmEasyIcon.svg";
+
 function BeatmapPage() {
 
     return (
@@ -50,12 +51,12 @@ function BeatmapPage() {
                         <div className={styles.bmAdditionalInfoSection}>
                             <div className={styles.bmArtistInfoSection}>
                                 <div className={styles.artistDetails}>
-                                    <img className={styles.artistImage} src={artist2Image}/>
+                                    <img className={styles.artistImage} src={artist2Image} alt=""/>
                                     <div className={styles.artistTitleContainer}>
                                         <div className={styles.artistName}>
                                             Folklore Minstrel
                                         </div>
-                                        <img className={styles.verifiedIcon} src={verifiedIcon}/>
+                                        <img className={styles.verifiedIcon} src={verifiedIcon} alt=""/>
                                     </div>
                                 </div>
                                 <div className={styles.releaseDate}>
@@ -64,13 +65,13 @@ function BeatmapPage() {
                             </div>
                             <div className={styles.bmDifficultySection}>
                                 <div className= {styles.bmDifficultyInfoSection}>
-                                    <img src={easyIcon} className={styles.diffIcon} />
+                                    <img src={easyIcon} className={styles.diffIcon} alt=""/>
                                     <div className={styles.difficultyScore}>
                                         2.3
                                     </div>
                                 </div>
                                 <div className= {styles.bmDiffBar}>
-                                    <img src={bmDifficultyBar} className={styles.diffBar} />
+                                    <img src={bmDifficultyBar} className={styles.diffBar} alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +79,7 @@ function BeatmapPage() {
                     <hr></hr>
                     <div className={styles.beatmapGameInfoSection}>
                         <div className={styles.beatmapInfo}>
-                            <img src={cover1} className={styles.coverImg}></img>
+                            <img src={cover1} className={styles.coverImg} alt=""></img>
                             <div className= {styles.bmInfoSection}>
                                 <div className={styles.mapperInfo}>
                                     mapped by Folklore Minstrel
@@ -117,7 +118,7 @@ function BeatmapPage() {
                                     HP Drain
                                 </div>
                                 <div className={styles.valueBar}>
-                                    <img src={bm30ValueBar} className={styles.bmValueBar} />
+                                    <img src={bm30ValueBar} className={styles.bmValueBar} alt=""/>
                                 </div>
                                 <div className={styles.bmStatValue}>5</div>
                             </div>
@@ -126,7 +127,7 @@ function BeatmapPage() {
                                     Approach Rate
                                 </div>
                                 <div className={styles.valueBar}>
-                                    <img src={bm30ValueBar} className={styles.bmValueBar} />
+                                    <img src={bm30ValueBar} className={styles.bmValueBar} alt=""/>
                                 </div>
                                 <div className={styles.bmStatValue}>7</div>
                             </div>

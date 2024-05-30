@@ -107,12 +107,12 @@ const Homepage = () => {
             return (
               <div className={styles.featuredArtistDetails}>
                 <div className={styles.artistDetails}>
-                  <img className={styles.artistImage} src={artist.image} alt="artist image"/>
+                  <img className={styles.artistImage} src={artist.image} alt="artist"/>
                   <div className={styles.artistTitleContainer}>
                     <div className={styles.artistName}>
                       {artist.name}
                     </div>
-                    <img className={styles.verifiedIcon} src={verifiedIcon} alt="verifie icon"/>
+                    <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
                   </div>
                 </div>
                 <div className={styles.artistRelatedInfo}>
