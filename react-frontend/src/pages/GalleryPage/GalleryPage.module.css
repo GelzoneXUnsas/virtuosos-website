@@ -23,11 +23,11 @@
 
 .titleText{
     position: absolute;
-    width: 40%;
-    height: auto; 
+    width: 100%;
+    /* height: auto;  */
     top: 130px;
-    left: 115px;
-    bottom: 0;
+    /* left: 115px;
+    bottom: 0; */
     z-index: 1;
     display: flex;
     justify-content: center;

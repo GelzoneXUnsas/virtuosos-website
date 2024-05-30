@@ -131,6 +131,9 @@ function BeatmapPage() {
                                 </div>
                                 <div className={styles.bmStatValue}>7</div>
                             </div>
+                            <button type="button" className={styles.downloadButton}>
+                                Download
+                            </button>
                         </div>
                         <hr></hr>
                         <div className={styles.bmDescription}>
@@ -138,6 +141,25 @@ function BeatmapPage() {
                             Folklore Minstrel, both artist and beatmap creator, weaves 
                             traditional tunes into an immersive experience. Each note 
                             carries the essence of a rich musical adventure.
+                        </div>
+
+                        <div className={styles.tagSection}> 
+                            <div className={styles.tagItem}>
+                                <div className={styles.tagTitle}>
+                                    Source:
+                                </div>
+                                <div className={styles.tagValues}>
+                                    Folkore Chronicles World
+                                </div>
+                            </div>
+                            <div className={styles.tagItem}>
+                                <div className={styles.tagTitle}>
+                                    Tags:
+                                </div>
+                                <div className={styles.tagValues}>
+                                    Folklore, Celtic, Traditional, World
+                                </div>
+                            </div>
                         </div>
 
                     </div>

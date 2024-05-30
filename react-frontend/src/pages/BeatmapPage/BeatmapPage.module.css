@@ -224,6 +224,8 @@ hr {
     padding: 0.5rem;
 }
 
+
+
 .mapperInfo {
     padding-top: 0.5rem;
     line-height: 24px;
@@ -270,16 +272,56 @@ hr {
     justify-content: space-around;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .bmStatAttribute {
     width: 5rem;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 16px;
 }
+
+.downloadButton{
+    width: 50%;
+    height: 2rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.downloadButton:hover{
+    transition: 0.7s;
+    background-color: white;
+    color: black;
+}
+
 
 .bmDescription {
     padding: 1rem;
     text-align: left;
     font-weight: 300;
+}
+
+.tagSection {
+    display: flex;
+    text-align: left;
+    font-family: 'Overpass Mono';
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tagItem {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+}
+
+.tagTitle {
+    padding-right: 1rem;
+}
+
+.tagValues {
+    color: #d5a6ed
 }
