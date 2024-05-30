@@ -9,8 +9,12 @@ import headerBackground from '../../assets/images/headerBackground.png';
 import cover1 from '../../assets/images/musicCovers/celticwhispersballad.png';
 
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
-import durationIcon from '../../assets/icons/durationicon.svg';
 
+import durationIcon from '../../assets/icons/durationicon.svg';
+import bpmIcon from '../../assets/icons/bpmIcon.svg';
+import noteCountIcon from '../../assets/icons/notecountIcon.svg';
+import sliderCountIcon from '../../assets/icons/bm-slider-icon.svg';
+import bm30ValueBar from '../../assets/icons/bm-fill-bar-30.svg';
 import bmDifficultyBar from '../../assets/icons/bm-difficultyBar.svg';
 
 import playIcon from '../../assets/icons/playIcon.svg';
@@ -81,13 +85,58 @@ function BeatmapPage() {
                                 </div>
                                 <div className={styles.bmData}>
                                     <div className={styles.bmDataItem}>
-                                        <img src={durationIcon} className={styles.infoSvg} alt="" />
+                                        <img src={durationIcon} className={styles.bmSvg} alt="" />
                                         <b>
                                             3:47
                                         </b>
                                     </div>
+                                    <div className={styles.bmDataItem}>
+                                        <img className={styles.bmSvg} src={bpmIcon} alt="" />
+                                        <b>
+                                            113
+                                        </b>
+                                    </div>
+                                    <div className={styles.bmDataItem}>
+                                        <img className={styles.bmSvg} src={noteCountIcon} alt="" />
+                                        <b>
+                                            185
+                                        </b>
+                                    </div>
+                                    <div className={styles.bmDataItem}>
+                                        <img className={styles.bmSvg} src={sliderCountIcon} alt="" />
+                                        <b>
+                                            61
+                                        </b>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className={styles.bmStatInfo}>
+                            <div className={styles.bmStatItem}>
+                                <div className={styles.bmStatAttribute}>
+                                    HP Drain
+                                </div>
+                                <div className={styles.valueBar}>
+                                    <img src={bm30ValueBar} className={styles.bmValueBar} />
+                                </div>
+                                <div className={styles.bmStatValue}>5</div>
+                            </div>
+                            <div className={styles.bmStatItem}>
+                                <div className={styles.bmStatAttribute}>
+                                    Approach Rate
+                                </div>
+                                <div className={styles.valueBar}>
+                                    <img src={bm30ValueBar} className={styles.bmValueBar} />
+                                </div>
+                                <div className={styles.bmStatValue}>7</div>
+                            </div>
+                        </div>
+                        <hr></hr>
+                        <div className={styles.bmDescription}>
+                            Embark on a folkloric journey with "Celtic Whispers Ballad." 
+                            Folklore Minstrel, both artist and beatmap creator, weaves 
+                            traditional tunes into an immersive experience. Each note 
+                            carries the essence of a rich musical adventure.
                         </div>
 
                     </div>

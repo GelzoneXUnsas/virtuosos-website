@@ -1,13 +1,12 @@
 .comingsoonPage {
     display: block;
     width: 100%;
-    background-color: black;
+    background-color: #232323;
     overflow: hidden;
     text-align: center;
     font-size: var(--body-overpass-base-size);
     color: var(--white);
     font-family: var(--body-overpass-base);
-
     height: auto;
     color: white;
 }
@@ -16,6 +15,7 @@
 .headerBackground {
     width: 100%;
     height: auto;
+    background-color: #232323;
     background-image: linear-gradient(rgba(6, 8, 21, 0.8), rgba(16, 17, 24, 0.8)), url(../../assets/images/headerBackground.png);
     background-position: center;
     background-size: cover;
@@ -43,4 +43,15 @@
     font-style: normal;
     font-weight: 700;
     /* line-height: 40px; 125% */
+}
+
+
+.comingsoonContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    padding: 2rem;
+    background-color: #232323;
 }

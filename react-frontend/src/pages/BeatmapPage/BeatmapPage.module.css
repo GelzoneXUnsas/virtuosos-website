@@ -237,15 +237,49 @@ hr {
 
 .bmData {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
+.bmsvg {
+    color: white;
+    fill: white;
+    /* width: 2rem;
+    height: 2rem; */
+    /* width: 100%; */
+    padding-right: 0.5rem;
+}
+
 .bmDataItem {
+    /* width: 4rem; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-; */
+    align-content: baseline;
+    padding-bottom: 0.5rem;
+}
+
+
+.bmStatItem {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.bmStatAttribute {
+    width: 5rem;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.bmDescription {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 300;
 }

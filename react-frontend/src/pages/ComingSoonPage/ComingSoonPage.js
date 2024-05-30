@@ -13,6 +13,10 @@ const ComingSoonPage = () => {
                 <img src={headerBackground} className={styles.headerBackground} alt="" />
                 <div className={styles.titleText}>COMING SOON</div>
             </div>
+            <div className={styles.comingsoonContent}>
+                This page is under construction. Thanks for your patience!
+            </div>
+
         </div>
     );
 };

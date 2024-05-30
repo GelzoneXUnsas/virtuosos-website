@@ -1,6 +1,6 @@
 .beatmaplistingPage {
     width: 100%;
-    background-color: black;
+    background-color: #232323;
     overflow: hidden;
     text-align: center;
     font-size: var(--body-overpass-base-size);

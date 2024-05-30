@@ -74,7 +74,8 @@ const Homepage = () => {
           <div className={styles.bgimage} />
         </div>
         <div className={styles.demoVideoContainer}>
-          <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/>
+          <iframe width="1124" height="632" src="https://www.youtube.com/embed/BBJa32lCaaY?autoplay=1" title="Rick Rolled (Short Version)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </div>
         <div className={styles.downloadSection}>
           <div className={styles.downloadText}>Download for free</div>
