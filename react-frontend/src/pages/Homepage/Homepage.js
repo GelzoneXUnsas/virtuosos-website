@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import styles from "./Homepage.module.css";
 
 import React from "react";
 
 import headerBackground from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
-import logoIcon from '../../assets/icons/logoIcon.svg';
+// import logoIcon from '../../assets/icons/logoIcon.svg';
 
 // import demoVideo from "../../assets/videos/VirtuososDemo_1.mp4";
 
@@ -46,7 +46,7 @@ const getFeaturedArtists = () => {
 };
 
 const Homepage = () => {
-  let autoPlayDemoVideo = true;
+  // let autoPlayDemoVideo = true;
   const appStoreDownloadLink = "https://gelzonexunsas.itch.io/virtuosos";
   const googlePlayDownloadLink = "https://gelzonexunsas.itch.io/virtuosos";
   const [featuredArtists, setFeaturedArtists] = useState([]);
@@ -107,12 +107,12 @@ const Homepage = () => {
             return (
               <div className={styles.featuredArtistDetails}>
                 <div className={styles.artistDetails}>
-                  <img className={styles.artistImage} src={artist.image}/>
+                  <img className={styles.artistImage} src={artist.image} alt="artist image"/>
                   <div className={styles.artistTitleContainer}>
                     <div className={styles.artistName}>
                       {artist.name}
                     </div>
-                    <img className={styles.verifiedIcon} src={verifiedIcon}/>
+                    <img className={styles.verifiedIcon} src={verifiedIcon} alt="verifie icon"/>
                   </div>
                 </div>
                 <div className={styles.artistRelatedInfo}>

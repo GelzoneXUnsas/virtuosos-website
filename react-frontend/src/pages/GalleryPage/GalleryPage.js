@@ -35,8 +35,6 @@ function GalleryPage() {
         });
     }, []);
 
-    const navigate = useNavigate();
-
     return (
         <div className={styles.gallerypage}>
             <div className={styles.titleContainer}>

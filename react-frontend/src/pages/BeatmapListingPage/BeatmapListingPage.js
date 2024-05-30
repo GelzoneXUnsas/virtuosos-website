@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./BeatmapListingPage.module.css";
 
@@ -50,7 +50,6 @@ function BeatmapListingPage() {
         }, []);
 
 
-    const navigate = useNavigate();
 
     return (
         <div className={styles.beatmaplistingPage}>
@@ -62,7 +61,8 @@ function BeatmapListingPage() {
                 <div className= {styles.beatmapListingSearchItem}>
                     <form action="" className={styles.beatmapListingSearchItem}>
                         <input type="text" placeholder="song, album, artist" />
-                        <button type="submit"><img src={searchIcon} alt="" /></button>
+                        <button type="submit">
+                            <img src={searchIcon} alt="" /></button>
                     </form>
                 </div>
                 <div className={styles.beatmapListingFilterItem}>
