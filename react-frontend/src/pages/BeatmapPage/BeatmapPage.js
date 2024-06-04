@@ -22,6 +22,10 @@ import heartIcon from '../../assets/icons/heartIcon.svg';
 import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
 import easyIcon from "../../assets/icons/bmEasyIcon.svg";
 
+//  const BACKEND_URL = 'http://localhost:5001';
+// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+
+
 function BeatmapPage() {
 
     return (

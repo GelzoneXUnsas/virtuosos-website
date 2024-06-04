@@ -10,8 +10,8 @@ const beatmap_list = {
                 artist : 'Folklore Minstrel',
                 beatmap_artist : 'Folklore Minstrel',
                 difficultyLink : ['Easy', 'Normal', 'Hard'],
-                playCount: 504,
-                likeCount: 145
+                playCount: 0,
+                likeCount: 0
             },
             {
                 id : 2,
@@ -20,8 +20,8 @@ const beatmap_list = {
                 beatmap_artist : 'Techo Maestro',
                 songCoverImg: 'path/to/image',
                 difficultyLevels : ['Easy', 'Normal', 'Hard'],
-                playCount: 365,
-                likeCount: 105
+                playCount: 0,
+                likeCount: 0
             },
             {
                 id : 3,
@@ -30,8 +30,8 @@ const beatmap_list = {
                 beatmap_artist : 'StarNavigator',
                 songCoverImg: 'path/to/image',
                 difficultyLink : ['Easy', 'Normal'],
-                playCount: 698,
-                likeCount: 323
+                playCount: 0,
+                likeCount: 0
             },
             {
                 id : 4,
@@ -40,8 +40,8 @@ const beatmap_list = {
                 beatmap_artist : 'ShadowWeaver',
                 songCoverImg: 'path/to/image',
                 difficultyLink : ['Easy', 'Normal'],
-                playCount: 500,
-                likeCount: 465
+                playCount: 0,
+                likeCount: 0
             }
         ]
 }

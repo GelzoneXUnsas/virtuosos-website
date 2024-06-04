@@ -5,13 +5,18 @@ import axios from 'axios';
 
 import styles from './MyApp.module.css';
 
+// BACKEND_URL = 'http://localhost:5001';
+const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+
 function MyApp() {
     //start with empty states
     const [characters, setCharacters] = useState([]);
 
     async function fetchAll() {
         try {
-            const response = await axios.get('http://localhost:5001/users');
+            const route = BACKEND_URL + '/users';
+            const response = await axios.get(route);
+            // const response = await axios.get('{http://localhost:5001}/users');
             return response.data.users_list;
         }
         catch (error) {
@@ -31,7 +36,8 @@ function MyApp() {
 
     async function makePostCall(person) {
         try {
-            const response = await axios.post('http://localhost:5001/users', person);
+            const route = BACKEND_URL + '/users';
+            const response = await axios.post(route, person);
             return response;
         }
         catch (error) {

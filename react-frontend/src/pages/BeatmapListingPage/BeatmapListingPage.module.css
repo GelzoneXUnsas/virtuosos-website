@@ -290,11 +290,6 @@ hr {
     flex-direction: row;
     justify-content: flex-end;
 
-    padding-left: 0.5rem;
-    /* width: 6rem; */
-    /* padding-top: 0.5rem;
-    padding-bottom: 0.5rem; */
-
 }
 
 .playCountInfo {

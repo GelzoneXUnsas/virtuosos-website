@@ -25,13 +25,16 @@ import cover4 from '../../assets/images/musicCovers/nocturnalpursuit.png';
 
 const albumCovers = [cover1, cover2, cover3, cover4];
 
+// BACKEND_URL = 'http://localhost:5001';
+const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function BeatmapListingPage() {
     const [beatmapList, setBeatmapList] = useState([]);
 
     async function fetchAll() {
         try {
-            const response = await axios.get('http://localhost:5001/beatmapListing');
+            const route = BACKEND_URL + '/beatmapListing';
+            const response = await axios.get(route);
             console.log(response.data);
             return response.data.beatmap_info;
         }

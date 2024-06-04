@@ -8,13 +8,16 @@ import searchIcon from '../../assets/icons/searchIcon.svg';
 import styles from "./GalleryPage.module.css";
 import headerBackground from '../../assets/images/headerBackground.png';
 
+// BACKEND_URL = 'http://localhost:5001';
+const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function MusicGalleryPage() {
     const [galleryImages, setGalleryImages] = useState([]);
 
     async function fetchAll() {
         try {
-            const response = await axios.get('http://localhost:5001/gallery');
+            const route = BACKEND_URL + '/gallery';
+            const response = await axios.get(route);
             console.log(response.data);
             return response.data.musiccovers_list;
         }
