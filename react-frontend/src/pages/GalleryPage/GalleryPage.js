@@ -46,7 +46,7 @@ function GalleryPage() {
             </div>
             <div className={styles.gallerySearchContainer}>
                 <div className= {styles.gallerySearchItem}>
-                    <form action="" className={styles.beatmapListingSearchItem}>
+                    <form action="" className={styles.gallerySearchItem}>
                         <input type="text" placeholder="search" />
                         <button type="submit"><img src={searchIcon} alt="" /></button>
                     </form>
