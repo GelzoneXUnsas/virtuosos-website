@@ -31,6 +31,9 @@ const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 function BeatmapListingPage() {
     const [beatmapList, setBeatmapList] = useState([]);
 
+    const [query, setQuery] = useState('');
+    // const [results, setResults] = useState([]);
+
     async function fetchAll() {
         try {
             const route = BACKEND_URL + '/beatmapListing';
@@ -52,6 +55,20 @@ function BeatmapListingPage() {
         });
         }, []);
 
+        const handleSearch = (e) => {
+            e.preventDefault();
+            setQuery(e.target.value);
+            console.log('Query:', query);
+
+            // Perform any additional logic or API calls here
+        };
+
+        const handleInputChange = (e) => {
+            setQuery(e.target.value);
+            console.log('input', e.target.value);
+        };
+        
+
 
 
     return (
@@ -60,13 +77,16 @@ function BeatmapListingPage() {
                 <img src={headerBackground} className={styles.headerBackground} alt="" />
                 <div className={styles.titleText}>BEATMAPS</div>
             </div>
-            <div className={styles.beatmapListingSearchFilter}>
+            <div className={styles.gallerySearchContainer}>
                 <div className= {styles.beatmapListingSearchItem}>
-                    <form action="" className={styles.beatmapListingSearchItem}>
-                        <input type="text" placeholder="song, album, artist" />
-                        <button type="submit">
-                            <img src={searchIcon} alt="" /></button>
-                    </form>
+                        <form onSubmit={handleSearch} action="" className={styles.beatmapListingSearchItem}>
+                            <label htmlFor="search">
+                                <input name="search" type="text" value={query} onChange={handleInputChange} placeholder="song, album, artist" />
+                            
+                                <button type="submit">
+                                <img src={searchIcon} alt="" /></button>
+                            </label>
+                        </form>
                 </div>
                 <div className={styles.beatmapListingFilterItem}>
                     <select className={styles.beatmapListingFilterItem} placeholder="sort by">
@@ -80,7 +100,7 @@ function BeatmapListingPage() {
             <div className={styles.bmListingDisplayMode}>
                 <div className={styles.bmListingDisplayModeContainter}>
                     <div className={styles.bmListinDisplayModeItem}>songs</div>
-                    <div className={styles.bmListinDisplayModeItem}>artists</div>
+                    {/* <div className={styles.bmListinDisplayModeItem}>artists</div> */}
                 </div>
                 <hr></hr>
                     <BeatmapList beatmapList={beatmapList} />

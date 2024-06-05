@@ -61,6 +61,24 @@
     /* line-height: 24px; 150% */
     }
 
+.gallerySearchContainer{
+        width: auto;
+        height: 5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #232323;
+        justify-content: space-around;
+        color: #B2B2B2;
+        font-family: "Overpass Mono";
+        font-size: var(--body-overpass-base-size);
+        font-style: normal;
+        font-weight: 500;
+}
+
 .beatmapListingSearchItem {
     display: flex;
     justify-content: left;
@@ -69,7 +87,6 @@
     align-items: center;
     flex-shrink: 0;
     border-radius: 5px;
-    
     background: #FFF;
     /* padding-left: 0.5rem; */
     padding-top: 0.25rem;
