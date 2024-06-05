@@ -38,7 +38,7 @@ const Header = () => {
                 
                 <div className={`${styles.dropdownMenu} ${open? styles.dropdownMenuActive: styles.dropdownMenuInactive}`} hidden={!open}>
                     <ul>
-                        <DropdownItem text={"Login"} link="/" />
+                        <DropdownItem text={"Home"} link="/" />
                         <DropdownItem text={"Music"} link="/beatmaplisting" />
                         <DropdownItem text={"Art"} link="/gallery" />
                         <DropdownItem text={"Community"} link="/comingsoon" />

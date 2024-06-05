@@ -61,6 +61,12 @@ router.get('/', (req, res) => {
     }
 );
 
+const findSongByArtist = (artist) => {
+    return beatmap_list['artist'].filter((beatmap) =>
+        beatmap['artist'] === title);
+}
+
+
 const findSongByTitle = (title) => {
     return beatmap_list['beatmap_info'].filter((beatmap) =>
         beatmap['songName'] === title);
