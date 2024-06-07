@@ -9,49 +9,99 @@ const beatmap_list = {
                 songName : 'Celtic Whispers Ballad',
                 artist : 'Folklore Minstrel',
                 beatmap_artist : 'Folklore Minstrel',
+                songCoverImg: 'cover1',
+                artistImg: 'artist2Image',
+                releaseDate: '2024-05-18',
                 difficultyLink : ['Easy', 'Normal', 'Hard'],
                 playCount: 0,
-                likeCount: 0
+                likeCount: 0,
+                songDuration: '3:45',
+                bpm : 145,
+                noteCount: 1000,
+                sliderCount: 50,
+                source: "Folklore Chronicles World",
+                tags: ['Celtic', 'Folklore', 'Traditional', 'World'],
+                description: 'Embark on a folkloric journey with "Celtic Whispers Ballad." Folklore Minstrel, both artist and beatmap creator, weaves traditional tunes into an immersive experience. Each note carries the essence of a rich musical adventure.'
             },
             {
                 id : 2,
                 songName : 'Neon Pulse Symphony',
                 artist : 'Techo Maestro',
                 beatmap_artist : 'Techo Maestro',
-                songCoverImg: 'path/to/image',
+                songCoverImg: 'cover2',
+                artistImg: 'artist1Image',
+                releaseDate: '2024-05-18',
                 difficultyLevels : ['Easy', 'Normal', 'Hard'],
                 playCount: 0,
-                likeCount: 0
+                likeCount: 0,
+                songDuration: '2:30',
+                bpm : 150,
+                noteCount: 800,
+                sliderCount: 61,
+                source: "Techno Adventures World",
+                tags: ['Neon', 'Synthwave'],
+                description : 'Dive into the cutting-edge realm of Techno Adventures World, where futuristic technology meets thrilling escapades. Explore cyber landscapes, master advanced gadgets, and overcome digital challenges in this electrifying journey through the next frontier.'
             },
             {
                 id : 3,
                 songName : 'Celestial Echoes',
                 artist : 'Celestial Harmonics',
                 beatmap_artist : 'StarNavigator',
-                songCoverImg: 'path/to/image',
+                songCoverImg: 'cover3',
+                artistImg: 'artist3Image',
+                releaseDate: '2024-05-18',
                 difficultyLink : ['Easy', 'Normal'],
                 playCount: 0,
-                likeCount: 0
+                likeCount: 0,
+                songDuration: '1:55',
+                bpm : 220,
+                noteCount: 780,
+                sliderCount: 43,
+                source: "Celestial Harmonics Universe",
+                tags: ['Night', 'Starry'],
+                description: "Immerse yourself in the ethereal beauty of the Celestial Harmonics Universe. This cosmic odyssey blends astral melodies with interstellar exploration, creating a symphony of wonder and discovery among the stars. Let the harmonies guide you through the celestial expanse."
+
             },
             {
                 id : 4,
                 songName : 'Nocturnal Pursuit',
                 artist : 'ShadowWeaver',
                 beatmap_artist : 'ShadowWeaver',
-                songCoverImg: 'path/to/image',
+                songCoverImg: 'cover4',
+                artistImg: 'artist1Image',
+                releaseDate: '2024-05-18',
                 difficultyLink : ['Easy', 'Normal'],
                 playCount: 0,
-                likeCount: 0
+                likeCount: 0,
+                songDuration: '4:03',
+                bpm : 120,
+                noteCount: 607,
+                sliderCount: 76,
+                source: "ShadowWeaver Mysteries",
+                tags: ['Dark', 'Mystery'],
+                description : 'Embark on a shadowy journey through the enigmatic world of ShadowWeaver Mysteries. Unravel secrets, solve riddles, and uncover hidden truths in this mysterious realm. Each note is a clue, each beat a step closer to the truth.'
             }
         ]
 }
 
 
 router.get('/', (req, res) => {
+    const id = req.query.id;
     const title = req.query.title;
+    const searchTerm = req.query.search;
+    console.log("id:", id)
     console.log("title:", title)
-    if (title != undefined) {
+    if(id != undefined){
+        let result = findSongByID(id);
+        console.log("result:", result)
+        result = {beatmap_info: result};
+        res.send(result);
+    } else if (title != undefined) {
         let result = findSongByTitle(title);
+        result = {beatmap_info: result};
+        res.send(result);
+    } else if (searchTerm != undefined) {
+        let result = findSong(searchTerm.toLowerCase());
         result = {beatmap_info: result};
         res.send(result);
     } else{
@@ -60,6 +110,10 @@ router.get('/', (req, res) => {
     
     }
 );
+const findSong = (searchTerm) => {
+    return beatmap_list['beatmap_info'].filter((beatmap) =>
+        beatmap['songName'].toLowerCase().includes(searchTerm) || beatmap['artist'].toLowerCase().includes(searchTerm));
+}
 
 const findSongByArtist = (artist) => {
     return beatmap_list['artist'].filter((beatmap) =>
@@ -70,6 +124,11 @@ const findSongByArtist = (artist) => {
 const findSongByTitle = (title) => {
     return beatmap_list['beatmap_info'].filter((beatmap) =>
         beatmap['songName'] === title);
+}
+
+const findSongByID = (id) => {
+    return beatmap_list['beatmap_info'].filter((beatmap) =>
+        beatmap['id'].toString() === id);
 }
 
 module.exports = router;
