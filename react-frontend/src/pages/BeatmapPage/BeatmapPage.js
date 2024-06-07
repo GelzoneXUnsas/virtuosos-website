@@ -34,8 +34,8 @@ const albumCovers = {'cover1': cover1, 'cover2': cover2, 'cover3': cover3, 'cove
 const artistImages = {'artist1Image': artist1Image, 'artist2Image': artist2Image, 'artist3Image': artist3Image};
 
 
- const BACKEND_URL = 'http://localhost:5001';
-// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+//  const BACKEND_URL = 'http://localhost:5001';
+const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 
 function BeatmapPage() {
