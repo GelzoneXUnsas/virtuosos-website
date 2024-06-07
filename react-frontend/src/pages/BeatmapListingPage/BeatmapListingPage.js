@@ -56,7 +56,7 @@ function BeatmapListingPage() {
             if (result)
                 setBeatmapList(result);
         });
-        }, []);
+    }, []);
 
         const handleSearch = (e) => {
             e.preventDefault();
@@ -130,10 +130,6 @@ function BeatmapListingPage() {
 
 function BeatmapList (props) {
     const navigate = useNavigate();
-
-    function handleClick() {
-        navigate('/beatmap');
-    }
     
     const rows = props.beatmapList.map((beatmap, index) => {
         return ( 
