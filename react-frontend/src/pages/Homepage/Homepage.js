@@ -58,7 +58,7 @@ const Homepage = () => {
   return (
     <div className={styles.homepage}>
       <div className={styles.titleContainer}>
-        {/* <div className= {styles.headerBackgroundDark}/> */}
+        {/* <div classNameg= {styles.headerBackgroundDark}/> */}
         <img src={headerBackground} className={styles.headerBackground} alt="" />
         <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
       </div>

@@ -12,10 +12,10 @@
 
 .titleText{
     position: absolute;
-    width: 40%;
+    width: 100%;
     height: auto; 
-    top: 130px;
-    left: 115px;
+    top: 8rem;
+    /* left: 115px; */
     bottom: 0;
     z-index: 1;
     display: flex;

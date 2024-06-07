@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
             </div>
             <div className={styles.footerEmail}>
-            contact hello@gmail.com for support
+                contact virtuosos.game@gmail.com for support
             </div>
         </div>
     </div>

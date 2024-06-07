@@ -115,12 +115,6 @@ const findSong = (searchTerm) => {
         beatmap['songName'].toLowerCase().includes(searchTerm) || beatmap['artist'].toLowerCase().includes(searchTerm));
 }
 
-const findSongByArtist = (artist) => {
-    return beatmap_list['artist'].filter((beatmap) =>
-        beatmap['artist'] === title);
-}
-
-
 const findSongByTitle = (title) => {
     return beatmap_list['beatmap_info'].filter((beatmap) =>
         beatmap['songName'] === title);
@@ -130,5 +124,27 @@ const findSongByID = (id) => {
     return beatmap_list['beatmap_info'].filter((beatmap) =>
         beatmap['id'].toString() === id);
 }
+
+// router.get('/:id', (req, res) => {
+//     const id = req.params.id;
+//     let result = findSongByID(id);
+//     if(result === undefined || result.length < 1) {
+//         res.status(404).send('Song ID not found');
+//     }else{
+//         result = {beatmap_info: result};
+//         res.send(result);
+//     }
+// });
+
+// router.get('/:title', (req, res) => {
+//     const title = req.params.title;
+//     let result = findSongByTitle(id);
+//     if(result === undefined || result.length < 1) {
+//         res.status(404).send('Song Title not found');
+//     }else{
+//         result = {beatmap_info: result};
+//         res.send(result);
+//     }
+// });
 
 module.exports = router;

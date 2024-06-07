@@ -25,8 +25,8 @@ import cover4 from '../../assets/images/musicCovers/nocturnalpursuit.png';
 
 const albumCovers = [cover1, cover2, cover3, cover4];
 
-//const BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+const BACKEND_URL = 'http://localhost:5001';
+// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function BeatmapListingPage() {
     const [beatmapList, setBeatmapList] = useState([]);
@@ -59,19 +59,19 @@ function BeatmapListingPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-        const handleSearch = (e) => {
-            e.preventDefault();
-            setQuery(e.target.value);
-            console.log('Query:', query);
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setQuery(e.target.value);
+        console.log('Query:', query);
 
-            updateList(query);
-            // Perform any additional logic or API calls here
-        };
+        updateList(query);
+        // Perform any additional logic or API calls here
+    };
 
-        const handleInputChange = (e) => {
-            setQuery(e.target.value);
-            console.log('input', e.target.value);
-        };
+    const handleInputChange = (e) => {
+        setQuery(e.target.value);
+        console.log('input', e.target.value);
+    };
     
     async function makeGetCall(keyword) {
         try {

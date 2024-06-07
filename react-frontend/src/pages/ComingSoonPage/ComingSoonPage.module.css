@@ -1,5 +1,5 @@
 .comingsoonPage {
-    display: block;
+    /* display: block; */
     width: 100%;
     background-color: #232323;
     overflow: hidden;
@@ -14,8 +14,7 @@
 
 .headerBackground {
     width: 100%;
-    height: auto;
-    background-color: #232323;
+    height: 11rem;
     background-image: linear-gradient(rgba(6, 8, 21, 0.8), rgba(16, 17, 24, 0.8)), url(../../assets/images/headerBackground.png);
     background-position: center;
     background-size: cover;
@@ -26,12 +25,14 @@
 }
 
 .titleText{
-    position: fixed;
-    width: 40%;
+    position: absolute;
+    width: 100%;
     height: auto; 
-    top: 130px;
-    left: 115px;
-    bottom: 0;
+    top: 8rem;
+    /* left:5rem; */
+    /* top: 130px;
+    left: 115px; */
+    /* bottom: 0; */
     z-index: 1;
     display: flex;
     justify-content: center;

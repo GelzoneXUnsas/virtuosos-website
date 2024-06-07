@@ -5,8 +5,8 @@ import axios from 'axios';
 
 import styles from './MyApp.module.css';
 
-// BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+const BACKEND_URL = 'http://localhost:5001';
+//  const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function MyApp() {
     //start with empty states
