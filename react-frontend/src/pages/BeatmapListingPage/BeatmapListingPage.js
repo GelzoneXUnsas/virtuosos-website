@@ -56,6 +56,7 @@ function BeatmapListingPage() {
             if (result)
                 setBeatmapList(result);
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
         const handleSearch = (e) => {
