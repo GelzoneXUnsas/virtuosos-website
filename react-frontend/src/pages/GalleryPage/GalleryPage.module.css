@@ -104,6 +104,13 @@
     align-content: right;
 }
 
+.selected {
+    z-index: 100;
+}
+
+.not-selected {
+    z-index: -100;
+}
 
 .galleryDisplayMode {
     display: flex;

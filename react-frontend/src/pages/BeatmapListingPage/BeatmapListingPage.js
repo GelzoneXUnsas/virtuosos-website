@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./BeatmapListingPage.module.css";
 
 import React from "react";
@@ -25,18 +25,21 @@ import cover4 from '../../assets/images/musicCovers/nocturnalpursuit.png';
 
 const albumCovers = [cover1, cover2, cover3, cover4];
 
-// BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+const BACKEND_URL = 'http://localhost:5001';
+// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function BeatmapListingPage() {
     const [beatmapList, setBeatmapList] = useState([]);
+    const [searchParams] = useSearchParams();
+    const searchQuery = searchParams.get('search');
 
-    const [query, setQuery] = useState('');
+    const [query, setQuery] = useState(searchQuery || '');
     // const [results, setResults] = useState([]);
 
     async function fetchAll() {
         try {
-            const route = BACKEND_URL + '/beatmapListing';
+            const route = BACKEND_URL + '/beatmapListing/' + (searchQuery? ('?search=' + searchQuery) : '');
+            console.log('ROUTE', route);
             const response = await axios.get(route);
             console.log(response.data);
             return response.data.beatmap_info;
@@ -60,6 +63,7 @@ function BeatmapListingPage() {
             setQuery(e.target.value);
             console.log('Query:', query);
 
+            updateList(query);
             // Perform any additional logic or API calls here
         };
 
@@ -67,9 +71,26 @@ function BeatmapListingPage() {
             setQuery(e.target.value);
             console.log('input', e.target.value);
         };
-        
+    
+    async function makeGetCall(keyword) {
+        try {
+            const route = BACKEND_URL + '/beatmapListing';
+            const response = await axios.get(route, keyword);
+            return response;
+        }
+        catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
 
-
+    //make get call everytime a user searches for a beatmap
+    function updateList(keyword) {
+        makeGetCall(keyword).then( result => {
+            if (result && result.status === 200)
+                setBeatmapList([...beatmapList, keyword]);
+        });
+    }
 
     return (
         <div className={styles.beatmaplistingPage}>
@@ -79,13 +100,10 @@ function BeatmapListingPage() {
             </div>
             <div className={styles.gallerySearchContainer}>
                 <div className= {styles.beatmapListingSearchItem}>
-                        <form onSubmit={handleSearch} action="" className={styles.beatmapListingSearchItem}>
-                            <label htmlFor="search">
-                                <input name="search" type="text" value={query} onChange={handleInputChange} placeholder="song, album, artist" />
-                            
-                                <button type="submit">
+                        <form action="" className={styles.beatmapListingSearchItem}>
+                                <input name="search" type="text" value={query} onChange={handleInputChange} placeholder="song, album, artist" />                           
+                                <button type="submit" onSubmit={handleSearch}>
                                 <img src={searchIcon} alt="" /></button>
-                            </label>
                         </form>
                 </div>
                 <div className={styles.beatmapListingFilterItem}>
@@ -120,7 +138,7 @@ function BeatmapList (props) {
     const rows = props.beatmapList.map((beatmap, index) => {
         return ( 
             <div key={index}>
-                <button type="button" className={styles.bmListItem} onClick={handleClick}>
+                <button type="button" className={styles.bmListItem} onClick={() => navigate(`/beatmap?id=${beatmap.id}`)}>
                     <div className={styles.musiccoverIcon}>
                         <img src={albumCovers[beatmap.id-1]} alt="" />
                     </div>

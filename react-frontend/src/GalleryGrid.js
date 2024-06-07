@@ -13,11 +13,21 @@ import art8 from "../src/assets/images/galleryArt/art8.png";
 const artImages = [art1, art2, art3, art4, art5, art6, art7, art8];
 
 function GalleryGrid(props) {
+    function f(id) {
+        document.getElementById(id).style.zIndex = 100;
+    }
+    function g(id) {
+        document.getElementById(id).style.zIndex = -100;
+    }
     const rows = props.galleryData.map((image, index) => { 
-    return (
-        <div key={index}>
-            <img className={styles.artImage} src={artImages[image.id-1]} alt={image.description} />
+    return (<>
+        <div onClick={() => g(index)} id={index} style={{zIndex:-100, position: 'absolute', left: 0, top: 0, width: "100vw", height: "auto"}}>
+        <img src={artImages[image.id-1]} alt={image.description} />
         </div>
+        <div key={index} onClick={() => f(index)}>
+        <img className={styles.artImage} src={artImages[image.id-1]} alt={image.description} />
+        </div>
+        </>
     );
     }
     );

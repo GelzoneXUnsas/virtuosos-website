@@ -38,10 +38,10 @@ const Header = () => {
                 
                 <div className={`${styles.dropdownMenu} ${open? styles.dropdownMenuActive: styles.dropdownMenuInactive}`} hidden={!open}>
                     <ul>
-                        <DropdownItem text={"Home"} link="/" />
-                        <DropdownItem text={"Music"} link="/beatmaplisting" />
-                        <DropdownItem text={"Art"} link="/gallery" />
-                        <DropdownItem text={"Community"} link="/comingsoon" />
+                        <DropdownItem text={"Home"} link="/" close={() => setOpen(false)} />
+                        <DropdownItem text={"Music"} link="/beatmaplisting" close={() => setOpen(false)}/>
+                        <DropdownItem text={"Art"} link="/gallery" close={() => setOpen(false)}/>
+                        <DropdownItem text={"Community"} link="/comingsoon" close={() => setOpen(false)}/>
                     </ul>
                 </div>
             </div>
@@ -55,6 +55,7 @@ function DropdownItem(props) {
     const navigate = useNavigate();
     
     function handleClick(){
+        props.close()
         navigate(props.link);
     }
 
