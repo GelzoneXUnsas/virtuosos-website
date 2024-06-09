@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 import GalleryGrid from "../../GalleryGrid";
-import searchIcon from '../../assets/icons/searchIcon.svg';
+// import searchIcon from '../../assets/icons/searchIcon.svg';
 
 import styles from "./GalleryPage.module.css";
 import headerBackground from '../../assets/images/headerBackground.png';
 
-// const BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+const BACKEND_URL = 'http://localhost:5001';
+// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function MusicGalleryPage() {
     const [galleryImages, setGalleryImages] = useState([]);
@@ -43,14 +43,14 @@ function MusicGalleryPage() {
             <img src={headerBackground} className={styles.headerBackground} alt="" />
             <div className={styles.titleText}>GALLERY</div>
         </div>
-        <div className={styles.gallerySearchContainer}>
+        {/* <div className={styles.gallerySearchContainer}>
             <div className= {styles.gallerySearchItem}>
                 <form action="" className={styles.gallerySearchItem}>
                     <input type="text" placeholder="search" />
                     <button type="submit"><img src={searchIcon} alt="" /></button>
                 </form>
             </div>
-        </div>
+        </div> */}
         <div className={styles.galleryDisplayMode}>
             <div className={styles.galleryDisplayModeContainter}>
                 <ArtTypeButton text="screen art" artType="/gallery" />

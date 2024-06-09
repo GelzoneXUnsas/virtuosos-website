@@ -25,8 +25,8 @@ import cover4 from '../../assets/images/musicCovers/nocturnalpursuit.png';
 
 const albumCovers = [cover1, cover2, cover3, cover4];
 
-// const BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+const BACKEND_URL = 'http://localhost:5001';
+// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function BeatmapListingPage() {
     const [beatmapList, setBeatmapList] = useState([]);
@@ -107,14 +107,14 @@ function BeatmapListingPage() {
                                 <img src={searchIcon} alt="" /></button>
                         </form>
                 </div>
-                <div className={styles.beatmapListingFilterItem}>
+                {/* <div className={styles.beatmapListingFilterItem}>
                     <select className={styles.beatmapListingFilterItem} placeholder="sort by">
                         <option value="1">sort by: newest</option>
                         <option value="2">sort by: oldest</option>
                         <option value="3">sort by: most played</option>
                         <option value="4">sort by: least played</option>
                     </select>
-                </div>
+                </div> */}
             </div>
             <div className={styles.bmListingDisplayMode}>
                 <div className={styles.bmListingDisplayModeContainter}>
