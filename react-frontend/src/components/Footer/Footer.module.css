@@ -36,6 +36,9 @@
 
 .footerSocialsItem {
   padding: 1rem;
+  color: transparent;
+  background-color: transparent;
+  border: none;
 }
 
 .footerEmail {

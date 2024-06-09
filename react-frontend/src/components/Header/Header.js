@@ -7,6 +7,7 @@ import logoIcon from '../../assets/icons/logoIcon.svg';
 import closedMenuIcon from '../../assets/icons/closedMenuIcon.svg';
 
 const Header = () => {
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
 
     let menuRef = useRef();
@@ -27,9 +28,14 @@ const Header = () => {
 
     return (
         <div className={styles.header} >
-            <div className={styles.headerLogo}>
-                <img className={styles.headerLogoImage} alt="" src={ logoIcon } />
-            </div>
+            <img
+              className={styles.headerLogo}
+              alt="Virtuosos Logo"
+              src={logoIcon}
+              onClick={() => {
+                navigate("/");
+              }}
+            />
             <div className={styles.headerMenu} ref={menuRef}>
                 <div className={styles.headerMenuButton} onClick={()=>{setOpen(!open)}}>
                     <b className={styles.headerMenuButtonText}>MENU</b>

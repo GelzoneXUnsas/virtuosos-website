@@ -7,7 +7,7 @@
   background-color:  var(--page-background);
   background: linear-gradient(180deg, #2D2C5F 70.9%, rgba(45, 44, 95, 0.00) 100%);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: 4rem;
   padding-top: 0.5rem;
@@ -16,7 +16,7 @@
   padding-right: 1rem;
 }
 .headerLogo {
-  width: 200%;
+  width: 7%;
   height: auto;
   margin: 0;
   padding: 0.25rem;
