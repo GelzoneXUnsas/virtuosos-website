@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 5001;
+const port = process.env.PORT || 5001;
 
 // allow backend to respond to calls co,ing from a different origin
 const cors = require('cors');
@@ -26,8 +26,9 @@ app.use('/beatmapListing', beatmapListingRouter);
 
 
 //listen to port
+
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Example app listening at ${port}`);
     }
 );
 

@@ -8,8 +8,8 @@ import GalleryGrid from "../../GalleryGrid";
 import styles from "./GalleryPage.module.css";
 import headerBackground from '../../assets/images/headerBackground.png';
 
-const BACKEND_URL = 'http://localhost:5001';
-// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+// const BACKEND_URL = 'http://localhost:5001';
+const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function MusicGalleryPage() {
     const [galleryImages, setGalleryImages] = useState([]);

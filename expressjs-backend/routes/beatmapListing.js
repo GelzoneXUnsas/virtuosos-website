@@ -125,16 +125,18 @@ const findSongByID = (id) => {
         beatmap['id'].toString() === id);
 }
 
-// router.get('/:id', (req, res) => {
-//     const id = req.params.id;
-//     let result = findSongByID(id);
-//     if(result === undefined || result.length < 1) {
-//         res.status(404).send('Song ID not found');
-//     }else{
-//         result = {beatmap_info: result};
-//         res.send(result);
-//     }
-// });
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    let result = findSongByID(id);
+    // console.log("result:", result)
+    if(result === undefined || result.length < 1) {
+        console.log("NOT FOUND")
+        res.status(404).send('Song not found');
+    }else{
+        result = {beatmap_info: result};
+        res.send(result);
+    }
+});
 
 // router.get('/:title', (req, res) => {
 //     const title = req.params.title;
