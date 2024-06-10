@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import styles from "./Homepage.module.css";
 
 import React from "react";
 
 import headerBackground from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
-// import logoIcon from '../../assets/icons/logoIcon.svg';
-
-// import demoVideo from "../../assets/videos/VirtuososDemo_1.mp4";
 
 import appleDownloadIcon from "../../assets/icons/appleDownloadIcon.svg";
 import googlePlayDownloadIcon from "../../assets/icons/googlePlayDownloadIcon.svg";
