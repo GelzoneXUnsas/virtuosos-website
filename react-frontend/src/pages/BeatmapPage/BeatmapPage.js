@@ -30,7 +30,7 @@ import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
 
-import tempBeatmap from "../../assets/beatmapFiles/beatmapMockFile.viz.zip";
+import tempBeatmap from "../../assets/beatmapFiles/beatmapMockFile.zip";
 
 const albumCovers = {'cover1': cover1, 'cover2': cover2, 'cover3': cover3, 'cover4': cover4};
 const artistImages = {'artist1Image': artist1Image, 'artist2Image': artist2Image, 'artist3Image': artist3Image};
