@@ -1,11 +1,9 @@
 // import React from 'react'
 // import ReactDOM from 'react-dom'
-// import MyApp from './MyApp'
 // import './index.css'
 // import './global.css'
 // import Homepage from './pages/HomePage'
 
-// // ReactDOM.render(<MyApp />, document.getElementById('root'))
 // ReactDOM.render(<Homepage/>, document.getElementById('root'))
 
 import React from "react";

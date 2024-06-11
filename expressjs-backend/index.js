@@ -15,12 +15,10 @@ app.get('/', (req, res) => {
 );
 
 //Define the routes
-const userRouter = require('./routes/users');
 const galleryRouter = require('./routes/gallery');
 const beatmapListingRouter = require('./routes/beatmapListing');
 
 
-app.use('/users', userRouter);
 app.use('/gallery', galleryRouter);
 app.use('/beatmapListing', beatmapListingRouter);
 
