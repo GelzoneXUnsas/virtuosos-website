@@ -8,16 +8,11 @@ The base URL for all API endpoints is `http://api-virtuosos.us-west-1.elasticbea
 
 
 ## API Endpoints
-The following sections describe the available API endpoints:
-
-- [User API](#user-api)
-- [Product API](#product-api)
-- [Order API](#order-api)
-
+The following sections describe the available API endpoints.
 Please refer to the respective sections for detailed information on each API.
  
 
- ### Get Screen Art Images - `/gallery` (GET)
+### Get Screen Art Images - `/gallery` (GET)
 
 Get all Screen Art Images.
 
@@ -33,6 +28,8 @@ Get all Screen Art Images.
     "dateAdded" : "string"
 }
 ```
+
+
 
 ### Get Music Cover Images - `/gallery?artType=musiccovers` (GET)
 
@@ -50,6 +47,8 @@ Get all Music Cover Images.
     "dateAdded" : "string"
 }
 ```
+
+
 
 ### Get Beatmap Listing - `/beatmapListing/` (GET)
 
@@ -91,6 +90,8 @@ Get all beatmap listings.
     "query": "string", /* Any search query, is wildcarded front and back */
 }
 ```
+
+
 
  **Response**:
 
