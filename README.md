@@ -8,3 +8,4 @@ Our website platform is a collaborative space where creators can share their com
 ## Project Contributors:
 #### Nikki Lago - nlago@calpoly.edu
 #### Annette Tran - atran268@calpoly.edu
+#### Min Hset Hlaing - hlaing@calpoly.edu
