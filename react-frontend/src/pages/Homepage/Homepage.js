@@ -14,6 +14,7 @@ import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
 import spotifyIcon from "../../assets/icons/spotifyIcon.svg";
+import Demogif from "../../assets/images/Demogif.gif";
 
 const getFeaturedArtists = () => {
   return [{
@@ -77,7 +78,7 @@ const Homepage = () => {
             <div className={styles.bgimage} />
           </div>
           <div className={styles.demoVideoContainer}>
-            <iframe width="562" height="316" src="https://www.youtube.com/embed/BBJa32lCaaY?autoplay=0" title="Rick Rolled (Short Version)" autoPlay="false" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <img width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
           </div>
           <div className={styles.downloadSection}>
