@@ -1,7 +1,45 @@
+/* Solid border */
+hr.solid {
+  border-top: 3px solid  #242424;
+}
+
+/* App.css */
+
+.gradient-container {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0)); /* Flipped gradient */
+}
+
+.titleContainer, .visionAndDownloadContainer {
+  color: white;
+}
+
+.titleContainer {
+  background: rgba(36, 36, 36, 0.5); /* Semi-transparent background */
+  position: relative;
+  z-index: 0; /* Ensure div1 content is below the gradient */
+}
+
+.visionAndDownloadContainer {
+  background: rgba(36, 36, 36, 1); /* Fully opaque background */
+  position: relative;
+  z-index: 2; /* Ensure div2 content is above the gradient */
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Adjust this to control how much of div1 is covered */
+  background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0)); /* Flipped gradient */
+  z-index: 1; /* Place the gradient below the content */
+}
 
 .homepage {
   width: 100%;
-  background-color:  var(--page-background);
+  background-color:  var(--page-accent-gray);
   overflow: hidden;
   text-align: center;
   font-size: var(--body-overpass-base-size);
@@ -9,61 +47,36 @@
   font-family: var(--body-overpass-base);
 }
 
-.titleContainer{
-  position: relative;
-  background: linear-gradient(0deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 50.03%);
-  /* display: inline-block; */
-  top: 0;
-  left: 0;
-}
-
-.headerBackground {
-  /* background-color: var(--page-background); */
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
-  /* background: linear-gradient(0deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 97.03%); */
+.headerBackgroundImg {
   width: 100%;
   height: 20rem;
   position: relative;
   top: 0;
   left: 0;
-  z-index: 1;
+  /* z-index: 0; */
 }
 
-.headerBackgroundDark {
-  /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2); */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/headerBackground.png');
-  /* background-color: --var(page-background); */
-  width: 100%;
-  height: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
 
 .virtuososTitle {
   position: absolute;
   width: 100%;
   height: 8rem;
   top: 8rem;
-  /* left: 6.5rem; */
   bottom: 0;
-  z-index: 1;
+  /* z-index: 1; */
   display: flex;
   justify-content: center;
 }
 
-.visionAndDownloadBackground {
-  background-color: var(--page-accent-gray);
-  background: linear-gradient(180deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 97.03%);
+
+.visionAndDownloadContainer_DELETE {
   color: var(--white);
   display: block;
-  overflow: auto;
+  overflow: visible;
+  z-index: 1;
 }
 
 .visionSection {
-  background-color: var(--page-accent-gray);
-  background: linear-gradient(0deg, #232323 91.59%, rgba(35, 35, 35, 0.00) 97.03%);
   color: var(--white);
   display: block;
   overflow: auto;
@@ -127,13 +140,13 @@
 }
 
 .featuredArtistsSection {
-  background: linear-gradient(0deg, #2D2C5F 78.72%, rgba(45, 44, 95, 0.40) 84.07%, rgba(45, 44, 95, 0.00) 95.68%);
+  background: linear-gradient(0deg, #2D2C5F 83.72%, rgba(45, 44, 95, 0.40) 91.07%, rgba(45, 44, 95, 0.00) 99.68%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: var(--page-accent-gray);
   color: var(--white);
   padding-top: 1.25rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-bottom: 0.75rem;
+  /* box-shadow: 0px 10px; */
 }
 
 .featuredArtistsSectionTitle {
@@ -147,29 +160,75 @@
   display: inline-block;
   margin:auto;
   padding: 1rem;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0rem;
   padding-top: 0;
 
 }
 
-.artistDetails {
+.featuredArtistDetails {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  /* padding-bottom: 1rem; */
+}
+
+.artistImgAndLinks {
+  /* flex-basis: 15%; */
+  flex: 0.25;
+  /* background-color: black; */
+  display: flex;
+  justify-content:space-around;
+  padding: 0.5rem;
+  flex-direction: column;
+}
+.artistImage {
+  width: 85%;
+  flex-shrink: 0;
+  justify-content:center;
+  border-radius: 52px;
+  background: lightgray 0px 0px / 100% 100% no-repeat;
+}
+
+.artistLinks {
+  display: flex;
+  /* background-color: aqua; */
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 0.2rem;
+}
+
+.artistLinkIcons{
+  width: 40%;
+  flex-shrink: 0;
+  border-radius: 52px;
+  background: lightgray 0px 0px / 100% 100% no-repeat;
+}
+
+.artistRelatedInfo {
+  /* flex-basis: 85%; */
   display: flex;
   justify-content: space-around;
-  padding: 0.5rem;
-  flex-direction: row;
+  padding-left: 0.3rem;
+  /* background-color: red; */
+  flex: 1;
+  flex-direction: column;
 }
 
 .artistTitleContainer {
   display: flex;
   flex-direction:  row;
-  align-self: center;
-  justify-content:left;
+  padding-top: 1.25rem;
+  /* background-color: antiquewhite; */
+  /* align-self: center; */
+  justify-content:flex-start;
 }
-
 
 .artistName {
   color: var(--icon-color, #FFF);
-  width: 100%;
   font-family: "Overpass Mono";
   font-size: var(--body-overpass-base);
   font-style: normal;
@@ -181,22 +240,64 @@
 }
 
 .verifiedIcon{
+  display: flex;
   width: 1rem;
   height: 1rem;
   padding: 0.25rem;
 }
 
-.artistImage {
-  width: 20%;
-  flex-shrink: 0;
-  border-radius: 52px;
-  background: lightgray 0px 0px / 100% 100% no-repeat;
+.artistStatistics {
+  display: flex;
+  /* background-color: aqua; */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artistStatTexts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.songcountText {
+  text-align: right;
+  padding-right: 2rem;
+  color: var(--white);
+}
+
+.artistSongcount {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-family: "Overpass Mono";
+}
+
+.songcountValue {
+  color: var(--lilac);
+}
+
+.playcountText {
+  text-align: right;
+  padding-right: 2rem;
+  color: var(--white);
+}
+
+.artistPlaycount {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-family: "Overpass Mono";
+}
+
+.playcountValue {
+  color: var(--lilac);
 }
 
 .aboutUsSection {
   background-color: var(--page-accent-gray);
   color: var(--white);
   padding-top: 2rem;
+  box-shadow: 0px 8px 5px #1c1c21 inset;
 }
 
 .aboutUsTitle {
@@ -216,38 +317,4 @@
   display: inline-block;
   padding: 2rem;
   padding-top: 0.5rem;
-}
-
-.artistSongcount {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  font-family: "Overpass Mono";
-}
-
-.songcountText {
-  text-align: right;
-  padding-right: 2rem;
-  color: var(--white);
-}
-
-.songcountValue {
-  color: var(--lilac);
-}
-
-.artistPlaycount {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  font-family: "Overpass Mono";
-}
-
-.playcountText {
-  text-align: right;
-  padding-right: 2rem;
-  color: var(--white);
-}
-
-.playcountValue {
-  color: var(--lilac);
 }

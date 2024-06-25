@@ -3,7 +3,7 @@ import styles from "./Homepage.module.css";
 
 import React from "react";
 
-import headerBackground from '../../assets/images/headerBackground.png';
+import headerBackgroundImg from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
 
 import appleDownloadIcon from "../../assets/icons/appleDownloadIcon.svg";
@@ -13,6 +13,7 @@ import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
 import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
+import spotifyIcon from "../../assets/icons/spotifyIcon.svg";
 
 const getFeaturedArtists = () => {
   return [{
@@ -52,67 +53,76 @@ const Homepage = () => {
   }, []);
 
   return (
+    <>
+    {/* <div className="gradient-container">
+      <div className="div1">Content of Div 1</div>
+      <div className="div2">Content of Div 2</div>
+    </div> */}
     <div className={styles.homepage}>
-      <div className={styles.titleContainer}>
-        {/* <div classNameg= {styles.headerBackgroundDark}/> */}
-        <img src={headerBackground} className={styles.headerBackground} alt="" />
-        <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
-      </div>
-      <div className={styles.visionAndDownloadBackground}> 
-        <div className={styles.visionSection}>    
-          <div className={styles.visionSectionTitle}>
-            OUR VISION
-          </div>
-          <div className={styles.visionSectionBody}>
-            Imagine a world where the lines between creator and player blur. Where
-            the music you compose is the soundtrack to another’s personal journey.
-          </div>
-          <div className={styles.bgimage} />
+      <div className="gradient-container">
+        <div className={styles.titleContainer}>
+          {/* <div classNameg= {styles.headerBackgroundDark}/> */}
+          <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
+          <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
         </div>
-        <div className={styles.demoVideoContainer}>
-          <iframe width="562" height="316" src="https://www.youtube.com/embed/BBJa32lCaaY?autoplay=1" title="Rick Rolled (Short Version)" autoPlay="true" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-          {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
-        </div>
-        <div className={styles.downloadSection}>
-          <div className={styles.downloadText}>Download for free</div>
-          <div className={styles.downloadLinks}>
-            <img
-              className={styles.downloadIcon}
-              alt="Download from the App Store"
-              src={appleDownloadIcon}
-              onClick={() => {
-                window.open(appStoreDownloadLink, "_blank");
-              }}
-            />
-            <img
-              className={styles.downloadIcon}
-              alt="Download from the Play Store"
-              src={googlePlayDownloadIcon}
-              onClick={() => {
-                window.open(googlePlayDownloadLink, "_blank");
-              }}
-            />
+        <div className={styles.visionAndDownloadContainer}> 
+          <div className={styles.visionSection}>    
+            <div className={styles.visionSectionTitle}>
+              OUR VISION
+            </div>
+            <div className={styles.visionSectionBody}>
+              Imagine a world where the lines between creator and player blur. Where
+              the music you compose is the soundtrack to another’s personal journey.
+            </div>
+            <div className={styles.bgimage} />
+          </div>
+          <div className={styles.demoVideoContainer}>
+            <iframe width="562" height="316" src="https://www.youtube.com/embed/BBJa32lCaaY?autoplay=0" title="Rick Rolled (Short Version)" autoPlay="false" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
+          </div>
+          <div className={styles.downloadSection}>
+            <div className={styles.downloadText}>Download for free</div>
+            <div className={styles.downloadLinks}>
+              <img
+                className={styles.downloadIcon}
+                alt="Download from the App Store"
+                src={appleDownloadIcon}
+                onClick={() => {
+                  window.open(appStoreDownloadLink, "_blank");
+                }}
+              />
+              <img
+                className={styles.downloadIcon}
+                alt="Download from the Play Store"
+                src={googlePlayDownloadIcon}
+                onClick={() => {
+                  window.open(googlePlayDownloadLink, "_blank");
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
       <div className={styles.featuredArtistsSection}>
-        <div className={styles.bg3} />
         <b className={styles.featuredArtistsSectionTitle}>Meet our Featured Artists!</b>
         {
-          featuredArtists.map((artist) => {
+          featuredArtists.map((artist, index) => {
             return (
+              <>
               <div className={styles.featuredArtistDetails}>
-                <div className={styles.artistDetails}>
+                <div className={styles.artistImgAndLinks}>
                   <img className={styles.artistImage} src={artist.image} alt="artist"/>
+                  <div className={styles.artistLinks}>
+                    <img className={styles.artistLinkIcons} src={spotifyIcon} alt="artist"/>
+                    <img className={styles.artistLinkIcons} src={spotifyIcon} alt="artist"/>
+                  </div>
+                </div>
+                <div className={styles.artistRelatedInfo}>
                   <div className={styles.artistTitleContainer}>
                     <div className={styles.artistName}>
                       {artist.name}
                     </div>
                     <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
-                  </div>
-                </div>
-                <div className={styles.artistRelatedInfo}>
-                  <div className={styles.artistLinks}>
                   </div>
                   <div className={styles.artistStatistics}>
                     <div className={styles.artistSongcount}>
@@ -126,6 +136,8 @@ const Homepage = () => {
                   </div>
                 </div>
               </div>
+              {index !== featuredArtists.length - 1 ? <hr class="solid"></hr> : null}
+              </>
             );
           })
         }
@@ -153,6 +165,7 @@ const Homepage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
