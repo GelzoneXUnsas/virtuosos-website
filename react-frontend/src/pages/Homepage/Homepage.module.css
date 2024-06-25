@@ -114,7 +114,6 @@ hr {
 
 .downloadSection {
   background-color: var(--page-accent-gray);
-  /* background: linear-gradient(180deg, #232323 50.59%, rgba(35, 35, 35, 0.00) 98.03%); */
   color: var(--white);
   padding-top: 2rem;
   height: 6rem;
@@ -176,7 +175,6 @@ hr {
 }
 
 .artistImgAndLinks {
-  /* flex-basis: 15%; */
   flex: 0.25;
   /* background-color: black; */
   display: flex;
@@ -208,7 +206,6 @@ hr {
 }
 
 .artistRelatedInfo {
-  /* flex-basis: 85%; */
   display: flex;
   justify-content: space-around;
   padding-left: 0.3rem;
@@ -250,7 +247,8 @@ hr {
   display: flex;
   width: 1rem;
   height: 1rem;
-  padding: 0.25rem;
+  padding-left: 0.5rem;
+  /* padding-top: 0.05em; */
 }
 
 .artistStatistics {
