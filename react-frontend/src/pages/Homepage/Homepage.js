@@ -65,6 +65,7 @@ const Homepage = () => {
           {/* <div classNameg= {styles.headerBackgroundDark}/> */}
           <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
           <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
+          <div className={styles.gradientOverlay}></div>
         </div>
         <div className={styles.visionAndDownloadContainer}> 
           <div className={styles.visionSection}>    
