@@ -78,7 +78,7 @@ const Homepage = () => {
             <div className={styles.bgimage} />
           </div>
           <div className={styles.demoVideoContainer}>
-          <img width="562" height="316" src={Demogif} alt="Game demo gif" />
+          <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
           </div>
           <div>
