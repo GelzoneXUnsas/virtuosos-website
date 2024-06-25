@@ -3,6 +3,9 @@ import styles from "./Homepage.module.css";
 
 import React from "react";
 
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
 
@@ -80,6 +83,11 @@ const Homepage = () => {
           <div className={styles.demoVideoContainer}>
           <img width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
+          </div>
+          <div className={styles.signUpNewsLetterTitle}>
+            <Button variant="primary" size="lg" onClick={() => window.open("https://forms.gle/pySBHibGemoQsA8J8")}>
+              Subscribe to our newsletter!
+            </Button>
           </div>
           <div className={styles.downloadSection}>
             <div className={styles.downloadText}>Download for free</div>
