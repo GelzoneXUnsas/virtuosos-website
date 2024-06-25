@@ -13,7 +13,8 @@ import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
 import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
-import spotifyIcon from "../../assets/icons/spotifyIcon.svg";
+import spotifyIcon from "../../assets/icons/SpotifyIcon1.svg";
+import soundcloudIcon from "../../assets/icons/soundCloudIcon.svg";
 import Demogif from "../../assets/images/Demogif.gif";
 
 const getFeaturedArtists = () => {
@@ -122,7 +123,7 @@ const Homepage = () => {
                   <img className={styles.artistImage} src={artist.image} alt="artist"/>
                   <div className={styles.artistLinks}>
                     <img className={styles.artistLinkIcons} src={spotifyIcon} alt="artist"/>
-                    <img className={styles.artistLinkIcons} src={spotifyIcon} alt="artist"/>
+                    <img className={styles.artistLinkIcons} src={soundcloudIcon} alt="artist"/>
                   </div>
                 </div>
                 <div className={styles.artistRelatedInfo}>
