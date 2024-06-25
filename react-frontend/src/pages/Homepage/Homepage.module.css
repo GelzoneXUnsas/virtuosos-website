@@ -318,3 +318,20 @@ hr.solid {
   padding: 2rem;
   padding-top: 0.5rem;
 }
+
+.SignUpbutton{
+  background-color: #2d2c5f;
+  color: var(--white);
+  border-radius: var(--br-8xs);
+  padding: 0.5rem 1rem;
+  font-size: var(--body-overpass-base-size);
+  font-family: var(--body-overpass-base);
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem;
+  margin-top: .5rem;
+}
+.SignUpbutton:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}

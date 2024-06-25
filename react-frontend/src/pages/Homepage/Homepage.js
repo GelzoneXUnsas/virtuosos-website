@@ -14,7 +14,7 @@ import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
 import spotifyIcon from "../../assets/icons/spotifyIcon.svg";
-import Demogif from "../../assets/images/Demogif.gif";
+import Demogif from "../../assets/images/DemoGif.gif";
 
 const getFeaturedArtists = () => {
   return [{
@@ -80,6 +80,12 @@ const Homepage = () => {
           <div className={styles.demoVideoContainer}>
           <img width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
+          </div>
+          <div>
+          <a href="https://forms.gle/pySBHibGemoQsA8J8">
+          <button className={styles.SignUpbutton}>Sign Up</button>
+          </a>
+          <div>Subscribe to our newsletter!</div>
           </div>
           <div className={styles.downloadSection}>
             <div className={styles.downloadText}>Download for free</div>
