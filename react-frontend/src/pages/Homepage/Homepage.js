@@ -14,7 +14,7 @@ import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
 import artist3Image from "../../assets/images/featuredArtists/artist3.png";
 import spotifyIcon from "../../assets/icons/spotifyIcon.svg";
-import Demogif from "../../assets/images/DemoGif.gif";
+import Demogif from "../../assets/images/Demogif.gif";
 
 const getFeaturedArtists = () => {
   return [{
