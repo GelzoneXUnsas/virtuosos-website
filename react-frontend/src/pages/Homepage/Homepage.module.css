@@ -86,8 +86,6 @@ hr.solid {
   font-size: var(--title-lexend-large-size);
   line-height: 2rem;
   font-family: var(--title-lexend-large);
-  text-align: left;
-  display: inline-block;
   margin:auto;
   padding: 1rem;
   padding-bottom: 0.25rem;
@@ -317,4 +315,13 @@ hr.solid {
   display: inline-block;
   padding: 2rem;
   padding-top: 0.5rem;
+}
+
+.signUpNewsLetterTitle {
+  font-size: var(--title-lexend-large-size);
+  line-height: 4rem;
+  font-family: var(--title-lexend-large);
+  margin:auto;
+  padding: 1rem;
+  padding-bottom: 0.25rem;
 }

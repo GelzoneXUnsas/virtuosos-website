@@ -3,6 +3,9 @@ import styles from "./Homepage.module.css";
 
 import React from "react";
 
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
 
@@ -79,6 +82,11 @@ const Homepage = () => {
           <div className={styles.demoVideoContainer}>
             <iframe width="562" height="316" src="https://www.youtube.com/embed/BBJa32lCaaY?autoplay=0" title="Rick Rolled (Short Version)" autoPlay="false" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
+          </div>
+          <div className={styles.signUpNewsLetterTitle}>
+            <Button variant="primary" size="lg" onClick={() => window.open("https://forms.gle/pySBHibGemoQsA8J8")}>
+              Subscribe to our newsletter!
+            </Button>
           </div>
           <div className={styles.downloadSection}>
             <div className={styles.downloadText}>Download for free</div>
