@@ -127,20 +127,37 @@ const Homepage = () => {
                 </div>
                 <div className={styles.artistRelatedInfo}>
                   <div className={styles.artistTitleContainer}>
-                    <div className={styles.artistName}>
-                      {artist.name}
+                    <div className={styles.artistNameVerified}>
+                      <div className={styles.artistName}>
+                        {artist.name}
+                      </div>
+                      <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
                     </div>
-                    <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
                   </div>
                   <div className={styles.artistStatistics}>
-                    <div className={styles.artistSongcount}>
+                    <div className={styles.artistStatLabels}>
+                      <div className={styles.songcountText}>songs</div>
+                      <div className={styles.playcountText}>total playcount</div>
+                    </div>
+
+                    <div className={styles.artistStatValues}>
+                      <div className={styles.songcountValue}>25</div>
+                      <div className={styles.playcountValue}>538</div>
+                    </div>
+
+
+
+                    {/* <div className={styles.artistSongcount}>
                       <div className={styles.songcountText}>songs</div>
                       <div className={styles.songcountValue}>25</div>
                     </div>
                     <div className={styles.artistPlaycount}>
                       <div className={styles.playcountText}>total playcount</div>
                       <div className={styles.playcountValue}>538</div>
-                    </div>
+                    </div> */}
+
+
+
                   </div>
                 </div>
               </div>

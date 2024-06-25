@@ -1,7 +1,12 @@
 /* Solid border */
-hr.solid {
-  border-top: 3px solid  #242424;
-}
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top: 1px solid var(--page-accent-gray); /* Change this color to your desired solid color */
+} 
 
 /* App.css */
 
@@ -34,7 +39,7 @@ hr.solid {
   left: 0;
   width: 100%;
   height: 70%; /* Adjust this to control how much of div1 is covered */
-  background: linear-gradient(0deg, rgba(36, 36, 36, 1) 5.72%, rgba(36, 36, 36, 0.5) 80.07%, rgba(36, 36, 36, 0) 99.68%);
+  background: linear-gradient(0deg, rgba(36, 36, 36, 1) 5.72%, rgba(36, 36, 36, 0.5) 80.07%, rgba(36, 36, 36, 0) 100%);
   /* background-color: #002ead; */
   z-index: 1; /* Place the gradient below the content */
 }
@@ -217,20 +222,28 @@ hr.solid {
   flex-direction:  row;
   padding-top: 1.25rem;
   /* background-color: antiquewhite; */
-  /* align-self: center; */
   justify-content:flex-start;
 }
 
+.artistNameVerified {
+  display: flex;
+  /* background-color: #002ead; */
+  justify-content: center;
+}
+
 .artistName {
+  display: flex;
   color: var(--icon-color, #FFF);
   font-family: "Overpass Mono";
   font-size: var(--body-overpass-base);
   font-style: normal;
   font-weight: 700;
-  line-height: 1rem; /* 150% */
-  padding-top: 0.25rem;
+  line-height: inherit;
   text-align: left;
-  padding-right: 0.5rem;
+  vertical-align: middle;
+  /* padding-right: 0.5rem; */
+  /* background-color: aquamarine; */
+  justify-content: center;
 }
 
 .verifiedIcon{
@@ -243,15 +256,21 @@ hr.solid {
 .artistStatistics {
   display: flex;
   /* background-color: aqua; */
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 1rem;
 }
 
-.artistStatTexts {
+.artistStatLabels {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .artistStatTexts {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
+} */
 
 .songcountText {
   text-align: right;
@@ -259,13 +278,14 @@ hr.solid {
   color: var(--white);
 }
 
-.artistSongcount {
+.artistStatValues {
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  font-family: "Overpass Mono";
+  flex-direction: column;
+  text-align: right;
+  color: var(--lilac);
 }
 
+/* not really needed. but easier to read in the js file with this style name */
 .songcountValue {
   color: var(--lilac);
 }
@@ -274,13 +294,6 @@ hr.solid {
   text-align: right;
   padding-right: 2rem;
   color: var(--white);
-}
-
-.artistPlaycount {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  font-family: "Overpass Mono";
 }
 
 .playcountValue {
