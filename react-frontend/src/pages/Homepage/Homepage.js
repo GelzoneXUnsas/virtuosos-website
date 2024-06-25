@@ -65,6 +65,7 @@ const Homepage = () => {
           {/* <div classNameg= {styles.headerBackgroundDark}/> */}
           <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
           <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
+          <div className={styles.gradientOverlay}></div>
         </div>
         <div className={styles.visionAndDownloadContainer}> 
           <div className={styles.visionSection}>    
@@ -81,11 +82,11 @@ const Homepage = () => {
           <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
           </div>
-          <div>
-          <a href="https://forms.gle/pySBHibGemoQsA8J8">
-          <button className={styles.SignUpbutton}>Sign Up</button>
-          </a>
-          <div>Subscribe to our newsletter!</div>
+          <div className={styles.signupContainer}>
+            <a href="https://forms.gle/pySBHibGemoQsA8J8">
+            <button className={styles.SignUpbutton}>Sign Up</button>
+            </a>
+            <div>Subscribe to our newsletter!</div>
           </div>
           <div className={styles.downloadSection}>
             <div className={styles.downloadText}>Download for free</div>
@@ -126,20 +127,37 @@ const Homepage = () => {
                 </div>
                 <div className={styles.artistRelatedInfo}>
                   <div className={styles.artistTitleContainer}>
-                    <div className={styles.artistName}>
-                      {artist.name}
+                    <div className={styles.artistNameVerified}>
+                      <div className={styles.artistName}>
+                        {artist.name}
+                      </div>
+                      <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
                     </div>
-                    <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
                   </div>
                   <div className={styles.artistStatistics}>
-                    <div className={styles.artistSongcount}>
+                    <div className={styles.artistStatLabels}>
+                      <div className={styles.songcountText}>songs</div>
+                      <div className={styles.playcountText}>total playcount</div>
+                    </div>
+
+                    <div className={styles.artistStatValues}>
+                      <div className={styles.songcountValue}>25</div>
+                      <div className={styles.playcountValue}>538</div>
+                    </div>
+
+
+
+                    {/* <div className={styles.artistSongcount}>
                       <div className={styles.songcountText}>songs</div>
                       <div className={styles.songcountValue}>25</div>
                     </div>
                     <div className={styles.artistPlaycount}>
                       <div className={styles.playcountText}>total playcount</div>
                       <div className={styles.playcountValue}>538</div>
-                    </div>
+                    </div> */}
+
+
+
                   </div>
                 </div>
               </div>

@@ -1,7 +1,12 @@
 /* Solid border */
-hr.solid {
-  border-top: 3px solid  #242424;
-}
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top: 1px solid var(--page-accent-gray); /* Change this color to your desired solid color */
+} 
 
 /* App.css */
 
@@ -18,6 +23,7 @@ hr.solid {
 .titleContainer {
   background: rgba(36, 36, 36, 0.5); /* Semi-transparent background */
   position: relative;
+  height: 15rem;
   z-index: 0; /* Ensure div1 content is below the gradient */
 }
 
@@ -27,13 +33,14 @@ hr.solid {
   z-index: 2; /* Ensure div2 content is above the gradient */
 }
 
-.gradient-overlay {
+.gradientOverlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 50%; /* Adjust this to control how much of div1 is covered */
-  background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0)); /* Flipped gradient */
+  height: 70%; /* Adjust this to control how much of div1 is covered */
+  background: linear-gradient(0deg, rgba(36, 36, 36, 1) 5.72%, rgba(36, 36, 36, 0.5) 80.07%, rgba(36, 36, 36, 0) 100%);
+  /* background-color: #002ead; */
   z-index: 1; /* Place the gradient below the content */
 }
 
@@ -49,7 +56,7 @@ hr.solid {
 
 .headerBackgroundImg {
   width: 100%;
-  height: 20rem;
+  /* height: 20rem; */
   position: relative;
   top: 0;
   left: 0;
@@ -58,22 +65,15 @@ hr.solid {
 
 
 .virtuososTitle {
+  /* background-color: #002ead; */
   position: absolute;
   width: 100%;
-  height: 8rem;
-  top: 8rem;
+  height: 5rem;
+  top: 6.3rem;
   bottom: 0;
-  /* z-index: 1; */
+  z-index: 3;
   display: flex;
   justify-content: center;
-}
-
-
-.visionAndDownloadContainer_DELETE {
-  color: var(--white);
-  display: block;
-  overflow: visible;
-  z-index: 1;
 }
 
 .visionSection {
@@ -89,7 +89,6 @@ hr.solid {
   text-align: left;
   display: inline-block;
   margin:auto;
-  padding: 1rem;
   padding-bottom: 0.25rem;
 }
 
@@ -111,11 +110,34 @@ hr.solid {
   width: 90%;
   height: auto;
   padding: 5vw 0;
+  border-radius: 2.5rem;
+  /* box-shadow: 10px 5px 5px #1c1c21; */
 }
+
+.signupContainer {
+  padding-top: 2rem;
+}
+
+.SignUpbutton{
+  background-color: #2d2c5f;
+  color: var(--white);
+  border-radius: var(--br-8xs);
+  padding: 0.5rem 1rem;
+  font-size: var(--body-overpass-base-size);
+  font-family: var(--body-overpass-base);
+  border: none;
+  cursor: pointer;
+  margin-top: -1rem;
+  margin-bottom: .5rem;
+}
+.SignUpbutton:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}
+
 
 .downloadSection {
   background-color: var(--page-accent-gray);
-  /* background: linear-gradient(180deg, #232323 50.59%, rgba(35, 35, 35, 0.00) 98.03%); */
   color: var(--white);
   padding-top: 2rem;
   height: 6rem;
@@ -177,7 +199,6 @@ hr.solid {
 }
 
 .artistImgAndLinks {
-  /* flex-basis: 15%; */
   flex: 0.25;
   /* background-color: black; */
   display: flex;
@@ -188,7 +209,7 @@ hr.solid {
 .artistImage {
   width: 85%;
   flex-shrink: 0;
-  justify-content:center;
+  align-self: center;
   border-radius: 52px;
   background: lightgray 0px 0px / 100% 100% no-repeat;
 }
@@ -209,7 +230,6 @@ hr.solid {
 }
 
 .artistRelatedInfo {
-  /* flex-basis: 85%; */
   display: flex;
   justify-content: space-around;
   padding-left: 0.3rem;
@@ -223,41 +243,56 @@ hr.solid {
   flex-direction:  row;
   padding-top: 1.25rem;
   /* background-color: antiquewhite; */
-  /* align-self: center; */
   justify-content:flex-start;
 }
 
+.artistNameVerified {
+  display: flex;
+  /* background-color: #002ead; */
+  justify-content: center;
+}
+
 .artistName {
+  display: flex;
   color: var(--icon-color, #FFF);
   font-family: "Overpass Mono";
   font-size: var(--body-overpass-base);
   font-style: normal;
   font-weight: 700;
-  line-height: 1rem; /* 150% */
-  padding-top: 0.25rem;
+  line-height: inherit;
   text-align: left;
-  padding-right: 0.5rem;
+  vertical-align: middle;
+  /* padding-right: 0.5rem; */
+  /* background-color: aquamarine; */
+  justify-content: center;
 }
 
 .verifiedIcon{
   display: flex;
   width: 1rem;
   height: 1rem;
-  padding: 0.25rem;
+  padding-left: 0.5rem;
+  /* padding-top: 0.05em; */
 }
 
 .artistStatistics {
   display: flex;
   /* background-color: aqua; */
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 1rem;
 }
 
-.artistStatTexts {
+.artistStatLabels {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .artistStatTexts {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
+} */
 
 .songcountText {
   text-align: right;
@@ -265,13 +300,14 @@ hr.solid {
   color: var(--white);
 }
 
-.artistSongcount {
+.artistStatValues {
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  font-family: "Overpass Mono";
+  flex-direction: column;
+  text-align: right;
+  color: var(--lilac);
 }
 
+/* not really needed. but easier to read in the js file with this style name */
 .songcountValue {
   color: var(--lilac);
 }
@@ -280,13 +316,6 @@ hr.solid {
   text-align: right;
   padding-right: 2rem;
   color: var(--white);
-}
-
-.artistPlaycount {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  font-family: "Overpass Mono";
 }
 
 .playcountValue {
@@ -317,21 +346,4 @@ hr.solid {
   display: inline-block;
   padding: 2rem;
   padding-top: 0.5rem;
-}
-
-.SignUpbutton{
-  background-color: #2d2c5f;
-  color: var(--white);
-  border-radius: var(--br-8xs);
-  padding: 0.5rem 1rem;
-  font-size: var(--body-overpass-base-size);
-  font-family: var(--body-overpass-base);
-  border: none;
-  cursor: pointer;
-  margin-top: -1rem;
-  margin-bottom: .5rem;
-}
-.SignUpbutton:hover {
-  background-color:#002ead;
-  transition: 0.7s;
 }
