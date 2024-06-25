@@ -82,11 +82,11 @@ const Homepage = () => {
           <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
           </div>
-          <div>
-          <a href="https://forms.gle/pySBHibGemoQsA8J8">
-          <button className={styles.SignUpbutton}>Sign Up</button>
-          </a>
-          <div>Subscribe to our newsletter!</div>
+          <div className={styles.signupContainer}>
+            <a href="https://forms.gle/pySBHibGemoQsA8J8">
+            <button className={styles.SignUpbutton}>Sign Up</button>
+            </a>
+            <div>Subscribe to our newsletter!</div>
           </div>
           <div className={styles.downloadSection}>
             <div className={styles.downloadText}>Download for free</div>

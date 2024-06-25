@@ -110,7 +110,31 @@ hr {
   width: 90%;
   height: auto;
   padding: 5vw 0;
+  border-radius: 2.5rem;
+  /* box-shadow: 10px 5px 5px #1c1c21; */
 }
+
+.signupContainer {
+  padding-top: 2rem;
+}
+
+.SignUpbutton{
+  background-color: #2d2c5f;
+  color: var(--white);
+  border-radius: var(--br-8xs);
+  padding: 0.5rem 1rem;
+  font-size: var(--body-overpass-base-size);
+  font-family: var(--body-overpass-base);
+  border: none;
+  cursor: pointer;
+  margin-top: -1rem;
+  margin-bottom: .5rem;
+}
+.SignUpbutton:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}
+
 
 .downloadSection {
   background-color: var(--page-accent-gray);
@@ -185,7 +209,7 @@ hr {
 .artistImage {
   width: 85%;
   flex-shrink: 0;
-  justify-content:center;
+  align-self: center;
   border-radius: 52px;
   background: lightgray 0px 0px / 100% 100% no-repeat;
 }
@@ -322,21 +346,4 @@ hr {
   display: inline-block;
   padding: 2rem;
   padding-top: 0.5rem;
-}
-
-.SignUpbutton{
-  background-color: #2d2c5f;
-  color: var(--white);
-  border-radius: var(--br-8xs);
-  padding: 0.5rem 1rem;
-  font-size: var(--body-overpass-base-size);
-  font-family: var(--body-overpass-base);
-  border: none;
-  cursor: pointer;
-  margin-top: -1rem;
-  margin-bottom: .5rem;
-}
-.SignUpbutton:hover {
-  background-color:#002ead;
-  transition: 0.7s;
 }
