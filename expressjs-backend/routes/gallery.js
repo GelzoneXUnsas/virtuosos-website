@@ -9,7 +9,7 @@ const gallery_images = {
                 id: 1,
                 name: 'art1',
                 artType: 'screenart',
-                imagePath: '/../assets/images/galleryArt/art1.png',
+                imagePath: '../src/assets/images/galleryArt/art1.png',
                 description: 'Test Description',
                 dateAdded : '2024-05-18'
             },
@@ -70,16 +70,27 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             }
         ],
-        musiccovers_list: [
+    musiccovers_list: 
+        [
             {
                 id: 1,
-                name: 'art3',
+                name: 'celestialechoes',
                 artType: 'musiccovers',
-                imagePath: '../../assets/images/galleryArt/art3.png',
+                imagePath: '../../assets/images/musicCovers/celestialechoes.png',
+                description: 'Test Description3',
+                dateAdded : '2024-05-11',
+
+            },
+            {
+                id: 2,
+                name: 'celticwhispersballad',
+                artType: 'musiccovers',
+                imagePath: '../../assets/images/musicCovers/celticwhispersballad.png',
                 description: 'Test Description3',
                 dateAdded : '2024-05-11',
 
             }
+
         ]
 }
 

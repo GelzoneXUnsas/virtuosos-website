@@ -117,11 +117,11 @@
     flex-direction: column;
     background-color: #232323;
     color: white;
+    justify-content: flex-start;
 }
 
 
 .galleryDisplayModeContainter {
-    padding-top: 1rem;
     display: flex;
     flex-direction: row;
     color: var(--icon-color, #FFF);
@@ -131,8 +131,10 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 24px; /* 150% */
     justify-content: space-evenly;
+    /* background-color: aliceblue; */
+    padding-top: 1rem;
+    margin-bottom: 0;
 }
 
 .galleryDisplayModeItem {
@@ -148,7 +150,9 @@ hr {
     display: block;
     padding-top: 0;
     padding-bottom: 0;
-    width: 75%;
+    width: 90%;
+    align-self: center;
+    border-top: none;
     /* margin: 1em auto; */
 }
 .imageGrid{
@@ -157,13 +161,12 @@ hr {
     grid-row-gap: 0.5rem;
     grid-column-gap: 0.5rem;
     padding-top: 1rem;
+    padding-bottom: 1rem;
     justify-content: center;
-    padding: 1rem; 
     width: 93%; 
+    /* background-color: #d5a6ed; */
+    align-self: center;
 }
-
-
-
 
 .artImage {
     object-fit: cover;
@@ -196,42 +199,64 @@ hr {
 
 }
 
-.screenArtMenuTitleText{
-    width: 122px;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    color: var(--lilac, #F1DBFC);
-    font-family: "Lexend Exa";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px; /* 150% */
-}
-
 .musicCoverMenuTitleText{
     background-color: transparent;
     background: transparent;
     border: 0;
+    border-radius: 10px;
     color: var(--icon-color, #FFF);
     font-family: "Lexend Exa";
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px; /* 150% */
+    justify-content: center;
+    /* background-color: aqua; */
 }
 
-.musicCoverMenuTitleText:hover{
-    color: #d5a6ed;
-    transition: 0.2s;
+.musicCoverMenuTitleText:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly translucent white background */
+    color: var(--lilac); /* Change text color */
+}
+
+.musicCoverMenuTitleText.active {
+    display: flex;
+    flex-direction: column;
+    color: var(--purple-accent); /* Change text color */
+    background-color: transparent;
+    background: transparent;
+    border: 0;
+    border-radius: 10px;
+    font-family: "Lexend Exa";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; 
+    padding-bottom: 0px;
+    /* background-color: aqua; */
+}
+
+.titleHr {
+    display: block;
+    height: 3px; /* Set the height of the line */
+    /* margin: 0.5em 1rem; Set the top, bottom, left, and right margins */
+    margin-bottom: 0;
+    margin-top: 0;
+    border: none; /* Remove any default border */
+    width: 100%;
+    background-color: var(--purple-accent); /* Use the desired solid color */
 }
 
 .menuDivider{
-    width: 350px;
-    height: 30px;
+    width: 90%;
+    margin-top: 0;
     border-style: solid;
-    border-color: transparent; 
     border-width: 0px 0px 2px 0px; 
     border-bottom-color: white;
     background: none;
+}
+
+.pageButtonAndLine {
+    display: flex;
+    flex-direction: column;
 }

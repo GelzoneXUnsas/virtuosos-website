@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from "axios";
 
 import GalleryGrid from "../../GalleryGrid";
@@ -33,7 +33,7 @@ function MusicGalleryPage() {
         fetchAll().then(result => {
             if (result)
                 setGalleryImages(result);
-                console.log('RESULT', result);
+                console.log('RESULT Music cover', result);
         });
     }, []);
 
@@ -56,10 +56,8 @@ function MusicGalleryPage() {
                 <ArtTypeButton text="screen art" artType="/gallery" />
                 <ArtTypeButton text="music covers" artType="/musicgallery" />
             </div>
-            <hr></hr>
-            <div className={styles.imageGrid}>
-                <GalleryGrid galleryData={galleryImages} />
-            </div>
+            <hr className={styles.menuDivider}></hr>
+            <GalleryGrid galleryData={galleryImages} currentPage="musicCovers"/>
         </div>
     </div>
     );
@@ -68,15 +66,19 @@ function MusicGalleryPage() {
 
 function ArtTypeButton(props) {
     const navigate = useNavigate();
+    const location = useLocation();
 
     function handleClick() {
         navigate(props.artType);
     }
 
+    const isActive = location.pathname === props.artType;
+    const buttonClass = isActive ? `${styles.musicCoverMenuTitleText} ${styles.active}` : styles.musicCoverMenuTitleText;
 
     return (
-        <button type="button" className={styles.musicCoverMenuTitleText} onClick={handleClick}>
+        <button type="button" className={buttonClass} onClick={handleClick}>
             {props.text}
+            {isActive ? <hr className={styles.titleHr}></hr> : null}
         </button>
     );
 }
