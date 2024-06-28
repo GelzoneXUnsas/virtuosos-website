@@ -1,19 +1,15 @@
-import React, {useState, useEffect} from "react";
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import GalleryGrid from "../../GalleryGrid";
-
 import styles from "./GalleryPage.module.css";
-
 import headerBackground from '../../assets/images/headerBackground.png';
-// import searchIcon from '../../assets/icons/searchIcon.svg';
 
-// const BACKEND_URL = 'http://localhost:5001';
 const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
-
 
 function GalleryPage() {
     const [galleryImages, setGalleryImages] = useState([]);
+    const [activeTab, setActiveTab] = useState('/gallery');
 
     async function fetchAll() {
         try {
@@ -21,20 +17,16 @@ function GalleryPage() {
             const response = await axios.get(route);
             console.log(response.data);
             return response.data.screenart_list;
-        }
-        catch (error) {
-            //We're not handling errors. Just logging into the console.
+        } catch (error) {
             console.log(error);
             return false;
-
         }
     }
 
     useEffect(() => {
         fetchAll().then(result => {
             console.log('RESULT', result);
-            if (result)
-                setGalleryImages(result);
+            if (result) setGalleryImages(result);
         });
     }, []);
 
@@ -44,18 +36,20 @@ function GalleryPage() {
                 <img src={headerBackground} className={styles.headerBackground} alt="" />
                 <div className={styles.titleText}>GALLERY</div>
             </div>
-            {/* <div className={styles.gallerySearchContainer}>
-                <div className= {styles.gallerySearchItem}>
-                    <form action="" className={styles.gallerySearchItem}>
-                        <input type="text" placeholder="search" />
-                        <button type="submit"><img src={searchIcon} alt="" /></button>
-                    </form>
-                </div>
-            </div> */}
             <div className={styles.galleryDisplayMode}>
                 <div className={styles.galleryDisplayModeContainter}>
-                    <ArtTypeButton text="screen art" artType="/gallery" />
-                    <ArtTypeButton text="music covers" artType="/musicgallery" />
+                    <ArtTypeButton 
+                        text="screen art" 
+                        artType="/gallery" 
+                        isActive={activeTab === '/gallery'} 
+                        onClick={() => setActiveTab('/gallery')}
+                    />
+                    <ArtTypeButton 
+                        text="music covers" 
+                        artType="/musicgallery" 
+                        isActive={activeTab === '/musicgallery'} 
+                        onClick={() => setActiveTab('/musicgallery')}
+                    />
                 </div>
                 <hr className={styles.menuDivider}></hr>
                 <GalleryGrid galleryData={galleryImages} currentPage="art"/>
@@ -66,22 +60,20 @@ function GalleryPage() {
 
 function ArtTypeButton(props) {
     const navigate = useNavigate();
-    const location = useLocation();
 
     function handleClick() {
         navigate(props.artType);
+        props.onClick();
     }
 
-    const isActive = location.pathname === props.artType;
-    const buttonClass = isActive ? `${styles.musicCoverMenuTitleText} ${styles.active}` : styles.musicCoverMenuTitleText;
+    const buttonClass = props.isActive ? `${styles.musicCoverMenuTitleText} ${styles.active}` : styles.musicCoverMenuTitleText;
 
     return (
         <div className={styles.pageButtonAndLine}>
             <button type="button" className={buttonClass} onClick={handleClick}>
                 {props.text}
-                
             </button>
-            {isActive ? <hr className={styles.titleHr}></hr> : null}
+            {props.isActive ? <hr className={styles.titleHr} style={{transform: `translateX(${props.activeTab === '/gallery' ? '100%' : '0'})`}}></hr> : null}
         </div>
     );
 }

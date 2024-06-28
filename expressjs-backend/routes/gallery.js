@@ -74,7 +74,7 @@ const gallery_images = {
         [
             {
                 id: 1,
-                name: 'celestialechoes',
+                name: 'Celestial Echoes',
                 artType: 'musiccovers',
                 imagePath: '../../assets/images/musicCovers/celestialechoes.png',
                 description: 'Test Description3',
@@ -83,9 +83,27 @@ const gallery_images = {
             },
             {
                 id: 2,
-                name: 'celticwhispersballad',
+                name: 'Celtic Whispers Ballad',
                 artType: 'musiccovers',
                 imagePath: '../../assets/images/musicCovers/celticwhispersballad.png',
+                description: 'Test Description3',
+                dateAdded : '2024-05-11',
+
+            },
+            {
+                id: 3,
+                name: 'Neon Pulse Sym',
+                artType: 'musiccovers',
+                imagePath: '../../assets/images/musicCovers/neonpulsesym.png',
+                description: 'Test Description3',
+                dateAdded : '2024-05-11',
+
+            },
+            {
+                id: 4,
+                name: 'Nocturnal Pursuit',
+                artType: 'musiccovers',
+                imagePath: '../../assets/images/musicCovers/nocturnalpursuit.png',
                 description: 'Test Description3',
                 dateAdded : '2024-05-11',
 

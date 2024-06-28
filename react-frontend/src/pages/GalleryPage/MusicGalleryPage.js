@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import axios from "axios";
 
 import GalleryGrid from "../../GalleryGrid";
@@ -13,12 +13,13 @@ const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function MusicGalleryPage() {
     const [galleryImages, setGalleryImages] = useState([]);
+    const [activeTab, setActiveTab] = useState('/musicgallery'); // Default active tab
 
     async function fetchAll() {
         try {
             const route = BACKEND_URL + '/gallery';
             const response = await axios.get(route);
-            console.log(response.data);
+            console.log(response.data.musiccovers_list);
             return response.data.musiccovers_list;
         }
         catch (error) {
@@ -53,8 +54,18 @@ function MusicGalleryPage() {
         </div> */}
         <div className={styles.galleryDisplayMode}>
             <div className={styles.galleryDisplayModeContainter}>
-                <ArtTypeButton text="screen art" artType="/gallery" />
-                <ArtTypeButton text="music covers" artType="/musicgallery" />
+                <ArtTypeButton 
+                    text="screen art" 
+                    artType="/gallery" 
+                    isActive={activeTab === '/gallery'} 
+                    onClick={() => setActiveTab('/gallery')}
+                />
+                <ArtTypeButton 
+                    text="music covers" 
+                    artType="/musicgallery" 
+                    isActive={activeTab === '/musicgallery'} 
+                    onClick={() => setActiveTab('/musicgallery')}
+                />
             </div>
             <hr className={styles.menuDivider}></hr>
             <GalleryGrid galleryData={galleryImages} currentPage="musicCovers"/>
@@ -66,20 +77,21 @@ function MusicGalleryPage() {
 
 function ArtTypeButton(props) {
     const navigate = useNavigate();
-    const location = useLocation();
 
     function handleClick() {
         navigate(props.artType);
+        props.onClick();
     }
 
-    const isActive = location.pathname === props.artType;
-    const buttonClass = isActive ? `${styles.musicCoverMenuTitleText} ${styles.active}` : styles.musicCoverMenuTitleText;
+    const buttonClass = props.isActive ? `${styles.musicCoverMenuTitleText} ${styles.active}` : styles.musicCoverMenuTitleText;
 
     return (
-        <button type="button" className={buttonClass} onClick={handleClick}>
-            {props.text}
-            {isActive ? <hr className={styles.titleHr}></hr> : null}
-        </button>
+        <div className={styles.pageButtonAndLine}>
+            <button type="button" className={buttonClass} onClick={handleClick}>
+                {props.text}
+            </button>
+            {props.isActive ? <hr className={styles.titleHr} style={{transform: `translateX(${props.activeTab === '/musicgallery' ? '100%' : '0'})`}}></hr> : null}
+        </div>
     );
 }
 

@@ -39,7 +39,12 @@ function GalleryGrid(props) {
             {props.currentPage === "art" ? 
                 <img className={styles.artImage} src={artImages[image.id-1]} alt={image.description} /> 
                 :
-                <img className={styles.artImage} src={musicCovers[image.id-1]} alt={image.description} /> 
+                <div className={styles.coverImageAndText}>
+                    <img className={styles.coverImage} src={musicCovers[image.id-1]} alt={image.description} /> 
+                    <div>
+                        {image.name}
+                    </div>
+                </div>
             }
         </div>
         </>
@@ -47,9 +52,17 @@ function GalleryGrid(props) {
     }
     );
     return (
-        <div className={styles.imageGrid}>
-            {rows}
-        </div>
+        <>
+        {props.currentPage === "art" ? 
+            <div className={styles.imageGridArt}>
+                {rows}
+            </div>
+        :
+            <div className={styles.imageGridCover}>
+                {rows}
+            </div>
+        }
+        </>
     );
 }
 

@@ -6,6 +6,7 @@
     font-size: var(--body-overpass-base-size);
     color: var(--white);
     font-family: var(--body-overpass-base);
+    min-height: 100vh;
 }
 
 .headerBackground {
@@ -155,7 +156,7 @@ hr {
     border-top: none;
     /* margin: 1em auto; */
 }
-.imageGrid{
+.imageGridArt{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 0.5rem;
@@ -175,7 +176,36 @@ hr {
     flex-shrink: 0;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    background: lightgray 0px 0px / 100% 100% no-repeat;
+}
+
+.imageGridCover {
+    display: grid;
+    grid-template-columns: auto;
+    grid-row-gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: center;
+    width: 93%; 
+    /* background-color: #d5a6ed; */
+    align-self: center;
+}
+
+.coverImageAndText {
+    font-family: "Lexend Exa";
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.coverImage {
+    object-fit: cover;
+    width: 19rem;
+    flex-shrink: 0;
+    border-radius: 10px;
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+    background: none; /* Remove the background property or set it to none */
+    margin: 0; /* Ensure there is no margin around the image */
+    padding: 0; /* Ensure there is no padding around the image */
+    /* background: lightgray  */
 }
 
 .menuContainer{
@@ -243,8 +273,9 @@ hr {
     margin-bottom: 0;
     margin-top: 0;
     border: none; /* Remove any default border */
-    width: 100%;
+    width: 60%;
     background-color: var(--purple-accent); /* Use the desired solid color */
+    transition: transform 0.3s ease; /* Add transition for smooth sliding */
 }
 
 .menuDivider{
@@ -259,4 +290,7 @@ hr {
 .pageButtonAndLine {
     display: flex;
     flex-direction: column;
+    position: relative; /* Ensure relative positioning for the container */
+    align-items: center;
+    width: 50%;
 }
