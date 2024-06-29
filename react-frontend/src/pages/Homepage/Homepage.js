@@ -162,7 +162,7 @@ const Homepage = () => {
                   </div>
                 </div>
               </div>
-              {index !== featuredArtists.length - 1 ? <hr class="solid"></hr> : null}
+              {index !== featuredArtists.length - 1 ? <hr ></hr> : null}
               </>
             );
           })

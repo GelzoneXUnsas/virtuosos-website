@@ -5,7 +5,11 @@ hr {
   margin-bottom: 0.5em;
   margin-left: 1rem;
   margin-right: 1rem;
-  border-top: 1px solid var(--page-accent-gray); /* Change this color to your desired solid color */
+  /* border-top: 1px solid var(--page-accent-gray); Change this color to your desired solid color */
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: var(--page-accent-gray);
 } 
 
 /* App.css */

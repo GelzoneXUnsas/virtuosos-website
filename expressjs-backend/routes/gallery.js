@@ -9,7 +9,7 @@ const gallery_images = {
                 id: 1,
                 name: 'art1',
                 artType: 'screenart',
-                imagePath: '/../assets/images/galleryArt/art1.png',
+                imagePath: '../src/assets/images/galleryArt/art1.png',
                 description: 'Test Description',
                 dateAdded : '2024-05-18'
             },
@@ -70,16 +70,45 @@ const gallery_images = {
                 dateAdded : '2024-05-18'
             }
         ],
-        musiccovers_list: [
+    musiccovers_list: 
+        [
             {
                 id: 1,
-                name: 'art3',
+                name: 'Celestial Echoes',
                 artType: 'musiccovers',
-                imagePath: '../../assets/images/galleryArt/art3.png',
+                imagePath: '../../assets/images/musicCovers/celestialechoes.png',
+                description: 'Test Description3',
+                dateAdded : '2024-05-11',
+
+            },
+            {
+                id: 2,
+                name: 'Celtic Whispers Ballad',
+                artType: 'musiccovers',
+                imagePath: '../../assets/images/musicCovers/celticwhispersballad.png',
+                description: 'Test Description3',
+                dateAdded : '2024-05-11',
+
+            },
+            {
+                id: 3,
+                name: 'Neon Pulse Sym',
+                artType: 'musiccovers',
+                imagePath: '../../assets/images/musicCovers/neonpulsesym.png',
+                description: 'Test Description3',
+                dateAdded : '2024-05-11',
+
+            },
+            {
+                id: 4,
+                name: 'Nocturnal Pursuit',
+                artType: 'musiccovers',
+                imagePath: '../../assets/images/musicCovers/nocturnalpursuit.png',
                 description: 'Test Description3',
                 dateAdded : '2024-05-11',
 
             }
+
         ]
 }
 
