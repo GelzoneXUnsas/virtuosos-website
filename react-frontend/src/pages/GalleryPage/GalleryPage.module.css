@@ -156,6 +156,7 @@ hr {
     border-top: none;
     /* margin: 1em auto; */
 }
+
 .imageGridArt{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -245,8 +246,8 @@ hr {
 }
 
 .musicCoverMenuTitleText:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly translucent white background */
-    color: var(--lilac); /* Change text color */
+    /* background-color: rgba(255, 255, 255, 0.1); Slightly translucent white background */
+    color: var(--purple-accent); /* Change text color */
 }
 
 .musicCoverMenuTitleText.active {
@@ -293,4 +294,57 @@ hr {
     position: relative; /* Ensure relative positioning for the container */
     align-items: center;
     width: 50%;
+}
+
+
+@media screen and (min-width: 830px) {
+    .imageGridArt{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-row-gap: 1rem;
+        grid-column-gap: 1rem;
+        /* background-color: #d5a6ed; */
+    }
+    
+    .artImage {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .imageGridCover{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        justify-content: center;
+        width: 93%; 
+        /* background-color: #d5a6ed; */
+        align-self: center;
+    }
+
+    .coverImageAndText {
+        font-family: "Lexend Exa";
+        font-size: 19px;
+        font-weight: bold;
+        /* background-color: #B2B2B2; */
+    }
+    
+    .coverImage {
+        object-fit: cover;
+        width: 20rem;
+        flex-shrink: 0;
+        border-radius: 10px;
+        /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+        background: none; /* Remove the background property or set it to none */
+        margin: 0; /* Ensure there is no margin around the image */
+        padding: 0; /* Ensure there is no padding around the image */
+        /* background: lightgray; */
+    }
+
+
 }
