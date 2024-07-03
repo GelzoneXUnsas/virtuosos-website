@@ -68,7 +68,7 @@ const Homepage = () => {
           <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
           <div className={styles.gradientOverlay}></div>
         </div>
-        <div className={styles.visionAndDownloadContainer}> 
+        <div className={styles.visionAndDemoContainer}> 
           <div className={styles.visionSection}>    
             <div className={styles.visionSectionTitle}>
               OUR VISION
@@ -83,6 +83,8 @@ const Homepage = () => {
           <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
           </div>
+        </div>
+        <div className={styles.signupAndDownloadContainer}>
           <div className={styles.signupContainer}>
             <a href="https://forms.gle/pySBHibGemoQsA8J8">
             <button className={styles.SignUpbutton}>Sign Up</button>
