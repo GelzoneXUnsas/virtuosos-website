@@ -47,7 +47,7 @@ const Header = () => {
                         <DropdownItem text={"Home"} link="/" close={() => setOpen(false)} />
                         <DropdownItem text={"Music"} link="/beatmaplisting" close={() => setOpen(false)}/>
                         <DropdownItem text={"Art"} link="/gallery" close={() => setOpen(false)}/>
-                        <DropdownItem text={"Community"} link="/comingsoon" close={() => setOpen(false)}/>
+                        {/* <DropdownItem text={"Community"} link="/comingsoon" close={() => setOpen(false)}/> */}
                     </ul>
                 </div>
             </div>
