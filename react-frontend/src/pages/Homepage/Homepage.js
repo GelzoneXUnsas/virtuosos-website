@@ -61,7 +61,7 @@ const Homepage = () => {
       <div className="div2">Content of Div 2</div>
     </div> */}
     <div className={styles.homepage}>
-      <div className="gradient-container">
+      <div className={styles.gradientContainer}>
         <div className={styles.titleContainer}>
           {/* <div classNameg= {styles.headerBackgroundDark}/> */}
           <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
@@ -80,7 +80,7 @@ const Homepage = () => {
             <div className={styles.bgimage} />
           </div>
           <div className={styles.demoVideoContainer}>
-          <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
+            <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
             {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
           </div>
         </div>

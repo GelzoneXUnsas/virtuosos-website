@@ -9,6 +9,26 @@
     min-height: 100vh;
 }
 
+.titleContainer {
+    background: rgba(36, 36, 36, 0.5); /* Semi-transparent background */
+    position: relative;
+    height: 12rem;
+    z-index: 0; /* Ensure div1 content is below the gradient */
+    overflow: hidden;
+  }
+
+.gradientOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* Adjust this to control how much of div1 is covered */
+    background: linear-gradient(0deg, rgba(36, 36, 36, 1) 5.72%, rgba(36, 36, 36, 0.5) 80.07%, rgba(36, 36, 36, 0) 100%);
+    /* background-color: #002ead; */
+    z-index: 1; /* Place the gradient below the content */
+  }
+
+/* 
 .headerBackground {
     width: 100%;
     height: 11rem;
@@ -20,15 +40,12 @@
     top: 0;
     left: 0;
     z-index: 1;
-}
+} */
 
 .titleText{
     position: absolute;
     width: 100%;
-    /* height: auto;  */
-    top: 130px;
-    /* left: 115px;
-    bottom: 0; */
+    bottom: 10px; 
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -39,7 +56,7 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    /* line-height: 40px; 125% */
+    z-index: 2;
 }
 
 .gallerySearchContainer{
@@ -298,6 +315,9 @@ hr {
 
 
 @media screen and (min-width: 830px) {
+    .titleContainer{
+        height: 20rem;
+    }
     .imageGridArt{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
