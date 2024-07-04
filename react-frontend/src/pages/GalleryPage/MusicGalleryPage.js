@@ -6,6 +6,7 @@ import GalleryGrid from "../../GalleryGrid";
 // import searchIcon from '../../assets/icons/searchIcon.svg';
 
 import styles from "./GalleryPage.module.css";
+import homeStyles from "../Homepage/Homepage.module.css";
 import headerBackground from '../../assets/images/headerBackground.png';
 
 // const BACKEND_URL = 'http://localhost:5001';
@@ -40,37 +41,40 @@ function MusicGalleryPage() {
 
     return (
         <div className={styles.gallerypage}>
-        <div className={styles.titleContainer}>
-            <img src={headerBackground} className={styles.headerBackground} alt="" />
-            <div className={styles.titleText}>GALLERY</div>
-        </div>
-        {/* <div className={styles.gallerySearchContainer}>
-            <div className= {styles.gallerySearchItem}>
-                <form action="" className={styles.gallerySearchItem}>
-                    <input type="text" placeholder="search" />
-                    <button type="submit"><img src={searchIcon} alt="" /></button>
-                </form>
+            <div className={homeStyles.gradientContainer}>
+                <div className={styles.titleContainer}>
+                    <img src={headerBackground} className={homeStyles.headerBackgroundImg} alt="" />
+                    <div className={styles.titleText}>GALLERY</div>
+                    <div className={styles.gradientOverlay}></div>
+                </div>
             </div>
-        </div> */}
-        <div className={styles.galleryDisplayMode}>
-            <div className={styles.galleryDisplayModeContainter}>
-                <ArtTypeButton 
-                    text="screen art" 
-                    artType="/gallery" 
-                    isActive={activeTab === '/gallery'} 
-                    onClick={() => setActiveTab('/gallery')}
-                />
-                <ArtTypeButton 
-                    text="music covers" 
-                    artType="/musicgallery" 
-                    isActive={activeTab === '/musicgallery'} 
-                    onClick={() => setActiveTab('/musicgallery')}
-                />
+            {/* <div className={styles.gallerySearchContainer}>
+                <div className= {styles.gallerySearchItem}>
+                    <form action="" className={styles.gallerySearchItem}>
+                        <input type="text" placeholder="search" />
+                        <button type="submit"><img src={searchIcon} alt="" /></button>
+                    </form>
+                </div>
+            </div> */}
+            <div className={styles.galleryDisplayMode}>
+                <div className={styles.galleryDisplayModeContainter}>
+                    <ArtTypeButton 
+                        text="screen art" 
+                        artType="/gallery" 
+                        isActive={activeTab === '/gallery'} 
+                        onClick={() => setActiveTab('/gallery')}
+                    />
+                    <ArtTypeButton 
+                        text="music covers" 
+                        artType="/musicgallery" 
+                        isActive={activeTab === '/musicgallery'} 
+                        onClick={() => setActiveTab('/musicgallery')}
+                    />
+                </div>
+                <hr className={styles.menuDivider}></hr>
+                <GalleryGrid galleryData={galleryImages} currentPage="musicCovers"/>
             </div>
-            <hr className={styles.menuDivider}></hr>
-            <GalleryGrid galleryData={galleryImages} currentPage="musicCovers"/>
         </div>
-    </div>
     );
 }
 

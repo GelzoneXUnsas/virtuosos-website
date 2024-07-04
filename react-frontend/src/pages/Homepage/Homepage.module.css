@@ -14,13 +14,12 @@ hr {
 
 /* App.css */
 
-.gradient-container {
+.gradientContainer {
   position: relative;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0)); /* Flipped gradient */
+  /* background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0)); Flipped gradient */
 }
 
-.titleContainer, .visionAndDownloadContainer {
+.titleContainer, .visionAndDemoContainer {
   color: white;
 }
 
@@ -29,9 +28,10 @@ hr {
   position: relative;
   height: 15rem;
   z-index: 0; /* Ensure div1 content is below the gradient */
+  overflow: hidden;
 }
 
-.visionAndDownloadContainer {
+.visionAndDemoContainer {
   background: rgba(36, 36, 36, 1); /* Fully opaque background */
   position: relative;
   z-index: 2; /* Ensure div2 content is above the gradient */
@@ -39,8 +39,8 @@ hr {
 
 .gradientOverlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0px;
+  left: 0px;
   width: 100%;
   height: 70%; /* Adjust this to control how much of div1 is covered */
   background: linear-gradient(0deg, rgba(36, 36, 36, 1) 5.72%, rgba(36, 36, 36, 0.5) 80.07%, rgba(36, 36, 36, 0) 100%);
@@ -49,6 +49,8 @@ hr {
 }
 
 .homepage {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color:  var(--page-accent-gray);
   overflow: hidden;
@@ -62,8 +64,8 @@ hr {
   width: 100%;
   /* height: 20rem; */
   position: relative;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   /* z-index: 0; */
 }
 
@@ -75,24 +77,26 @@ hr {
   height: 5rem;
   top: 6.3rem;
   bottom: 0;
-  z-index: 3;
+  z-index: 2;
   display: flex;
   justify-content: center;
 }
 
 .visionSection {
   color: var(--white);
-  display: block;
+  /* display: block; */
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .visionSectionTitle {
   font-size: var(--title-lexend-large-size);
   line-height: 2rem;
   font-family: var(--title-lexend-large);
-  text-align: left;
+  text-align: center;
   display: inline-block;
-  margin:auto;
+  margin: 0;
   padding-bottom: 0.25rem;
 }
 
@@ -116,6 +120,15 @@ hr {
   padding: 5vw 0;
   border-radius: 2.5rem;
   /* box-shadow: 10px 5px 5px #1c1c21; */
+}
+
+.signupAndDownloadContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 3;
 }
 
 .signupContainer {
@@ -350,4 +363,61 @@ hr {
   display: inline-block;
   padding: 2rem;
   padding-top: 0.5rem;
+}
+
+@media screen and (min-width: 830px) {
+  .visionAndDemoContainer{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+  }
+
+  .titleContainer {
+    height: 20rem;
+    /* background-color: #002ead; */
+  }
+
+  .gradientOverlay {
+    height: 70%; /* Adjust this to control how much of div1 is covered */
+    background: linear-gradient(0deg, rgba(36, 36, 36, 1) 15.72%, rgba(36, 36, 36, 0.5) 70.07%, rgba(36, 36, 36, 0) 100%);
+  }
+
+  .virtuososTitle {
+    /* background-color: #002ead; */
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    top: 45%;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .visionSection {
+  color: var(--white);
+  /* display: block; */
+  overflow: auto;
+  display: flex;
+  /* background-color: #002ead; */
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.demoVideoContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.demoVideo {
+  width: 70%;
+  height: auto;
+  padding: 0;
+  border-radius: 2.5rem;
+  /* box-shadow: 10px 5px 5px #1c1c21; */
+}
+
 }

@@ -20,7 +20,7 @@ const Footer = () => {
                 }}>
                 Beatmaps
             </div>
-            <div className={styles.footerSectionPageItem}
+            {/* <div className={styles.footerSectionPageItem}
                 onClick={() => {
                     navigate("/comingsoon");
                 }}>
@@ -31,7 +31,7 @@ const Footer = () => {
                     navigate("/comingsoon");
                     }}>
                 Community
-            </div>
+            </div> */}
             <div className={styles.footerSectionPageItem}
                 onClick={() => {
                     navigate("/gallery");
