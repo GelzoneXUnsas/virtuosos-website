@@ -17,30 +17,30 @@ const Header = () => {
     return (
         <Navbar variant="dark" expand="lg" className={styles.header}>
             <Container fluid>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand>
                     <img
-                    className={styles.headerLogo}
-                    alt="Virtuosos Logo"
-                    src={logoIcon}
-                    onClick={() => {
-                        navigate("/");
-                    }}
+                        className={styles.headerLogo}
+                        alt="Virtuosos Logo"
+                        src={logoIcon}
+                        onClick={() => {
+                            navigate("/");
+                        }}
                     />
                 </Navbar.Brand>
                 <Nav className="ml-auto">
                     <NavDropdown
-                    id="menu-dropdown-button"
-                    title="MENU"
-                    menuVariant="dark"
-                    className={styles.headerMenuButton}
-                    align="end"
+                        id="menu-dropdown-button"
+                        title="MENU"
+                        menuVariant="dark"
+                        className={styles.headerMenuButton}
+                        align="end" // Align the dropdown menu to the end (right side)
                     >
-                    <NavDropdown.Item href="/beatmaplisting">Beatmaps</NavDropdown.Item>
-                    <NavDropdown.Item href="/gallery">Art</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
-                        More Pages Coming Soon
-                    </NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => navigate('/beatmaplisting')}>Beatmaps</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => navigate('/gallery')}>Art</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item onClick={() => navigate('/comingsoon')}>
+                            More Pages Coming Soon
+                        </NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </Container>
