@@ -3,145 +3,42 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  height: 75px;
   background-color:  var(--page-background);
   background: linear-gradient(180deg, #2D2C5F 70.9%, rgba(45, 44, 95, 0.00) 100%);
+  /* background-color: antiquewhite; */
+  z-index: 100;
+  margin-bottom: -75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  overflow: auto;
 }
+
 .headerLogo {
-  width: 1.5rem;
-  height: auto;
-  margin: 0;
-  padding: 0.25rem;
-  max-width: 3rem;
-}
-
-.headerLogoIcon {
-  width: 200%;
-  height: 1rem;
-}
-
-.headerMenu {
-  font-size: var(--title-lexend-large-size);
-  color: var(--white);
-  font-family: var(--title-lexend-large);
-  margin: 0;
-  padding: 0.5rem;
-  height: auto
+  width: auto;
+  height: 2rem;
+  padding-left: 100%;
+  cursor: pointer;
+  /* background-color: aliceblue; */
 }
 
 .headerMenuButton {
-  font-size: 1rem;
+  font-size: var(--title-lexend-medium-size);
+  color: var(--white);
+  font-family: var(--title-lexend-large);
   color: var(--white);
   display: flex;
-  padding: 3px 9.418px 4px 3px;
   align-items: center;
+  justify-content: center;
   gap: 7.462px;
   height: 2rem;
   width: 6rem;
   cursor: pointer;
 }
 
-.headerMenuButtonText {
-  font-family: "Lexend Exa";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1rem; /* 133.333% */
+#menu-dropdown-button .dropdown-menu {
+  left: 0;
+  right: auto;
 }
 
-.menubuttonIcon {
-  display: flex;
-  /* padding: 3px 9.418px 4px 3px; */
-  padding-top: 0.75rem;
-  align-items: center;
-  gap: 7.462px;
-}
-
-.dropdownMenu {
-  position: absolute;
-  top: 5rem;
-  right: 1rem;
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 5px;
-  padding: 0.5rem;
-  width: 100%;
-  transform: translateY(-1rem);
-  transition: 0.3s ease;
-}
-
-.dropdownMenuInactive {
-  z-index: -10;
-  pointer-events: unset;
-}
-
-.dropdownMenuActive {
-  z-index: 10;
-}
-
-.dropdownMenu::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  right: 10px;
-  border: 10px solid transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.5);
-  transform: rotate(45deg);
-}
-
-.dropdownMenu ul {
-  margin: 0;
-}
-
-.dropdownMenu ul button {
-  font-size: var(--title-lexend-medium-size);
-  font-family: var(--title-lexend-large);
-  padding: 0.5rem;
-  border-top: 0.25rem solid rgba(255, 255, 255, 0.5);
-  width: 90%;
-  background-color: transparent;
-  color: var(--white);
-  background: transparent;
-  border: 0;
-  /* cursor: pointer; */
-  text-align: left;
-}
-
-.dropdownMenu ul button:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-}
-
-/* .dropdownMenu{
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: 0.3s ease;
-
-} */
-
-
-/* .dropdownMenu:not(:active){
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-1rem);
-  transition: 0.3s ease;
-} */
-
-.dropdownItem {
-  display: flex;
-  /* margin: 5px auto; */
-
-}
-.dropdownItem a {
-  max-width: 6rem;
-  margin-left: 0.25rem;
-  transition: 0.3s;
-}

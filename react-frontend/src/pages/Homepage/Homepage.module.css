@@ -58,6 +58,7 @@ hr {
   font-size: var(--body-overpass-base-size);
   color: var(--white);
   font-family: var(--body-overpass-base);
+  /* margin-top: -75px; */
 }
 
 .headerBackgroundImg {
