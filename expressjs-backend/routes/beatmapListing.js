@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+
+/*
 const beatmap_list = {
     beatmap_info: 
         [
@@ -83,6 +85,41 @@ const beatmap_list = {
             }
         ]
 }
+        */
+const AWS = require('aws-sdk');
+const uuid = require("uuid");
+AWS.config.loadFromPath('./AWS_config.json');
+
+
+
+var ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" });
+const tableName = 'Virtuosos_Testing';
+
+
+var params = {
+    TableName: "Virtuosos_Testing",
+    Key: {
+        dystopianvirtuosos: { S: "Test" },
+    },
+  };
+  
+  // Call DynamoDB to read the item from the table
+  var item = ddb.getItem(params, function (err, data) {
+    if (err) {
+      console.log("Error", err);
+    } else {
+        var result1 = data.Item; 
+      console.log("Success", result1);
+      console.log("Success", typeof result1);
+    }
+  });
+console.log("Table name: ", tableName);
+const beatmap_list = {
+    beatmap_info: [{ item
+
+    }]
+}
+
 
 
 router.get('/', (req, res) => {
