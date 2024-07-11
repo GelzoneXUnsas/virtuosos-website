@@ -14,11 +14,6 @@ hr {
 
 /* App.css */
 
-.gradientContainer {
-  position: relative;
-  /* background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0)); Flipped gradient */
-}
-
 .titleContainer, .visionAndDemoContainer {
   color: white;
 }
@@ -61,13 +56,16 @@ hr {
   /* margin-top: -75px; */
 }
 
+/* .bgImgContainer {
+  width: 100%;
+  height: 300rem;
+} */
+
 .headerBackgroundImg {
   width: 100%;
-  /* height: 20rem; */
   position: relative;
-  /* top: 0;
-  left: 0; */
-  /* z-index: 0; */
+  object-position: 0 50%; /* Adjust this to shift the image down */
+  object-fit: cover; /* Ensures the image covers the container */
 }
 
 
@@ -406,19 +404,19 @@ hr {
   padding: 5rem;
 }
 
-.demoVideoContainer {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-}
+  .demoVideoContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
 
-.demoVideo {
-  width: 70%;
-  height: auto;
-  padding: 0;
-  border-radius: 2.5rem;
-  /* box-shadow: 10px 5px 5px #1c1c21; */
-}
+  .demoVideo {
+    width: 70%;
+    height: auto;
+    padding: 0;
+    border-radius: 2.5rem;
+    /* box-shadow: 10px 5px 5px #1c1c21; */
+  }
 
 }

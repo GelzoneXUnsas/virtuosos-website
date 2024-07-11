@@ -33,13 +33,11 @@ function GalleryPage() {
 
     return (
         <div className={styles.gallerypage}>
-            <div className={homeStyles.gradientContainer}>
                 <div className={styles.titleContainer}>
                     <img src={headerBackground} className={homeStyles.headerBackgroundImg} alt="" />
                     <div className={styles.titleText}>GALLERY</div>
                     <div className={styles.gradientOverlay}></div>
                 </div>
-            </div>
             <div className={styles.galleryDisplayMode}>
                 <div className={styles.galleryDisplayModeContainter}>
                     <ArtTypeButton 

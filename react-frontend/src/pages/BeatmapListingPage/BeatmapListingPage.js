@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./BeatmapListingPage.module.css";
+import homeStyles from "../Homepage/Homepage.module.css";
 
 import React from "react";
 import axios from "axios";
@@ -95,9 +96,12 @@ function BeatmapListingPage() {
 
     return (
         <div className={styles.beatmaplistingPage}>
-            <div className={styles.titleContainer}>
-                <img src={headerBackground} className={styles.headerBackground} alt="" />
-                <div className={styles.titleText}>BEATMAPS</div>
+            <div className={homeStyles.gradientContainer}>
+                <div className={styles.titleContainer}>
+                    <img src={headerBackground} className={homeStyles.headerBackgroundImg} alt="" />
+                    <div className={styles.titleText}>BEATMAPS</div>
+                    <div className={styles.gradientOverlay}></div>
+                </div>
             </div>
             <div className={styles.gallerySearchContainer}>
                 <div className= {styles.beatmapListingSearchItem}>

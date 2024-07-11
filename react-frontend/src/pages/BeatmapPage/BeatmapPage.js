@@ -1,6 +1,7 @@
 // import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import styles from "./BeatmapPage.module.css";
+import homeStyles from "../Homepage/Homepage.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -70,141 +71,144 @@ function BeatmapPage() {
 
     return (
         <div className={styles.beatmaplistingPage}>
-            <div className={styles.titleContainer}>
-                <img src={headerBackground} className={styles.headerBackground} alt="" />
-                <div className={styles.titleText}>BEATMAP</div>
-                <div className={styles.bmContent}>
-                    <div className={styles.bmSongInfoSection}>
-                        <div className={styles.bmSongName}>
-                            {beatmap.songName}
+            <div className={homeStyles.gradientContainer}>
+                <div className={styles.titleContainer}>
+                    <img src={headerBackground} className={homeStyles.headerBackgroundImg} alt="" />
+                    <div className={styles.titleText}>BEATMAP</div>
+                    <div className={styles.gradientOverlay}></div>
+                </div>
+            </div>
+            <div className={styles.bmContent}>
+                <div className={styles.bmSongInfoSection}>
+                    <div className={styles.bmSongName}>
+                        {beatmap.songName}
+                    </div>
+                    <div className= {styles.countInfoSection}>
+                        <div className={styles.playCountInfo}>
+                            <img src={playIcon} className={styles.infoSvg} alt="" />
+                            <b>
+                                {beatmap.playCount}
+                            </b>
                         </div>
-                        <div className= {styles.countInfoSection}>
-                            <div className={styles.playCountInfo}>
-                                <img src={playIcon} className={styles.infoSvg} alt="" />
-                                <b>
-                                    {beatmap.playCount}
-                                </b>
-                            </div>
-                            <div className={styles.heartCountInfo}>
-                                <img src={heartIcon} className={styles.infoSvg} alt="" />
-                                <b>
-                                    {beatmap.likeCount}
-                                </b>
-                            </div>
+                        <div className={styles.heartCountInfo}>
+                            <img src={heartIcon} className={styles.infoSvg} alt="" />
+                            <b>
+                                {beatmap.likeCount}
+                            </b>
                         </div>
-                        <div className={styles.bmAdditionalInfoSection}>
-                            <div className={styles.bmArtistInfoSection}>
-                                <div className={styles.artistDetails}>
-                                    <img className={styles.artistImage} src={artistImages[beatmap.artistImg]} alt=""/>
-                                    <div className={styles.artistTitleContainer}>
-                                        <div className={styles.artistName}>
-                                            {beatmap.artist}                                        </div>
-                                        <img className={styles.verifiedIcon} src={verifiedIcon} alt=""/>
-                                    </div>
-                                </div>
-                                <div className={styles.releaseDate}>
-                                    released {beatmap.releaseDate}
-                                </div>    
-                            </div>
-                            <div className={styles.bmDifficultySection}>
-                                <div className= {styles.bmDifficultyInfoSection}>
-                                    <img src={easyIcon} className={styles.diffIcon} alt=""/>
-                                    <div className={styles.difficultyScore}>
-                                        2.3  
-                                    </div>
-                                </div>
-                                <div className= {styles.bmDiffBar}>
-                                    <img src={bmDifficultyBar} className={styles.diffBar} alt=""/>
+                    </div>
+                    <div className={styles.bmAdditionalInfoSection}>
+                        <div className={styles.bmArtistInfoSection}>
+                            <div className={styles.artistDetails}>
+                                <img className={styles.artistImage} src={artistImages[beatmap.artistImg]} alt=""/>
+                                <div className={styles.artistTitleContainer}>
+                                    <div className={styles.artistName}>
+                                        {beatmap.artist}                                        </div>
+                                    <img className={styles.verifiedIcon} src={verifiedIcon} alt=""/>
                                 </div>
                             </div>
+                            <div className={styles.releaseDate}>
+                                released {beatmap.releaseDate}
+                            </div>    
                         </div>
+                        <div className={styles.bmDifficultySection}>
+                            <div className= {styles.bmDifficultyInfoSection}>
+                                <img src={easyIcon} className={styles.diffIcon} alt=""/>
+                                <div className={styles.difficultyScore}>
+                                    2.3  
+                                </div>
+                            </div>
+                            <div className= {styles.bmDiffBar}>
+                                <img src={bmDifficultyBar} className={styles.diffBar} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr></hr>
+                <div className={styles.beatmapGameInfoSection}>
+                    <div className={styles.beatmapInfo}>
+                        <img src={albumCovers[beatmap.songCoverImg]} className={styles.coverImg} alt=""></img>
+                        <div className= {styles.bmInfoSection}>
+                            <div className={styles.mapperInfo}>
+                                mapped by {beatmap.beatmap_artist}
+                            </div>
+                            <div className={styles.bmData}>
+                                <div className={styles.bmDataItem}>
+                                    <img src={durationIcon} className={styles.bmSvg} alt="" />
+                                    <b>
+                                        {beatmap.songDuration}
+                                    </b>
+                                </div>
+                                <div className={styles.bmDataItem}>
+                                    <img className={styles.bmSvg} src={bpmIcon} alt="" />
+                                    <b>
+                                        {beatmap.bpm}
+                                    </b>
+                                </div>
+                                <div className={styles.bmDataItem}>
+                                    <img className={styles.bmSvg} src={noteCountIcon} alt="" />
+                                    <b>
+                                        {beatmap.noteCount}
+                                    </b>
+                                </div>
+                                <div className={styles.bmDataItem}>
+                                    <img className={styles.bmSvg} src={sliderCountIcon} alt="" />
+                                    <b>
+                                        {beatmap.sliderCount}
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.bmStatInfo}>
+                        <div className={styles.bmStatItem}>
+                            <div className={styles.bmStatAttribute}>
+                                HP Drain
+                            </div>
+                            <div className={styles.valueBar}>
+                                <img src={bm30ValueBar} className={styles.bmValueBar} alt=""/>
+                            </div>
+                            <div className={styles.bmStatValue}>5</div>
+                        </div>
+                        <div className={styles.bmStatItem}>
+                            <div className={styles.bmStatAttribute}>
+                                Approach Rate
+                            </div>
+                            <div className={styles.valueBar}>
+                                <img src={bm30ValueBar} className={styles.bmValueBar} alt=""/>
+                            </div>
+                            <div className={styles.bmStatValue}>7</div>
+                        </div>
+                        <a href={tempBeatmap} target="_blank" rel="noopener noreferrer" download>
+                            <button type="button" className={styles.downloadButton}>
+                                Download
+                            </button>
+                        </a>
                     </div>
                     <hr></hr>
-                    <div className={styles.beatmapGameInfoSection}>
-                        <div className={styles.beatmapInfo}>
-                            <img src={albumCovers[beatmap.songCoverImg]} className={styles.coverImg} alt=""></img>
-                            <div className= {styles.bmInfoSection}>
-                                <div className={styles.mapperInfo}>
-                                    mapped by {beatmap.beatmap_artist}
-                                </div>
-                                <div className={styles.bmData}>
-                                    <div className={styles.bmDataItem}>
-                                        <img src={durationIcon} className={styles.bmSvg} alt="" />
-                                        <b>
-                                            {beatmap.songDuration}
-                                        </b>
-                                    </div>
-                                    <div className={styles.bmDataItem}>
-                                        <img className={styles.bmSvg} src={bpmIcon} alt="" />
-                                        <b>
-                                            {beatmap.bpm}
-                                        </b>
-                                    </div>
-                                    <div className={styles.bmDataItem}>
-                                        <img className={styles.bmSvg} src={noteCountIcon} alt="" />
-                                        <b>
-                                            {beatmap.noteCount}
-                                        </b>
-                                    </div>
-                                    <div className={styles.bmDataItem}>
-                                        <img className={styles.bmSvg} src={sliderCountIcon} alt="" />
-                                        <b>
-                                            {beatmap.sliderCount}
-                                        </b>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.bmStatInfo}>
-                            <div className={styles.bmStatItem}>
-                                <div className={styles.bmStatAttribute}>
-                                    HP Drain
-                                </div>
-                                <div className={styles.valueBar}>
-                                    <img src={bm30ValueBar} className={styles.bmValueBar} alt=""/>
-                                </div>
-                                <div className={styles.bmStatValue}>5</div>
-                            </div>
-                            <div className={styles.bmStatItem}>
-                                <div className={styles.bmStatAttribute}>
-                                    Approach Rate
-                                </div>
-                                <div className={styles.valueBar}>
-                                    <img src={bm30ValueBar} className={styles.bmValueBar} alt=""/>
-                                </div>
-                                <div className={styles.bmStatValue}>7</div>
-                            </div>
-                            <a href={tempBeatmap} target="_blank" rel="noopener noreferrer" download>
-                                <button type="button" className={styles.downloadButton}>
-                                    Download
-                                </button>
-                            </a>
-                        </div>
-                        <hr></hr>
-                        <div className={styles.bmDescription}>
-                            {beatmap.description}
-                        </div>
-
-                        <div className={styles.tagSection}> 
-                            <div className={styles.tagItem}>
-                                <div className={styles.tagTitle}>
-                                    Source:
-                                </div>
-                                <div className={styles.tagValues}>
-                                    {beatmap.source}
-                                </div>
-                            </div>
-                            <div className={styles.tagItem}>
-                                <div className={styles.tagTitle}>
-                                    Tags:
-                                </div>
-                                <div className={styles.tagValues}>
-                                    {(beatmap.tags) && (beatmap.tags).join(', ')}
-                                </div>
-                            </div>
-                        </div>
-
+                    <div className={styles.bmDescription}>
+                        {beatmap.description}
                     </div>
+
+                    <div className={styles.tagSection}> 
+                        <div className={styles.tagItem}>
+                            <div className={styles.tagTitle}>
+                                Source:
+                            </div>
+                            <div className={styles.tagValues}>
+                                {beatmap.source}
+                            </div>
+                        </div>
+                        <div className={styles.tagItem}>
+                            <div className={styles.tagTitle}>
+                                Tags:
+                            </div>
+                            <div className={styles.tagValues}>
+                                {(beatmap.tags) && (beatmap.tags).join(', ')}
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
