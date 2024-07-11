@@ -29,7 +29,7 @@ hr {
 .visionAndDemoContainer {
   background: rgba(36, 36, 36, 1); /* Fully opaque background */
   position: relative;
-  z-index: 2; /* Ensure div2 content is above the gradient */
+  /* z-index: 2; Ensure div2 content is above the gradient */
 }
 
 .gradientOverlay {
@@ -56,15 +56,16 @@ hr {
   /* margin-top: -75px; */
 }
 
-/* .bgImgContainer {
+.bgImgContainer {
   width: 100%;
-  height: 300rem;
-} */
+  /* background-color: aqua; */
+  /* height: 350px; */
+}
 
 .headerBackgroundImg {
   width: 100%;
   position: relative;
-  object-position: 0 50%; /* Adjust this to shift the image down */
+  object-position: 50% 0%; /* Adjust this to shift the image down */
   object-fit: cover; /* Ensures the image covers the container */
 }
 
@@ -374,6 +375,10 @@ hr {
   .titleContainer {
     height: 20rem;
     /* background-color: #002ead; */
+  }
+
+  .bgImgContainer {
+    margin-top: -180px;
   }
 
   .gradientOverlay {

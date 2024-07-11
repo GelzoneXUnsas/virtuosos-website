@@ -357,3 +357,10 @@ hr {
     /* text-align: left; */
     /* display: inline-block; */
 }
+
+@media screen and (min-width: 830px) {
+    .titleContainer{
+        height: 15rem;
+    }
+    
+}

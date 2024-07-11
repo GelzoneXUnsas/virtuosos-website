@@ -62,7 +62,10 @@ const Homepage = () => {
     </div> */}
     <div className={styles.homepage}>
     <div className={styles.titleContainer}>
-      <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
+      <div className={styles.bgImgContainer}>
+        <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
+      </div>
+      
       <img src={virtuososTitle} className={styles.virtuososTitle} alt="" />
       <div className={styles.gradientOverlay}></div>
     </div>

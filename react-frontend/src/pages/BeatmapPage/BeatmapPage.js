@@ -5,7 +5,7 @@ import homeStyles from "../Homepage/Homepage.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import headerBackground from '../../assets/images/headerBackground.png';
+import headerBackgroundImg from '../../assets/images/headerBackground.png';
 
 
 import durationIcon from '../../assets/icons/durationicon.svg';
@@ -73,7 +73,9 @@ function BeatmapPage() {
         <div className={styles.beatmaplistingPage}>
             <div className={homeStyles.gradientContainer}>
                 <div className={styles.titleContainer}>
-                    <img src={headerBackground} className={homeStyles.headerBackgroundImg} alt="" />
+                    <div className={homeStyles.bgImgContainer}>
+                        <img src={headerBackgroundImg} className={homeStyles.headerBackgroundImg} alt="" />
+                    </div>
                     <div className={styles.titleText}>BEATMAP</div>
                     <div className={styles.gradientOverlay}></div>
                 </div>
