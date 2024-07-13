@@ -20,24 +20,17 @@ import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
 import easyIcon from "../../assets/icons/bmEasyIcon.svg";
 
 //images for beatmap covers 
-import cover1 from '../../assets/images/musicCovers/celticwhispersballad.png';
-import cover2 from '../../assets/images/musicCovers/neonpulsesym.png';
-import cover3 from '../../assets/images/musicCovers/celestialechoes.png';
-import cover4 from '../../assets/images/musicCovers/nocturnalpursuit.png';
+
 
 //images for artists
-import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
-import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
-import artist3Image from "../../assets/images/featuredArtists/artist3.png";
+
 
 import tempBeatmap from "../../assets/beatmapFiles/beatmapMockFile.zip";
 
-const albumCovers = {'cover1': cover1, 'cover2': cover2, 'cover3': cover3, 'cover4': cover4};
-const artistImages = {'artist1Image': artist1Image, 'artist2Image': artist2Image, 'artist3Image': artist3Image};
 
 
-// const BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+ const BACKEND_URL = 'http://localhost:5001';
+//const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 
 function BeatmapPage() {
@@ -49,11 +42,11 @@ function BeatmapPage() {
         try {
             const route = BACKEND_URL + `/beatmapListing?id=${id}`;
             const response = await axios.get(route);
-            console.log(response.data.beatmap_info[0]);
+            console.log("wop wop wop:",response.data.beatmap_info[0]);
             return response.data.beatmap_info;
         }
         catch (error) {
-            console.log(error);
+            console.log("there was a error",error);
             return false;
         }
     }
@@ -95,10 +88,10 @@ function BeatmapPage() {
                         <div className={styles.bmAdditionalInfoSection}>
                             <div className={styles.bmArtistInfoSection}>
                                 <div className={styles.artistDetails}>
-                                    <img className={styles.artistImage} src={artistImages[beatmap.artistImg]} alt=""/>
+                                    <img className={styles.artistImage} src={beatmap.artistimg} alt=""/>
                                     <div className={styles.artistTitleContainer}>
                                         <div className={styles.artistName}>
-                                            {beatmap.artist}                                        </div>
+                                            {beatmap.Artist}                                        </div>
                                         <img className={styles.verifiedIcon} src={verifiedIcon} alt=""/>
                                     </div>
                                 </div>
@@ -122,7 +115,7 @@ function BeatmapPage() {
                     <hr></hr>
                     <div className={styles.beatmapGameInfoSection}>
                         <div className={styles.beatmapInfo}>
-                            <img src={albumCovers[beatmap.songCoverImg]} className={styles.coverImg} alt=""></img>
+                            <img src={beatmap.songCoverImg} className={styles.coverImg} alt=""></img>
                             <div className= {styles.bmInfoSection}>
                                 <div className={styles.mapperInfo}>
                                     mapped by {beatmap.beatmap_artist}
@@ -191,7 +184,7 @@ function BeatmapPage() {
                                     Source:
                                 </div>
                                 <div className={styles.tagValues}>
-                                    {beatmap.source}
+                                    {beatmap.Source}
                                 </div>
                             </div>
                             <div className={styles.tagItem}>
@@ -199,7 +192,7 @@ function BeatmapPage() {
                                     Tags:
                                 </div>
                                 <div className={styles.tagValues}>
-                                    {(beatmap.tags) && (beatmap.tags).join(', ')}
+                                    {(beatmap.Tags) && (beatmap.Tags).join(', ')}
                                 </div>
                             </div>
                         </div>

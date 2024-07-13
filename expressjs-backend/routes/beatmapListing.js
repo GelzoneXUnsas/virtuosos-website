@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const beatmap_list = {
+const beatmap_list1 = {
     beatmap_info: 
         [
             {
@@ -82,13 +82,52 @@ const beatmap_list = {
                 description : 'Embark on a shadowy journey through the enigmatic world of ShadowWeaver Mysteries. Unravel secrets, solve riddles, and uncover hidden truths in this mysterious realm. Each note is a clue, each beat a step closer to the truth.'
             }
         ]
-}
+} 
+
+var AWS = require("aws-sdk");
+// Set the region
+AWS.config.update({ region: "us-west-1" });
+
+// Create the DynamoDB service object
+
+var ddb = new AWS.DynamoDB.DocumentClient()
+
+var item;
+
+// Call DynamoDB to read the item from the table
+ddb.scan({
+    TableName: "Virtuosos_Testing",
+  })
+  .promise()
+  .then(data => item = data.Items)
+  .catch(console.error)
+
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  } 
+//sleep(2000).then(() => { console.log("Item:", item) });
+var beatmap_list;
+var beatmap_info = [];
+sleep(2000).then(() => { for(let i = 0; i < item.length; i++){
+    beatmap_info.push(item[i])
+}});
+
+sleep(3000).then(() => {beatmap_list = {
+        beatmap_info : beatmap_info
+}});
+
+
+sleep(4000).then(() => {console.log("Beatmap List:", beatmap_list)
+    console.log("Beatmap List2:", beatmap_list1)
+});
 
 
 router.get('/', (req, res) => {
     const id = req.query.id;
     const title = req.query.title;
     const searchTerm = req.query.search;
+    console.log("searchTerm:", res)
     console.log("id:", id)
     console.log("title:", title)
     if(id != undefined){
@@ -122,7 +161,7 @@ const findSongByTitle = (title) => {
 
 const findSongByID = (id) => {
     return beatmap_list['beatmap_info'].filter((beatmap) =>
-        beatmap['id'].toString() === id);
+        beatmap['id'].toString() == id);
 }
 
 router.get('/:id', (req, res) => {

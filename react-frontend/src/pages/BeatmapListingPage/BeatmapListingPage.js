@@ -17,16 +17,10 @@ import playIcon from '../../assets/icons/playIcon.svg';
 import heartIcon from '../../assets/icons/heartIcon.svg';
 
 
-//images for beatmap covers 
-import cover1 from '../../assets/images/musicCovers/celticwhispersballad.png';
-import cover2 from '../../assets/images/musicCovers/neonpulsesym.png';
-import cover3 from '../../assets/images/musicCovers/celestialechoes.png';
-import cover4 from '../../assets/images/musicCovers/nocturnalpursuit.png';
+//images for beatmap covers
 
-const albumCovers = [cover1, cover2, cover3, cover4];
-
-// const BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+ const BACKEND_URL = 'http://localhost:5001';
+//const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function BeatmapListingPage() {
     const [beatmapList, setBeatmapList] = useState([]);
@@ -137,11 +131,11 @@ function BeatmapList (props) {
             <div key={index}>
                 <button type="button" className={styles.bmListItem} onClick={() => navigate(`/beatmap?id=${beatmap.id}`)}>
                     <div className={styles.musiccoverIcon}>
-                        <img src={albumCovers[beatmap.id-1]} alt="" />
+                        <img src={beatmap.songCoverImg} alt="" />
                     </div>
                     <div className={styles.musiccoverInfo}>
                         <div className={styles.songTitleText}>
-                            {beatmap.songName}
+                            {beatmap.Title}
                         </div>
                         <div className={styles.songArtistText}>
                             {beatmap.artist}
@@ -184,7 +178,3 @@ function BeatmapList (props) {
 }
 
 export default BeatmapListingPage;
-
-
-
-
