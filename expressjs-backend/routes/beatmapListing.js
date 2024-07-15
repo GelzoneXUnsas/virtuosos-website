@@ -107,28 +107,31 @@ var ddb = DynamoDBDocument.from(new DynamoDB())
 
 var item;
 
-// Call DynamoDB to read the item from the table
-ddb.scan({
-    TableName: "Virtuosos_Testing",
-  })
-  .then(data => item = data.Items)
-  .catch(console.error)
-
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-//sleep(2000).then(() => { console.log("Item:", item) });
-sleep(2000).then(() => { if(item == undefined) {beatmap_list = beatmap_list1}});
 var beatmap_list;
 var beatmap_info = [];
-sleep(2000).then(() => { for(let i = 0; i < item.length; i++){
-    beatmap_info.push(item[i])
-}});
 
-sleep(3000).then(() => {beatmap_list = {
-        beatmap_info : beatmap_info
-}});
+// Call DynamoDB to read the item from the table
+async function readItemsFromDynamoDB() {
+    try {
+        const data = await ddb.scan({
+            TableName: "Virtuosos_Testing",
+        });
+        item = data.Items;
+        for(let i = 0; i < item.length; i++){
+            beatmap_info.push(item[i]);}
+            {beatmap_list = {
+                beatmap_info : beatmap_info
+        }}
+    } catch (error) {
+        beatmap_list = beatmap_list1
+        console.error(error);
+    }
+}
+
+readItemsFromDynamoDB();
+
+
+
 
 
 router.get('/', (req, res) => {
