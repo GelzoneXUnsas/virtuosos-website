@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// should be used as a redundancey in case the database is down
 const beatmap_list1 = {
     beatmap_info: 
         [
@@ -82,15 +83,27 @@ const beatmap_list1 = {
                 description : 'Embark on a shadowy journey through the enigmatic world of ShadowWeaver Mysteries. Unravel secrets, solve riddles, and uncover hidden truths in this mysterious realm. Each note is a clue, each beat a step closer to the truth.'
             }
         ]
-} 
+}
 
 var AWS = require("aws-sdk");
+
+const {
+    DynamoDBDocument,
+} = require('@aws-sdk/lib-dynamodb');
+
+const {
+    DynamoDB,
+} = require('@aws-sdk/client-dynamodb');
+
 // Set the region
+// JS SDK v3 does not support global configuration.
+// Codemod has attempted to pass values to each service client in this file.
+// You may need to update clients outside of this file, if they use global config.
 AWS.config.update({ region: "us-west-1" });
 
 // Create the DynamoDB service object
 
-var ddb = new AWS.DynamoDB.DocumentClient()
+var ddb = DynamoDBDocument.from(new DynamoDB())
 
 var item;
 
@@ -98,15 +111,15 @@ var item;
 ddb.scan({
     TableName: "Virtuosos_Testing",
   })
-  .promise()
   .then(data => item = data.Items)
   .catch(console.error)
 
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  } 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 //sleep(2000).then(() => { console.log("Item:", item) });
+sleep(2000).then(() => { if(item == undefined) {beatmap_list = beatmap_list1}});
 var beatmap_list;
 var beatmap_info = [];
 sleep(2000).then(() => { for(let i = 0; i < item.length; i++){
@@ -118,16 +131,10 @@ sleep(3000).then(() => {beatmap_list = {
 }});
 
 
-sleep(4000).then(() => {console.log("Beatmap List:", beatmap_list)
-    console.log("Beatmap List2:", beatmap_list1)
-});
-
-
 router.get('/', (req, res) => {
     const id = req.query.id;
     const title = req.query.title;
     const searchTerm = req.query.search;
-    console.log("searchTerm:", res)
     console.log("id:", id)
     console.log("title:", title)
     if(id != undefined){
