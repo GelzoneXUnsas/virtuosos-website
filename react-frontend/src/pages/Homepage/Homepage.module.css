@@ -14,11 +14,6 @@ hr {
 
 /* App.css */
 
-.gradientContainer {
-  position: relative;
-  /* background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0)); Flipped gradient */
-}
-
 .titleContainer, .visionAndDemoContainer {
   color: white;
 }
@@ -34,7 +29,7 @@ hr {
 .visionAndDemoContainer {
   background: rgba(36, 36, 36, 1); /* Fully opaque background */
   position: relative;
-  z-index: 2; /* Ensure div2 content is above the gradient */
+  /* z-index: 2; Ensure div2 content is above the gradient */
 }
 
 .gradientOverlay {
@@ -58,15 +53,20 @@ hr {
   font-size: var(--body-overpass-base-size);
   color: var(--white);
   font-family: var(--body-overpass-base);
+  /* margin-top: -75px; */
+}
+
+.bgImgContainer {
+  width: 100%;
+  /* background-color: aqua; */
+  /* height: 350px; */
 }
 
 .headerBackgroundImg {
   width: 100%;
-  /* height: 20rem; */
   position: relative;
-  /* top: 0;
-  left: 0; */
-  /* z-index: 0; */
+  object-position: 50% 0%; /* Adjust this to shift the image down */
+  object-fit: cover; /* Ensures the image covers the container */
 }
 
 
@@ -377,6 +377,10 @@ hr {
     /* background-color: #002ead; */
   }
 
+  .bgImgContainer {
+    margin-top: -180px;
+  }
+
   .gradientOverlay {
     height: 70%; /* Adjust this to control how much of div1 is covered */
     background: linear-gradient(0deg, rgba(36, 36, 36, 1) 15.72%, rgba(36, 36, 36, 0.5) 70.07%, rgba(36, 36, 36, 0) 100%);
@@ -405,19 +409,19 @@ hr {
   padding: 5rem;
 }
 
-.demoVideoContainer {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-}
+  .demoVideoContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
 
-.demoVideo {
-  width: 70%;
-  height: auto;
-  padding: 0;
-  border-radius: 2.5rem;
-  /* box-shadow: 10px 5px 5px #1c1c21; */
-}
+  .demoVideo {
+    width: 70%;
+    height: auto;
+    padding: 0;
+    border-radius: 2.5rem;
+    /* box-shadow: 10px 5px 5px #1c1c21; */
+  }
 
 }

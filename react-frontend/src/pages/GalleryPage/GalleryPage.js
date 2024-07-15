@@ -4,7 +4,7 @@ import axios from "axios";
 import GalleryGrid from "../../GalleryGrid";
 import styles from "./GalleryPage.module.css";
 import homeStyles from "../Homepage/Homepage.module.css";
-import headerBackground from '../../assets/images/headerBackground.png';
+import headerBackgroundImg from '../../assets/images/headerBackground.png';
 
 const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
@@ -33,12 +33,12 @@ function GalleryPage() {
 
     return (
         <div className={styles.gallerypage}>
-            <div className={homeStyles.gradientContainer}>
-                <div className={styles.titleContainer}>
-                    <img src={headerBackground} className={homeStyles.headerBackgroundImg} alt="" />
-                    <div className={styles.titleText}>GALLERY</div>
-                    <div className={styles.gradientOverlay}></div>
+            <div className={styles.titleContainer}>
+                <div className={homeStyles.bgImgContainer}>
+                    <img src={headerBackgroundImg} className={homeStyles.headerBackgroundImg} alt="" />
                 </div>
+                <div className={styles.titleText}>GALLERY</div>
+                <div className={styles.gradientOverlay}></div>
             </div>
             <div className={styles.galleryDisplayMode}>
                 <div className={styles.galleryDisplayModeContainter}>

@@ -61,56 +61,56 @@ const Homepage = () => {
       <div className="div2">Content of Div 2</div>
     </div> */}
     <div className={styles.homepage}>
-      <div className={styles.gradientContainer}>
-        <div className={styles.titleContainer}>
-          {/* <div classNameg= {styles.headerBackgroundDark}/> */}
-          <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
-          <img src= {virtuososTitle} className={styles.virtuososTitle} alt="" />
-          <div className={styles.gradientOverlay}></div>
+    <div className={styles.titleContainer}>
+      <div className={styles.bgImgContainer}>
+        <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
+      </div>
+      
+      <img src={virtuososTitle} className={styles.virtuososTitle} alt="" />
+      <div className={styles.gradientOverlay}></div>
+    </div>
+      <div className={styles.visionAndDemoContainer}> 
+        <div className={styles.visionSection}>    
+          <div className={styles.visionSectionTitle}>
+            OUR VISION
+          </div>
+          <div className={styles.visionSectionBody}>
+            Imagine a world where the lines between creator and player blur. Where
+            the music you compose is the soundtrack to another’s personal journey.
+          </div>
+          <div className={styles.bgimage} />
         </div>
-        <div className={styles.visionAndDemoContainer}> 
-          <div className={styles.visionSection}>    
-            <div className={styles.visionSectionTitle}>
-              OUR VISION
-            </div>
-            <div className={styles.visionSectionBody}>
-              Imagine a world where the lines between creator and player blur. Where
-              the music you compose is the soundtrack to another’s personal journey.
-            </div>
-            <div className={styles.bgimage} />
-          </div>
-          <div className={styles.demoVideoContainer}>
-            <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
-            {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
-          </div>
+        <div className={styles.demoVideoContainer}>
+          <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
+          {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </div>
-        <div className={styles.signupAndDownloadContainer}>
-          <div className={styles.signupContainer}>
-            <a href="https://forms.gle/pySBHibGemoQsA8J8">
-            <button className={styles.SignUpbutton}>Sign Up</button>
-            </a>
-            <div>Subscribe to our newsletter!</div>
-          </div>
-          <div className={styles.downloadSection}>
-            <div className={styles.downloadText}>Download for free</div>
-            <div className={styles.downloadLinks}>
-              <img
-                className={styles.downloadIcon}
-                alt="Download from the App Store"
-                src={appleDownloadIcon}
-                onClick={() => {
-                  window.open(appStoreDownloadLink, "_blank");
-                }}
-              />
-              <img
-                className={styles.downloadIcon}
-                alt="Download from the Play Store"
-                src={googlePlayDownloadIcon}
-                onClick={() => {
-                  window.open(googlePlayDownloadLink, "_blank");
-                }}
-              />
-            </div>
+      </div>
+      <div className={styles.signupAndDownloadContainer}>
+        <div className={styles.signupContainer}>
+          <a href="https://forms.gle/pySBHibGemoQsA8J8">
+          <button className={styles.SignUpbutton}>Sign Up</button>
+          </a>
+          <div>Subscribe to our newsletter!</div>
+        </div>
+        <div className={styles.downloadSection}>
+          <div className={styles.downloadText}>Download for free</div>
+          <div className={styles.downloadLinks}>
+            <img
+              className={styles.downloadIcon}
+              alt="Download from the App Store"
+              src={appleDownloadIcon}
+              onClick={() => {
+                window.open(appStoreDownloadLink, "_blank");
+              }}
+            />
+            <img
+              className={styles.downloadIcon}
+              alt="Download from the Play Store"
+              src={googlePlayDownloadIcon}
+              onClick={() => {
+                window.open(googlePlayDownloadLink, "_blank");
+              }}
+            />
           </div>
         </div>
       </div>
