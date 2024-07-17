@@ -33,6 +33,7 @@ const Header = () => {
                     className={styles.headerMenuButton}
                     align="end" // Align the dropdown menu to the end (right side)
                 >
+                    <NavDropdown.Item onClick={() => navigate('/login')}>Login</NavDropdown.Item>
                     <NavDropdown.Item onClick={() => navigate('/beatmaplisting')}>Beatmaps</NavDropdown.Item>
                     <NavDropdown.Item onClick={() => navigate('/gallery')}>Art</NavDropdown.Item>
                     {/* <NavDropdown.Divider />
