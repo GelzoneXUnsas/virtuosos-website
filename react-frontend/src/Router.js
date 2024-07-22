@@ -16,19 +16,19 @@ function Router() {
     return (
         <div>
             <AuthProvider>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="gallery" element={<GalleryPage />} />
-                <Route path="musicgallery" element={<MusicGalleryPage />} />
-                <Route path="beatmaplisting" element={<BeatmapListingPage />} />
-                <Route path="beatmap" element={<BeatmapPage />} />
-                <Route path="comingsoon" element={<ComingSoonPage />} />
-                <Route path="login" element={<Login />} />
-                <Route path='register' element={<Register />} />
-                <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
-            <Footer />
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Homepage />} />
+                    <Route path="gallery" element={<GalleryPage />} />
+                    <Route path="musicgallery" element={<MusicGalleryPage />} />
+                    <Route path="beatmaplisting" element={<BeatmapListingPage />} />
+                    <Route path="beatmap" element={<BeatmapPage />} />
+                    <Route path="comingsoon" element={<ComingSoonPage />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path='register' element={<Register />} />
+                    <Route path="*" element={<Navigate to="/" />} />
+                </Routes>
+                <Footer />
             </AuthProvider>
         </div>
     );
