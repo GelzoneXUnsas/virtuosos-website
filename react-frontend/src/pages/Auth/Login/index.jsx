@@ -35,7 +35,7 @@ const Login = () => {
             {/* if user is already logged in, just go to home page */}
             {userLoggedIn && (<Navigate to={'/'} replace={true} />)}
 
-            <div className="w-3/4 h-fit lg:w-1/5 flex self-center justify-self-center place-items-center flex-col p-3 rounded-lg shadow-2xl">
+            <div className="w-96 flex self-center justify-self-center place-items-center flex-col p-3 rounded-lg shadow-2xl">
                 <div className="text-center">
                     <div className="mt-2">
                         <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Welcome Back!</h3>
@@ -89,7 +89,7 @@ const Login = () => {
                 </form>
 
                 <p className="text-center text-sm mt-4">
-                    Don't have an account?
+                    Don't have an account? {` `} 
                     <Link to={'/register'}
                     className="hover:underline font-bold">
                         Sign up
@@ -98,9 +98,9 @@ const Login = () => {
 
                 <div className="flex flex-row text-center w-full mb-3">
                     {/* these 3 divs below are just for the separator and the "or" text */}
-                    <div className="border-b-2 mb-2.5 mr-2 w-full flex-1"></div>
+                    <div className="border-b mb-2.5 mr-2 w-full flex-1"></div>
                     <div className="text-sm font-bold w-fit">OR</div>
-                    <div className="border-b-2 mb-2.5 ml-2 w-full flex-1"></div>
+                    <div className="border-b mb-2.5 ml-2 w-full flex-1"></div>
                 </div>
 
                 <button

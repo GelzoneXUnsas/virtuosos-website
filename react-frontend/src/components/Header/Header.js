@@ -8,8 +8,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useAuth } from '../../contexts/authContext';
 import { doSignOut } from '../../firebase/auth';
 
-
 import logoIcon from '../../assets/icons/logoIcon.svg';
+import icon from "../../assets/icons/normalCircleIcon.svg";
 // import closedMenuIcon from '../../assets/icons/closedMenuIcon.svg';
 
 const Header = () => {
@@ -38,7 +38,7 @@ const Header = () => {
                     align="end" // Align the dropdown menu to the end (right side)
                 >
                     {/* {userLoggedIn.displayName ? } */}
-                    {userLoggedIn ? <NavDropdown.Item disabled={true} >Welcome Back, {currUser.displayName ? currUser.displayName : currUser.email}!</NavDropdown.Item> : <NavDropdown.Item>Who Are You? :O</NavDropdown.Item>}
+                    {userLoggedIn ? <NavDropdown.Item disabled={true} >Welcome Back, {currUser.displayName ? currUser.displayName : currUser.email}!</NavDropdown.Item> : <NavDropdown.Item disabled={true}>Who Are You? :0</NavDropdown.Item>}
                     <NavDropdown.Item onClick={() => navigate('/beatmaplisting')}>Beatmaps</NavDropdown.Item>
                     <NavDropdown.Item onClick={() => navigate('/gallery')}>Art</NavDropdown.Item>
                     {/* <NavDropdown.Divider />
