@@ -17,8 +17,10 @@ const Login = () => {
             setIsSigningIn(true)
             await doSignInWithEmailAndPassword(email, password)
             .then((result) => {
-                console.log("Email SignIn successful:", result);
+                console.log("Email SignIn successful:", result.user.uid);
+
                 // Handle successful sign-in (e.g., save user information)
+                console.log("UserID: ", result.user.uid)
             })
             .catch((err) => {
                 console.error("Email SignIn error:", err);
@@ -36,8 +38,31 @@ const Login = () => {
             setIsSigningIn(true)
             doSignInWithGoogle()
                 .then((result) => {
-                    console.log("Google SignIn successful:", result);
+                    console.log("Google SignIn successful:", result.user.uid);
                     // Handle successful sign-in (e.g., save user information)
+
+                // // Storing in DyanmoDB 
+                // (we dont really need this part anymore since we will handle creating and updating info for user in userDB inside the setUserRole function)
+                // also we dont wanna be calling this whenever a user logins, should only be on signup/role changes
+
+                // const params = {
+                //     TableName: 'Users Table Name in DynamoDB', 
+                //     Item: {
+                //         userId: userId,
+                //         email: email,
+                //         // other relevant attributes here
+                //     }
+                // };
+    
+                // // Store the user ID in DynamoDB
+                // dynamoDb.put(params, (err, data) => {       // data is what the put method returns but usually 0 unless "ReturnValues" is specified in params
+                //     if (err) {
+                //         console.error("Error storing user ID in DynamoDB:", err);
+                //     } else {
+                //         console.log("User ID stored in DynamoDB:", data);
+                //     }
+                // });
+
                 })
                 .catch((err) => {
                     console.error("Google SignIn error:", err);

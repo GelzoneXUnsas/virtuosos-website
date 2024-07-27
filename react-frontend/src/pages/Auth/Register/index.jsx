@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import { Navigate, Link, useNavigate } from 'react-router-dom'
+import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../../../contexts/authContext'
-import { doCreateUserWithEmailAndPassword } from '../../../firebase/auth'
+import { doCreateUserWithEmailAndPassword, getErrorMessage, setUserRole } from '../../../firebase/auth'
 
 
 const Register = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const[email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -19,7 +19,21 @@ const Register = () => {
         e.preventDefault()
         if (!isRegistering) {
             setIsRegistering(true)
-            await doCreateUserWithEmailAndPassword(email, password)
+            try{
+            const result = await doCreateUserWithEmailAndPassword(email, password);
+                console.log("User registration successful:", result.user.uid);
+                const user = result.user;
+
+                // // Assign user default role and store in dynamoDB
+                // await setUserRole(user.uid, 'user');
+                // console.log('User signed up and role assigned:', user);
+                
+            }
+            catch(err) {
+                console.error("Email SignIn error:", err);
+                setIsRegistering(false);
+                setErrorMessage(`${getErrorMessage(err.code)}`);
+            };
         }
     }
 

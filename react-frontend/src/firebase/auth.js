@@ -3,6 +3,9 @@ import {auth} from "./firebase"
 import { GoogleAuthProvider } from "firebase/auth";
 
 
+// import AWS from 'aws-sdk';  // need to npm install (will probably move this code and getUserRole/setUserRole into backend folder so npm install there)
+
+
 export const doCreateUserWithEmailAndPassword = async (email, password) =>  {
     return createUserWithEmailAndPassword(auth, email, password);
 };
@@ -58,3 +61,59 @@ export const getErrorMessage = (errorCode) => {
         return 'An error occurred. Please try again.';
     }
   };
+
+
+// // the rest of the code below is for setting/editing userRoles as they go from users/mucisians, artists, admin, etc
+// // ideally move it to a backend file for dynamoDB endpoints
+// // Configure the AWS SDK
+// AWS.config.update({
+//   region: 'your-region', // e.g., 'us-west-2'
+//   accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+//   secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+// });
+
+// const dynamoDb = new AWS.DynamoDB.DocumentClient();
+
+// export const setUserRole = async (userId, role) => {
+//     const params = {
+//         TableName: 'DynamoDB table name', // Replace with your table name
+//         Item: {
+//             userId: userId,
+//             role: role,
+//             permissions: {
+//                 canEdit: role === 'admin',
+//                 canView: role !== 'guest',
+//                 // Add more custom permissions as needed
+//             }
+//         }
+//     };
+
+//     try {
+//         await dynamoDb.put(params).promise();
+//         console.log('User role set:', params.Item);
+//     } catch (error) {
+//         console.error('Error setting user role in DynamoDB:', error);
+//     }
+// };
+
+// export const getUserRole = async (userId) => {
+//   const params = {
+//       TableName: 'YourTableName', // Replace with your table name
+//       Key: {
+//           userId: userId
+//       }
+//   };
+
+//   try {
+//       const data = await dynamoDb.get(params).promise();
+//       if (data.Item) {
+//           return data.Item;
+//       } else {
+//           console.log('No role data found for user');
+//           return null;
+//       }
+//   } catch (error) {
+//       console.error('Error fetching user role from DynamoDB:', error);
+//       return null;
+//   }
+// };
