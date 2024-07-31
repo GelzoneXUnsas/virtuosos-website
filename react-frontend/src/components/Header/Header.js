@@ -9,7 +9,6 @@ import { useAuth } from '../../contexts/authContext';
 import { doSignOut } from '../../firebase/auth';
 
 import logoIcon from '../../assets/icons/logoIcon.svg';
-import icon from "../../assets/icons/normalCircleIcon.svg";
 // import closedMenuIcon from '../../assets/icons/closedMenuIcon.svg';
 
 const Header = () => {
@@ -18,6 +17,7 @@ const Header = () => {
     const { userLoggedIn } = useAuth()
 
     return (
+        <>
         <Navbar variant="dark" expand="lg" className={styles.header}>
             <Container fluid>
                 <Navbar.Brand>
@@ -37,14 +37,14 @@ const Header = () => {
                     className={styles.headerMenuButton}
                     align="end" // Align the dropdown menu to the end (right side)
                 >
-                    {/* {userLoggedIn.displayName ? } */}
                     {userLoggedIn ? <NavDropdown.Item disabled={true} >Welcome Back, {currUser.displayName ? currUser.displayName : currUser.email}!</NavDropdown.Item> : <NavDropdown.Item disabled={true}>Who Are You? :0</NavDropdown.Item>}
+                    <NavDropdown.Item onClick={() => navigate('/')}>Home</NavDropdown.Item>
                     <NavDropdown.Item onClick={() => navigate('/beatmaplisting')}>Beatmaps</NavDropdown.Item>
                     <NavDropdown.Item onClick={() => navigate('/gallery')}>Art</NavDropdown.Item>
-                    {/* <NavDropdown.Divider />
-                    <NavDropdown.Item onClick={() => navigate('/comingsoon')}>
+                    <NavDropdown.Divider />
+                    {/* <NavDropdown.Item onClick={() => navigate('/comingsoon')}>
                         More Pages Coming Soon
-                    </NavDropdown.Item> */}
+                    </NavDropdown.Item>  */}
 
                     {userLoggedIn ?
                         <NavDropdown.Item onClick={() => doSignOut().then(() => { navigate('/login') }) }>SignOut</NavDropdown.Item>
@@ -54,6 +54,7 @@ const Header = () => {
                 </NavDropdown>
             </Container>
         </Navbar>
+        </>
     );
 }
 
