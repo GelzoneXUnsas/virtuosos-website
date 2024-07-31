@@ -2,14 +2,31 @@ const express = require('express');
 const router = express.Router();
 
 // should be used as a redundancey in case the database is down
-const beatmap_list1 = {
+
+
+const Discographys = {
+    albums : [
+        {
+            albumId: 1,
+            artistId: 1,
+            albumImg: "",
+            releasedDate: "2/19/2024",
+            playTime: "18:02",
+            songIDs:[1,2,3,4]
+            
+        }
+
+    ]
+
+}
+const beatmap_list = {
     beatmap_info: 
         [
             {
                 id : 1,
-                songName : 'Celtic Whispers Ballad',
+                artistName : 'Celtic Whispers Ballad',
                 artist : 'Folklore Minstrel',
-                beatmap_artist : 'Folklore Minstrel',
+                artist_artist : 'Folklore Minstrel',
                 songCoverImg: 'cover1',
                 artistImg: 'artist2Image',
                 releaseDate: '2024-05-18',
@@ -22,13 +39,13 @@ const beatmap_list1 = {
                 sliderCount: 50,
                 source: "Folklore Chronicles World",
                 tags: ['Celtic', 'Folklore', 'Traditional', 'World'],
-                description: 'Embark on a folkloric journey with "Celtic Whispers Ballad." Folklore Minstrel, both artist and beatmap creator, weaves traditional tunes into an immersive experience. Each note carries the essence of a rich musical adventure.'
+                description: 'Embark on a folkloric journey with "Celtic Whispers Ballad." Folklore Minstrel, both artist and artist creator, weaves traditional tunes into an immersive experience. Each note carries the essence of a rich musical adventure.'
             },
             {
                 id : 2,
-                songName : 'Neon Pulse Symphony',
+                artistName : 'Neon Pulse Symphony',
                 artist : 'Techo Maestro',
-                beatmap_artist : 'Techo Maestro',
+                artist_artist : 'Techo Maestro',
                 songCoverImg: 'cover2',
                 artistImg: 'artist1Image',
                 releaseDate: '2024-05-18',
@@ -45,9 +62,9 @@ const beatmap_list1 = {
             },
             {
                 id : 3,
-                songName : 'Celestial Echoes',
+                artistName : 'Celestial Echoes',
                 artist : 'Celestial Harmonics',
-                beatmap_artist : 'StarNavigator',
+                artist_artist : 'StarNavigator',
                 songCoverImg: 'cover3',
                 artistImg: 'artist3Image',
                 releaseDate: '2024-05-18',
@@ -65,9 +82,9 @@ const beatmap_list1 = {
             },
             {
                 id : 4,
-                songName : 'Nocturnal Pursuit',
+                artistName : 'Nocturnal Pursuit',
                 artist : 'ShadowWeaver',
-                beatmap_artist : 'ShadowWeaver',
+                artist_artist : 'ShadowWeaver',
                 songCoverImg: 'cover4',
                 artistImg: 'artist1Image',
                 releaseDate: '2024-05-18',
@@ -84,7 +101,35 @@ const beatmap_list1 = {
             }
         ]
 }
+const musicianList = {
+    musician_infos: 
+        [
+            {
+                id : 1,
+                musicianName : 'Techno Maestro',
+                totalPlaycount: 538,
+                totalSongs: 25,
+                musicianImg: "artist1Image",
+                socials: ["instagram.com","x.com","spotify.com","soundcloud.com"],
+                discographyIds:[1],
+                description:"As both musician and beatmap creator, Techno Maestro orchestrates a futuristic fusion of techno, cyberpunk, and neon vibes"
+            },
+            {
+                id : 2,
+                musicianName : 'Techno sadgerrijhggwe]f',
+                totalPlaycount: 400,
+                totalSongs: 26,
+                musicianImg: "artist1Image",
+                socials: ["instagram.com","x.com","spotify.com","soundcloud.com"],
+                discographyIds:[1],
+                description:"As both artist and beatmap creator, Techno Maestro orchestrates a futuristic fusion of techno, cyberpunk, and neon vibes"
+            },     
+        ]
+}
 
+
+
+/*
 var AWS = require("aws-sdk");
 
 const {
@@ -107,8 +152,8 @@ var ddb = DynamoDBDocument.from(new DynamoDB())
 
 var item;
 
-var beatmap_list;
-var beatmap_info = [];
+var artistList;
+var artist_info = [];
 
 // Call DynamoDB to read the item from the table
 async function readItemsFromDynamoDB() {
@@ -118,18 +163,18 @@ async function readItemsFromDynamoDB() {
         });
         item = data.Items;
         for(let i = 0; i < item.length; i++){
-            beatmap_info.push(item[i]);}
-            {beatmap_list = {
-                beatmap_info : beatmap_info
+            artist_info.push(item[i]);}
+            {artistList = {
+                artist_info : artist_info
         }}
     } catch (error) {
-        beatmap_list = beatmap_list1
+        artistList = artist_list1
         console.error(error);
     }
 }
 
 readItemsFromDynamoDB();
-
+*/
 
 
 
@@ -141,50 +186,62 @@ router.get('/', (req, res) => {
     console.log("id:", id)
     console.log("title:", title)
     if(id != undefined){
-        let result = findSongByID(id);
+        let result = findArtistByID(id);
         console.log("result:", result)
-        result = {beatmap_info: result};
+        result = {musician_infos: result};
         res.send(result);
     } else if (title != undefined) {
-        let result = findSongByTitle(title);
-        result = {beatmap_info: result};
+        let result = findArtistByTitle(title);
+        result = {musician_infos: result};
         res.send(result);
     } else if (searchTerm != undefined) {
-        let result = findSong(searchTerm.toLowerCase());
-        result = {beatmap_info: result};
+        let result = findArtist(searchTerm.toLowerCase());
+        result = {musician_infos: result};
         res.send(result);
     } else{
-        res.send(beatmap_list);
+        res.send(musicianList);
     }
     
     }
 );
-const findSong = (searchTerm) => {
-    return beatmap_list['beatmap_info'].filter((beatmap) =>
-        beatmap['songName'].toLowerCase().includes(searchTerm) || beatmap['artist'].toLowerCase().includes(searchTerm));
+const findArtist = (searchTerm) => {
+    return musicianList['musician_infos'].filter((musician) =>
+        musician['musicianName'].toLowerCase().includes(searchTerm) || musician['musician'].toLowerCase().includes(searchTerm));
 }
 
-const findSongByTitle = (title) => {
-    return beatmap_list['beatmap_info'].filter((beatmap) =>
-        beatmap['songName'] === title);
+const findArtistByTitle = (title) => {
+    return musicianList['musician_infos'].filter((musician) =>
+        musician['musicianName'] === title);
 }
 
-const findSongByID = (id) => {
-    return beatmap_list['beatmap_info'].filter((beatmap) =>
-        beatmap['id'].toString() == id);
+const findArtistByID = (id) => {
+    return musicianList['musician_infos'].filter((musician) =>
+        musician['id'].toString() == id);
 }
+
 
 router.get('/:id', (req, res) => {
     const id = req.params.id;
-    let result = findSongByID(id);
+    let result = findArtistByID(id);
     // console.log("result:", result)
     if(result === undefined || result.length < 1) {
         console.log("NOT FOUND")
         res.status(404).send('Song not found');
     }else{
-        result = {beatmap_info: result};
+        result = {musician_infos: result};
         res.send(result);
     }
 });
+
+// router.get('/:title', (req, res) => {
+//     const title = req.params.title;
+//     let result = findArtistByTitle(id);
+//     if(result === undefined || result.length < 1) {
+//         res.status(404).send('Song Title not found');
+//     }else{
+//         result = {artist_info: result};
+//         res.send(result);
+//     }
+// });
 
 module.exports = router;

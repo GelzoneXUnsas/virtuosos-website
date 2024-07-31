@@ -1,0 +1,270 @@
+.musicianlistingPage {
+    width: 100%;
+    background-color: #232323;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--body-overpass-base-size);
+    color: var(--white);
+    font-family: var(--body-overpass-base);
+}
+
+.headerBackground {
+    width: 100%;
+    height: 11rem;
+    background-image: linear-gradient(rgba(6, 8, 21, 0.8), rgba(16, 17, 24, 0.8)), url(../../assets/images/headerBackground.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.titleText{
+    position: absolute;
+    width: 100%;
+    height: 3rem; 
+    top: 8rem;
+    /* left: 115px; */
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    color: var(--icon-color, #FFF);
+    text-align: center;
+    /* title/lexend xlarge */
+    font-family: "Lexend Exa";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    /* line-height: 40px; 125% */
+}
+
+.musicianListingSearchFilter {
+    width: auto;
+    height: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    background: #232323;
+    justify-content: space-around;
+
+    color: #B2B2B2;
+    /* body/overpass base */
+    font-family: "Overpass Mono";
+    font-size: var(--body-overpass-base-size);
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 24px; 150% */
+    }
+.button2{
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    
+}
+.gallerySearchContainer{
+        width: auto;
+        height: 5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #232323;
+        justify-content: space-around;
+        color: #B2B2B2;
+        font-family: "Overpass Mono";
+        font-size: var(--body-overpass-base-size);
+        font-style: normal;
+        font-weight: 500;
+}
+
+.musicianListingSearchItem {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FFF;
+    /* padding-left: 0.5rem; */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+::placeholder {
+    color: #B2B2B2;
+}
+
+.musicianListingSearchItem input{
+    background: transparent;
+    width: 75%;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* padding: 0.5rem 0.25rem; */
+    color: #B2B2B2;
+    font-family: "Overpass Mono";
+}
+
+.musicianListingSearchItem button img {
+    width: 1rem;
+}
+
+.musicianListingSearchItem button {
+    background: transparent;
+    border: 0;
+    width: 2rem; 
+    height: 2rem;
+    outline: #FFF;
+    cursor: pointer;
+    padding-top: 0.25rem;
+    align-content: right;
+}
+
+
+.musicianListingFilterItem {
+    display: flex;
+    justify-content: left;
+    width: 50%;
+    height: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    
+    background: #FFF;
+    /* padding-left: 0.5rem; */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    font-size: small;
+}
+
+.musicianListingFilterItem select {
+    background: transparent;
+    width: 75%;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* padding: 0.5rem 0.25rem; */
+    color: #B2B2B2;
+    font-family: "Overpass Mono";
+}
+
+.musicianListingDisplayMode {
+    display: flex;
+    flex-direction: column;
+    background-color: #232323;
+    color: white;
+}
+
+
+.musicianListingDisplayModeContainter {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    color: var(--icon-color, #FFF);
+    background-color: #232323;
+    /* title/lexend base */
+    font-family: "Lexend Exa";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    justify-content: space-evenly;
+}
+
+
+
+.musicianListinDisplayModeItem {
+    width: 25%;
+    color: white;
+    text-align: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+hr {
+    color: white;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 75%;
+    /* margin: 1em auto; */
+}
+
+.musicianListContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* margin-bottom: 2rem; */
+    width: 100%;
+
+}
+
+.musicianListItem{
+    display: flex;
+    margin: 0.5rem;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: var(--white);
+    width: 10rem;
+    position: relative;
+    border-radius: 10px;
+    /* max-width: 100%; */
+    overflow: hidden;
+    height: rem;
+    mix-blend-mode: normal;
+    padding: 0.5rem;
+    height: 9rem;
+
+}
+.musician{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+.musicianpic{
+    width: 246px;
+    height: 171px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.musicianname{
+    color: var(--icon-color, #FFF);
+text-align: center;
+/* title/lexend medium */
+font-family: "Lexend Exa";
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+}
+.musicianplays{
+    color: var(--icon-color, #FFF);
+text-align: center;
+/* body/overpass base */
+font-family: "Overpass Mono";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+}

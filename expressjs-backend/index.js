@@ -17,11 +17,12 @@ app.get('/', (req, res) => {
 //Define the routes
 const galleryRouter = require('./routes/gallery');
 const beatmapListingRouter = require('./routes/beatmapListing');
+const musicianListingRouter = require('./routes/musicianListing.js');
 
 
 app.use('/gallery', galleryRouter);
 app.use('/beatmapListing', beatmapListingRouter);
-
+app.use('/musicianListing',musicianListingRouter);
 
 //listen to port
 
