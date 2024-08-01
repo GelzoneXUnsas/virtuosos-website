@@ -30,6 +30,88 @@ const albumCovers = [cover1, cover2, cover3, cover4];
 const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function BeatmapListingPage() {
+    const beatmap_list = {
+        beatmap_info: 
+            [
+                {
+                    id : 1,
+                    songName : 'Celtic Whispers Ballad',
+                    artist : 'Folklore Minstrel',
+                    beatmap_artist : 'Folklore Minstrel',
+                    songCoverImg: 'cover1',
+                    artistImg: 'artist2Image',
+                    releaseDate: '2024-05-18',
+                    difficultyLink : ['Easy', 'Normal', 'Hard'],
+                    playCount: 0,
+                    likeCount: 0,
+                    songDuration: '3:45',
+                    bpm : 145,
+                    noteCount: 1000,
+                    sliderCount: 50,
+                    source: "Folklore Chronicles World",
+                    tags: ['Celtic', 'Folklore', 'Traditional', 'World'],
+                    description: 'Embark on a folkloric journey with "Celtic Whispers Ballad." Folklore Minstrel, both artist and beatmap creator, weaves traditional tunes into an immersive experience. Each note carries the essence of a rich musical adventure.'
+                },
+                {
+                    id : 2,
+                    songName : 'Neon Pulse Symphony',
+                    artist : 'Techo Maestro',
+                    beatmap_artist : 'Techo Maestro',
+                    songCoverImg: 'cover2',
+                    artistImg: 'artist1Image',
+                    releaseDate: '2024-05-18',
+                    difficultyLevels : ['Easy', 'Normal', 'Hard'],
+                    playCount: 0,
+                    likeCount: 0,
+                    songDuration: '2:30',
+                    bpm : 150,
+                    noteCount: 800,
+                    sliderCount: 61,
+                    source: "Techno Adventures World",
+                    tags: ['Neon', 'Synthwave'],
+                    description : 'Dive into the cutting-edge realm of Techno Adventures World, where futuristic technology meets thrilling escapades. Explore cyber landscapes, master advanced gadgets, and overcome digital challenges in this electrifying journey through the next frontier.'
+                },
+                {
+                    id : 3,
+                    songName : 'Celestial Echoes',
+                    artist : 'Celestial Harmonics',
+                    beatmap_artist : 'StarNavigator',
+                    songCoverImg: 'cover3',
+                    artistImg: 'artist3Image',
+                    releaseDate: '2024-05-18',
+                    difficultyLink : ['Easy', 'Normal'],
+                    playCount: 0,
+                    likeCount: 0,
+                    songDuration: '1:55',
+                    bpm : 220,
+                    noteCount: 780,
+                    sliderCount: 43,
+                    source: "Celestial Harmonics Universe",
+                    tags: ['Night', 'Starry'],
+                    description: "Immerse yourself in the ethereal beauty of the Celestial Harmonics Universe. This cosmic odyssey blends astral melodies with interstellar exploration, creating a symphony of wonder and discovery among the stars. Let the harmonies guide you through the celestial expanse."
+    
+                },
+                {
+                    id : 4,
+                    songName : 'Nocturnal Pursuit',
+                    artist : 'ShadowWeaver',
+                    beatmap_artist : 'ShadowWeaver',
+                    songCoverImg: 'cover4',
+                    artistImg: 'artist1Image',
+                    releaseDate: '2024-05-18',
+                    difficultyLink : ['Easy', 'Normal'],
+                    playCount: 0,
+                    likeCount: 0,
+                    songDuration: '4:03',
+                    bpm : 120,
+                    noteCount: 607,
+                    sliderCount: 76,
+                    source: "ShadowWeaver Mysteries",
+                    tags: ['Dark', 'Mystery'],
+                    description : 'Embark on a shadowy journey through the enigmatic world of ShadowWeaver Mysteries. Unravel secrets, solve riddles, and uncover hidden truths in this mysterious realm. Each note is a clue, each beat a step closer to the truth.'
+                }
+            ]
+    }
     const [beatmapList, setBeatmapList] = useState([]);
     const [searchParams] = useSearchParams();
     const searchQuery = searchParams.get('search');
@@ -93,6 +175,12 @@ function BeatmapListingPage() {
                 setBeatmapList([...beatmapList, keyword]);
         });
     }
+    function check(e){
+        console.log('this is the beatmap list',beatmapList)
+        if (beatmapList.length === 0){
+            setBeatmapList(beatmap_list.beatmap_info);}
+    }
+    check();
 
     return (
         <div className={styles.beatmaplistingPage}>
