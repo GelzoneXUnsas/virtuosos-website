@@ -22,7 +22,7 @@ const Register = () => {
             try{
             const result = await doCreateUserWithEmailAndPassword(email, password);
                 console.log("User registration successful:", result.user.uid);
-                const user = result.user;
+                // const user = result.user;
 
                 // // Assign user default role and store in dynamoDB
                 // await setUserRole(user.uid, 'user');
