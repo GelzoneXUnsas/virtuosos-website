@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../../../contexts/authContext'
-import { doCreateUserWithEmailAndPassword, getErrorMessage, setUserRole } from '../../../firebase/auth'
+import { doCreateUserWithEmailAndPassword, getErrorMessage} from '../../../firebase/auth'
 
 
 const Register = () => {
