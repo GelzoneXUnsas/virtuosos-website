@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import styles from "./BeatmapPage.module.css";
 import homeStyles from "../Homepage/Homepage.module.css";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
 
@@ -38,7 +38,7 @@ const artistImages = {'artist1Image': artist1Image, 'artist2Image': artist2Image
 
 
 // const BACKEND_URL = 'http://localhost:5001';
-const BACKEND_URL = 'https://api-virtuosos.us-west-1.elasticbeanstalk.com';
+//const BACKEND_URL = 'https://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 
 function BeatmapPage() {
