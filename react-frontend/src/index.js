@@ -1,6 +1,5 @@
 // import React from 'react'
 // import ReactDOM from 'react-dom'
-// import './index.css'
 // import './global.css'
 // import Homepage from './pages/HomePage'
 
@@ -8,6 +7,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+import './index.css'
 import "./global.css";
 import Router from "./Router";
 import { BrowserRouter } from "react-router-dom";
