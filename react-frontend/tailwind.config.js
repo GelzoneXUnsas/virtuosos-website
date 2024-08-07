@@ -39,9 +39,14 @@ module.exports = {
         'gradient-overlay-featured-artists': 'linear-gradient(0deg, #2D2C5F 83.72%, rgba(45, 44, 95, 0.40) 91.07%, rgba(45, 44, 95, 0.00) 99.68%)',
         'image-background': 'lightgray 0px 0px / 100% 100% no-repeat',
       },
+
       borderRadius: {
         DEFAULT: '5px',
       },
+
+      gridTemplateColumns: {
+        'custom-grid-browser': 'repeat(auto-fit, minmax(300px, 1fr))',
+      }
     },
   },
   plugins: [],
