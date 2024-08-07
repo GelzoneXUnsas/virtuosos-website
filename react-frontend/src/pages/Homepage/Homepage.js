@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./Homepage.module.css";
+// import styles from "./Homepage.module.css";
 
 import React from "react";
 
@@ -114,54 +114,57 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.featuredArtistsSection}>
-        <b className={styles.featuredArtistsSectionTitle}>Meet our Featured Artists!</b>
+      <div className="featuredArtistsSection bg-gradient-overlay-featured-artists shadow-custom-featured-artists bg-page-accent-gray pt-5 pb-3">
+        <b className="featuredArtistsSectionTitle text-title-lexend-medium font-bold leading-8 font-title-lexend text-center inline-block mx-auto px-4 py-0">Meet our Featured Artists!</b>
         {
           featuredArtists.map((artist, index) => {
             return (
               <>
-              <div className={styles.featuredArtistDetails}>
-                <div className={styles.artistImgAndLinks}>
-                  <img className={styles.artistImage} src={artist.image} alt="artist"/>
-                  <div className={styles.artistLinks}>
-                    <img className={styles.artistLinkIcons} src={spotifyIcon} alt="artist"/>
-                    <img className={styles.artistLinkIcons} src={soundcloudIcon} alt="artist"/>
+              <div className="featuredArtistDetails flex flex-row justify-start px-9">
+                <div className="artistImgAndLinks flex-[0.25] flex justify-around p-2 flex-col">
+                  <img 
+                    className="artistImage w-[85%] flex-shrink-0 self-center rounded-circle" 
+                    src={artist.image} 
+                    alt="artist"/>
+                  <div className="artistLinks flex flex-row justify-between p-3 pt-1 bg-image-background">
+                    <img className="artistLinkIcons w-[40%] flex-shrink-0 rounded-circle bg-slate-300" src={spotifyIcon} alt="artist"/>
+                    <img className="artistLinkIcons w-[40%] flex-shrink-0 rounded-circle bg-slate-300" src={soundcloudIcon} alt="artist"/>
                   </div>
                 </div>
-                <div className={styles.artistRelatedInfo}>
-                  <div className={styles.artistTitleContainer}>
-                    <div className={styles.artistNameVerified}>
-                      <div className={styles.artistName}>
+                <div className="artistRelatedInfo flex justify-around pl-[0.3rem] flex-1 flex-col">
+                  <div className="artistTitleContainer flex flex-row pt-3 pl-3 justify-start">
+                    <div className="artistNameVerified flex justify-center">
+                      <div className="artistName flex font-overpass-mono text-body-overpass-base font-bold leading-inherit text-left items-center justify-center">
                         {artist.name}
                       </div>
-                      <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
+                      <img className="verifiedIcon flex w-4 h-4 pl-2" src={verifiedIcon} alt="verified"/>
                     </div>
                   </div>
-                  <div className={styles.artistStatistics}>
-                    <div className={styles.artistStatLabels}>
-                      <div className={styles.songcountText}>songs</div>
-                      <div className={styles.playcountText}>total playcount</div>
+                  <div className="artistStatistics flex flex-row justify-end pr-8">
+                    <div className="artistStatLabels flex flex-col">
+                      <div className="songcountText text-right pr-8">songs</div>
+                      <div className="playcountText text-right pr-8">total playcount</div>
                     </div>
 
-                    <div className={styles.artistStatValues}>
-                      <div className={styles.songcountValue}>25</div>
-                      <div className={styles.playcountValue}>538</div>
+                    <div className="artistStatValues flex flex-col text-right text-lilac">
+                      <div className="songCountValue">25</div>
+                      <div className="playCountValue">538</div>
                     </div>
                   </div>
                 </div>
               </div>
-              {index !== featuredArtists.length - 1 ? <hr ></hr> : null}
+              {index !== featuredArtists.length - 1 ? <hr class="block my-2 mx-4 border-b border-gray-300"></hr> : null}
               </>
             );
           })
         }
 
       </div>
-      <div className={styles.aboutUsSection}>
-        <div className={styles.aboutUsTitle}>
+      <div className="aboutUsSection bg-page-accent-gray text-white pt-8 shadow-custom-inset-about-us">
+        <div className="aboutUsTitle text-left inline-block mx-auto font-title-lexend text-title-lexend-medium leading-4 p-3 pb-1">
           About Us
         </div>
-        <div className={styles.aboutUsDescription}>
+        <div className="aboutUsDescription leading-6 font-medium inline-block p-8 pt-2">
           <p>
             Virtuosos is a rhythm game that goes beyond entertainment. We've
             crafted an experience that seamlessly weaves together immersive

@@ -169,17 +169,17 @@ hr {
   mix-blend-mode: normal;
 } */
 
-.featuredArtistsSection {
+/* .featuredArtistsSection {
   background: linear-gradient(0deg, #2D2C5F 83.72%, rgba(45, 44, 95, 0.40) 91.07%, rgba(45, 44, 95, 0.00) 99.68%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: var(--page-accent-gray);
   color: var(--white);
   padding-top: 1.25rem;
   padding-bottom: 0.75rem;
-  /* box-shadow: 0px 10px; */
-}
+  /* box-shadow: 0px 10px; 
+} */
 
-.featuredArtistsSectionTitle {
+/* .featuredArtistsSectionTitle {
   font-size: var(--title-lexend-medium-size);
   font-size: 18px;
   font-style: normal;
@@ -193,38 +193,36 @@ hr {
   padding-bottom: 0rem;
   padding-top: 0;
 
-}
+} */
 
-.featuredArtistDetails {
-  /* background-color: aqua; */
+/* .featuredArtistDetails {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.5rem;
-  /* padding-bottom: 1rem; */
-}
-
+} */
+/* 
 .artistImgAndLinks {
   flex: 0.25;
-  /* background-color: black; */
+  /* background-color: black; 
   display: flex;
   justify-content:space-around;
   padding: 0.5rem;
   flex-direction: column;
-}
-.artistImage {
+} */
+
+/* .artistImage {
   width: 85%;
   flex-shrink: 0;
   align-self: center;
   border-radius: 52px;
   background: lightgray 0px 0px / 100% 100% no-repeat;
-}
+} */
 
-.artistLinks {
+/* .artistLinks {
   display: flex;
-  /* background-color: aqua; */
   flex-direction: row;
   justify-content: space-between;
   padding-top: 0.2rem;
@@ -235,32 +233,29 @@ hr {
   flex-shrink: 0;
   border-radius: 52px;
   background: lightgray 0px 0px / 100% 100% no-repeat;
-}
+} */
 
-.artistRelatedInfo {
+/* .artistRelatedInfo {
   display: flex;
   justify-content: space-around;
   padding-left: 0.3rem;
-  /* background-color: red; */
   flex: 1;
   flex-direction: column;
-}
+} */
 
-.artistTitleContainer {
+/* .artistTitleContainer {
   display: flex;
   flex-direction:  row;
   padding-top: 1.25rem;
-  /* background-color: antiquewhite; */
   justify-content:flex-start;
-}
+} */
 
-.artistNameVerified {
+/* .artistNameVerified {
   display: flex;
-  /* background-color: #002ead; */
   justify-content: center;
-}
+} */
 
-.artistName {
+/* .artistName {
   display: flex;
   color: var(--icon-color, #FFF);
   font-family: "Overpass Mono";
@@ -270,31 +265,27 @@ hr {
   line-height: inherit;
   text-align: left;
   vertical-align: middle;
-  /* padding-right: 0.5rem; */
-  /* background-color: aquamarine; */
   justify-content: center;
-}
+} */
 
-.verifiedIcon{
+/* .verifiedIcon{
   display: flex;
   width: 1rem;
   height: 1rem;
   padding-left: 0.5rem;
-  /* padding-top: 0.05em; */
-}
+} */
 
-.artistStatistics {
+/* .artistStatistics {
   display: flex;
-  /* background-color: aqua; */
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 1rem;
-}
+} */
 
-.artistStatLabels {
+/* .artistStatLabels {
   display: flex;
   flex-direction: column;
-}
+} */
 
 /* .artistStatTexts {
   display: flex;
@@ -302,42 +293,42 @@ hr {
   justify-content: flex-end;
 } */
 
-.songcountText {
+/* .songcountText {
   text-align: right;
   padding-right: 2rem;
   color: var(--white);
-}
+} */
 
-.artistStatValues {
+/* .artistStatValues {
   display: flex;
   flex-direction: column;
   text-align: right;
   color: var(--lilac);
-}
+} */
 
 /* not really needed. but easier to read in the js file with this style name */
-.songcountValue {
+/* .songcountValue {
   color: var(--lilac);
-}
+} */
 
-.playcountText {
+/* .playcountText {
   text-align: right;
   padding-right: 2rem;
   color: var(--white);
-}
+} */
 
-.playcountValue {
+/* .playcountValue {
   color: var(--lilac);
-}
+} */
 
-.aboutUsSection {
+/* .aboutUsSection {
   background-color: var(--page-accent-gray);
   color: var(--white);
   padding-top: 2rem;
   box-shadow: 0px 8px 5px #1c1c21 inset;
-}
+} */
 
-.aboutUsTitle {
+/* .aboutUsTitle {
   font-size: var(--title-lexend-medium-size);
   line-height: 1rem;
   font-family: var(--title-lexend-large);
@@ -346,15 +337,15 @@ hr {
   margin:auto;
   padding: 1rem;
   padding-bottom: 0.25rem;
-}
+} */
 
-.aboutUsDescription {
+/* .aboutUsDescription {
   line-height: 1.5rem;
   font-weight: 500;
   display: inline-block;
   padding: 2rem;
   padding-top: 0.5rem;
-}
+} */
 
 @media screen and (min-width: 830px) {
   /* .visionAndDemoContainer{

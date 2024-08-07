@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         'title-lexend': "Lexend Exa",
         'body-overpass': "Overpass Mono",
+        'overpass-mono': ['Overpass Mono', 'monospace'],
       },
       
       colors: {
@@ -28,8 +29,15 @@ module.exports = {
         'custom-hover-blue': '#002ead',
       },
 
+      boxShadow: {
+        'custom-featured-artists': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        'custom-inset-about-us': '0px 8px 5px rgba(28, 28, 33, 0.5) inset',
+      },
+
       backgroundImage: {
         'gradient-overlay': 'linear-gradient(0deg, rgba(36, 36, 36, 1) 5.72%, rgba(36, 36, 36, 0.5) 80.07%, rgba(36, 36, 36, 0) 100%)',
+        'gradient-overlay-featured-artists': 'linear-gradient(0deg, #2D2C5F 83.72%, rgba(45, 44, 95, 0.40) 91.07%, rgba(45, 44, 95, 0.00) 99.68%)',
+        'image-background': 'lightgray 0px 0px / 100% 100% no-repeat',
       },
       borderRadius: {
         DEFAULT: '5px',
