@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./Homepage.module.css";
+// import styles from "./Homepage.module.css";
 
 import React from "react";
 
@@ -60,43 +60,45 @@ const Homepage = () => {
       <div className="div1">Content of Div 1</div>
       <div className="div2">Content of Div 2</div>
     </div> */}
-    <div className={styles.homepage}>
-    <div className={styles.titleContainer}>
-      <div className={styles.bgImgContainer}>
-        <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
+    <div className="homepage flex flex-col w-full bg-page-accent-gray overflow-hidden text-center text-body-overpass-base text-white font-body-overpass">
+    <div className="titleContainer relative h-60 z-0 overflow-hidden lg:h-80">
+      <div className="bgImgContainer w-full lg:-mt-64">
+        <img src={headerBackgroundImg} className="headerBackgroundImg w-full relative object-cover" alt="" />
       </div>
       
-      <img src={virtuososTitle} className={styles.virtuososTitle} alt="" />
-      <div className={styles.gradientOverlay}></div>
+      <img src={virtuososTitle} className="virtuososTitle absolute w-full h-20 top-28 bottom-0 z-2 flex justify-center lg:h-[35%] lg:top-[45%]" alt="" />
+      <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
-      <div className={styles.visionAndDemoContainer}> 
-        <div className={styles.visionSection}>    
-          <div className={styles.visionSectionTitle}>
+      <div className="visionAndDemoContainer bg-page-accent-gray relative lg:flex-row lg:flex lg:pt-4"> 
+        <div className="visionSection overflow-auto flex flex-col lg:justify-center lg:p-20">    
+          <div className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8">
             OUR VISION
           </div>
-          <div className={styles.visionSectionBody}>
+          <div className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2">
             Imagine a world where the lines between creator and player blur. Where
             the music you compose is the soundtrack to another’s personal journey.
           </div>
-          <div className={styles.bgimage} />
+          {/* <div className={styles.bgimage} /> */}
         </div>
-        <div className={styles.demoVideoContainer}>
-          <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
+        <div className="demoVideoContainer w-full h-auto flex justify-center">
+          <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
           {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </div>
       </div>
-      <div className={styles.signupAndDownloadContainer}>
-        <div className={styles.signupContainer}>
+      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-30 lg:flex-row lg:gap-[39rem]">
+        <div className="signupContainer pt-8 lg:pt-12">
           <a href="https://forms.gle/pySBHibGemoQsA8J8">
-          <button className={styles.SignUpbutton}>Sign Up</button>
+          <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
+            Sign Up
+          </button>
           </a>
           <div>Subscribe to our newsletter!</div>
         </div>
-        <div className={styles.downloadSection}>
-          <div className={styles.downloadText}>Download for free</div>
-          <div className={styles.downloadLinks}>
+        <div className="downloadSection bg-page-accent-gray pt-8 h-24">
+          <div className="downloadText leading-6 font-medium pb-2">Download for free</div>
+          <div className="downloadLinks flex justify-evenly lg:gap-16">
             <img
-              className={styles.downloadIcon}
+              className="rounded overflow-hidden object-contain mix-blend-normal"
               alt="Download from the App Store"
               src={appleDownloadIcon}
               onClick={() => {
@@ -104,7 +106,7 @@ const Homepage = () => {
               }}
             />
             <img
-              className={styles.downloadIcon}
+              className="rounded overflow-hidden object-contain mix-blend-normal"
               alt="Download from the Play Store"
               src={googlePlayDownloadIcon}
               onClick={() => {
@@ -114,68 +116,61 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.featuredArtistsSection}>
-        <b className={styles.featuredArtistsSectionTitle}>Meet our Featured Artists!</b>
-        {
-          featuredArtists.map((artist, index) => {
-            return (
-              <>
-              <div className={styles.featuredArtistDetails}>
-                <div className={styles.artistImgAndLinks}>
-                  <img className={styles.artistImage} src={artist.image} alt="artist"/>
-                  <div className={styles.artistLinks}>
-                    <img className={styles.artistLinkIcons} src={spotifyIcon} alt="artist"/>
-                    <img className={styles.artistLinkIcons} src={soundcloudIcon} alt="artist"/>
-                  </div>
-                </div>
-                <div className={styles.artistRelatedInfo}>
-                  <div className={styles.artistTitleContainer}>
-                    <div className={styles.artistNameVerified}>
-                      <div className={styles.artistName}>
-                        {artist.name}
+      <div className="featuredArtistsSection bg-gradient-overlay-featured-artists shadow-custom-featured-artists bg-page-accent-gray pt-5 pb-3">
+        <b className="featuredArtistsSectionTitle text-title-lexend-medium font-bold leading-8 font-title-lexend text-center inline-block mx-auto px-4 py-0">
+          Meet our Featured Artists!
+        </b>
+        <div class="featuredArtistsGridContainer pt-2 lg:grid lg:grid-cols-custom-grid-browser lg:gap-4 lg:px-10 lg:pt-8">
+          {
+            featuredArtists.map((artist, index) => {
+              return (
+                <div className="ArtistsAndDivider flex flex-col lg:flex-row">
+                  <div className="featuredArtistDetails flex flex-row justify-start px-9 py-0">
+                    <div className="artistImgAndLinks flex-[0.25] flex justify-around p-2 flex-col">
+                      <img 
+                        className="artistImage w-[85%] flex-shrink-0 self-center rounded-full" 
+                        src={artist.image} 
+                        alt="artist"/>
+                      <div className="artistLinks flex flex-row justify-between p-3 pt-1 bg-image-background">
+                        <img className="artistLinkIcons w-[40%] flex-shrink-0 rounded-full bg-slate-300" src={spotifyIcon} alt="artist"/>
+                        <img className="artistLinkIcons w-[40%] flex-shrink-0 rounded-full bg-slate-300" src={soundcloudIcon} alt="artist"/>
                       </div>
-                      <img className={styles.verifiedIcon} src={verifiedIcon} alt="verified"/>
+                    </div>
+                    <div className="artistRelatedInfo flex justify-around pl-[0.3rem] flex-1 flex-col">
+                      <div className="artistTitleContainer flex flex-row pt-3 pl-3 justify-start">
+                        <div className="artistNameVerified flex items-center">
+                          <div className="artistName flex font-overpass-mono text-body-overpass-base font-bold leading-inherit text-left items-center">
+                            {artist.name}
+                          </div>
+                          <img className="verifiedIcon w-4 h-4 pl-2" src={verifiedIcon} alt="verified"/>
+                        </div>
+                      </div>
+                      <div className="artistStatistics flex flex-row justify-end pr-8">
+                        <div className="artistStatLabels flex flex-col">
+                          <div className="songcountText text-right pr-8">songs</div>
+                          <div className="playcountText text-right pr-8">total playcount</div>
+                        </div>
+                        <div className="artistStatValues flex flex-col text-right text-lilac">
+                          <div className="songCountValue">25</div>
+                          <div className="playCountValue">538</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className={styles.artistStatistics}>
-                    <div className={styles.artistStatLabels}>
-                      <div className={styles.songcountText}>songs</div>
-                      <div className={styles.playcountText}>total playcount</div>
-                    </div>
-
-                    <div className={styles.artistStatValues}>
-                      <div className={styles.songcountValue}>25</div>
-                      <div className={styles.playcountValue}>538</div>
-                    </div>
-
-
-
-                    {/* <div className={styles.artistSongcount}>
-                      <div className={styles.songcountText}>songs</div>
-                      <div className={styles.songcountValue}>25</div>
-                    </div>
-                    <div className={styles.artistPlaycount}>
-                      <div className={styles.playcountText}>total playcount</div>
-                      <div className={styles.playcountValue}>538</div>
-                    </div> */}
-
-
-
-                  </div>
+                  {index !== featuredArtists.length - 1 && (
+                    <hr className="flex my-2 border-b border-gray-300 lg:flex lg:w-14 lg:border-l lg:rotate-90 lg:border-gray-300" />
+                  )}
                 </div>
-              </div>
-              {index !== featuredArtists.length - 1 ? <hr ></hr> : null}
-              </>
-            );
-          })
-        }
-
+              );
+            })
+          }
+        </div>
       </div>
-      <div className={styles.aboutUsSection}>
-        <div className={styles.aboutUsTitle}>
+      <div className="aboutUsSection bg-page-accent-gray text-white pt-8 shadow-custom-inset-about-us lg:px-52">
+        <div className="aboutUsTitle text-left inline-block mx-auto font-title-lexend text-title-lexend-medium leading-4 p-3 pb-1">
           About Us
         </div>
-        <div className={styles.aboutUsDescription}>
+        <div className="aboutUsDescription leading-6 font-medium inline-block p-8 pt-2">
           <p>
             Virtuosos is a rhythm game that goes beyond entertainment. We've
             crafted an experience that seamlessly weaves together immersive

@@ -62,7 +62,7 @@ const Footer = () => {
             </button>
             </div>
             <div className={styles.footerEmail}>
-                contact virtuosos.game@gmail.com for support
+                contact ongawa.game@gmail.com for support
             </div>
         </div>
     </div>
