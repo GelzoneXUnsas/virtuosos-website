@@ -60,43 +60,43 @@ const Homepage = () => {
       <div className="div1">Content of Div 1</div>
       <div className="div2">Content of Div 2</div>
     </div> */}
-    <div className={styles.homepage}>
-    <div className={styles.titleContainer}>
-      <div className={styles.bgImgContainer}>
-        <img src={headerBackgroundImg} className={styles.headerBackgroundImg} alt="" />
+    <div className="homepage flex flex-col w-full bg-page-accent-gray overflow-hidden text-center text-body-overpass-base text-white font-body-overpass">
+    <div className="titleContainer relative h-60 z-0 overflow-hidden lg:h-80">
+      <div className="bgImgContainer w-full lg:-mt-64">
+        <img src={headerBackgroundImg} className="headerBackgroundImg w-full relative object-cover" alt="" />
       </div>
       
-      <img src={virtuososTitle} className={styles.virtuososTitle} alt="" />
-      <div className={styles.gradientOverlay}></div>
+      <img src={virtuososTitle} className="virtuososTitle absolute w-full h-20 top-28 bottom-0 z-2 flex justify-center lg:h-[35%] lg:top-[45%]" alt="" />
+      <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
-      <div className={styles.visionAndDemoContainer}> 
-        <div className={styles.visionSection}>    
-          <div className={styles.visionSectionTitle}>
+      <div className="visionAndDemoContainer bg-page-accent-gray relative lg:flex-row lg:flex lg:pt-4"> 
+        <div className="visionSection overflow-auto flex flex-col lg:justify-center lg:p-20">    
+          <div className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8">
             OUR VISION
           </div>
-          <div className={styles.visionSectionBody}>
+          <div className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2">
             Imagine a world where the lines between creator and player blur. Where
             the music you compose is the soundtrack to another’s personal journey.
           </div>
-          <div className={styles.bgimage} />
+          {/* <div className={styles.bgimage} /> */}
         </div>
-        <div className={styles.demoVideoContainer}>
-          <img className={styles.demoVideo} width="562" height="316" src={Demogif} alt="Game demo gif" />
+        <div className="demoVideoContainer w-full h-auto flex justify-center">
+          <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
           {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </div>
       </div>
-      <div className={styles.signupAndDownloadContainer}>
-        <div className={styles.signupContainer}>
+      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-30">
+        <div className="signupContainer pt-8 lg:pt-12">
           <a href="https://forms.gle/pySBHibGemoQsA8J8">
-          <button className={styles.SignUpbutton}>Sign Up</button>
+          <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">Sign Up</button>
           </a>
           <div>Subscribe to our newsletter!</div>
         </div>
-        <div className={styles.downloadSection}>
-          <div className={styles.downloadText}>Download for free</div>
-          <div className={styles.downloadLinks}>
+        <div className="downloadSection bg-page-accent-gray pt-8 h-24">
+          <div className="downloadText leading-6 font-medium pb-2">Download for free</div>
+          <div className="downloadLinks flex justify-evenly">
             <img
-              className={styles.downloadIcon}
+              className="rounded overflow-hidden object-contain mix-blend-normal"
               alt="Download from the App Store"
               src={appleDownloadIcon}
               onClick={() => {
@@ -104,7 +104,7 @@ const Homepage = () => {
               }}
             />
             <img
-              className={styles.downloadIcon}
+              className="rounded overflow-hidden object-contain mix-blend-normal"
               alt="Download from the Play Store"
               src={googlePlayDownloadIcon}
               onClick={() => {
@@ -147,20 +147,6 @@ const Homepage = () => {
                       <div className={styles.songcountValue}>25</div>
                       <div className={styles.playcountValue}>538</div>
                     </div>
-
-
-
-                    {/* <div className={styles.artistSongcount}>
-                      <div className={styles.songcountText}>songs</div>
-                      <div className={styles.songcountValue}>25</div>
-                    </div>
-                    <div className={styles.artistPlaycount}>
-                      <div className={styles.playcountText}>total playcount</div>
-                      <div className={styles.playcountValue}>538</div>
-                    </div> */}
-
-
-
                   </div>
                 </div>
               </div>
