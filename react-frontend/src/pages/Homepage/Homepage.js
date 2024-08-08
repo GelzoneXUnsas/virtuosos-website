@@ -44,6 +44,15 @@ const getFeaturedArtists = () => {
 }];
 };
 
+// const sparkle =(delay, offset) => ({
+//   startingPos: {x: -100, opacity: 0},
+//   endingPos: {
+//       x: 0,
+//       opacity: 1,
+//       transition: {duration: 0.5, delay: delay}
+//   }
+// })
+
 const Homepage = () => {
   // let autoPlayDemoVideo = true;
   const appStoreDownloadLink = "https://gelzonexunsas.itch.io/virtuosos";
@@ -56,10 +65,6 @@ const Homepage = () => {
 
   return (
     <>
-    {/* <div className="gradient-container">
-      <div className="div1">Content of Div 1</div>
-      <div className="div2">Content of Div 2</div>
-    </div> */}
     <div className="homepage flex flex-col w-full bg-page-accent-gray overflow-hidden text-center text-body-overpass-base text-white font-body-overpass">
     <div className="titleContainer relative h-60 z-0 overflow-hidden lg:h-80">
       <div className="bgImgContainer w-full lg:-mt-64">
@@ -69,23 +74,40 @@ const Homepage = () => {
       <img src={virtuososTitle} className="virtuososTitle absolute w-full h-20 top-28 bottom-0 z-2 flex justify-center lg:h-[35%] lg:top-[45%]" alt="" />
       <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
-      <div className="visionAndDemoContainer bg-page-accent-gray relative lg:flex-row lg:flex lg:pt-4"> 
+      <div className="visionAndDemoContainer bg-page-accent-gray relative lg:flex-row lg:flex lg:pt-4">
+
+        {/* below are just for the particles effect. order is left to right of page */}
+        <div className="particles absolute bottom-24 left-0 w-10 h-10 bg-purple-accent rounded-full filter blur-md lg:bottom-16 lg:-left-14 lg:w-16 lg:h-16 lg:blur-xl"></div>
+        <div className="particles absolute top-0 left-8 w-4 h-4 bg-white rounded-full filter blur animate-pulse"></div>
+        
+        <div className="particles absolute top-4 left-14 w-36 h-36 lg:top-24 lg:left-[14rem] lg:w-48 lg:h-48 bg-purple-900 rounded-full mix-blend-normal filter blur-2xl animate-merge_left"></div>
+        <div className="particles absolute top-4 left-56 w-36 h-36 lg:top-24 lg:left-[25rem] lg:w-48 lg:h-48 bg-slate-500 rounded-full mix-blend-normal filter blur-2xl animate-merge_right"></div>
+
+        <div className="particles absolute -bottom-4 left-20 w-4 h-4 bg-white rounded-full filter blur-md"></div>
+        <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
+
+        <div className="particles absolute top-52 right-32 w-10 h-10 bg-purple-accent rounded-full filter blur-md"></div>
+        <div className="particles absolute top-4 right-4 w-2 h-2 bg-purple-accent rounded-full filter blur-sm"></div>
+
+        <div className="particles absolute top-32 -right-6 w-10 h-10 bg-slate-200 rounded-full filter blur-md"></div>
+
+
         <div className="visionSection overflow-auto flex flex-col lg:justify-center lg:p-20">    
-          <div className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8">
+          <div className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8 z-10">
             OUR VISION
           </div>
-          <div className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2">
+          <div className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2 z-10">
             Imagine a world where the lines between creator and player blur. Where
             the music you compose is the soundtrack to another’s personal journey.
           </div>
           {/* <div className={styles.bgimage} /> */}
         </div>
-        <div className="demoVideoContainer w-full h-auto flex justify-center">
-          <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
+        <div className="demoVideoContainer w-full h-auto flex justify-center z-10">
+          <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] z-10 object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
           {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </div>
       </div>
-      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-30 lg:flex-row lg:gap-[39rem]">
+      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[39rem]">
         <div className="signupContainer pt-8 lg:pt-12">
           <a href="https://forms.gle/pySBHibGemoQsA8J8">
           <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
@@ -124,7 +146,7 @@ const Homepage = () => {
           {
             featuredArtists.map((artist, index) => {
               return (
-                <div className="ArtistsAndDivider flex flex-col lg:flex-row">
+                <div key={index} className="ArtistsAndDivider flex flex-col lg:flex-row">
                   <div className="featuredArtistDetails flex flex-row justify-start px-9 py-0">
                     <div className="artistImgAndLinks flex-[0.25] flex justify-around p-2 flex-col">
                       <img 

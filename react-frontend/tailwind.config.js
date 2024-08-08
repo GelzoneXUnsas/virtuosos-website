@@ -46,7 +46,41 @@ module.exports = {
 
       gridTemplateColumns: {
         'custom-grid-browser': 'repeat(auto-fit, minmax(300px, 1fr))',
-      }
+      },
+      animation: {
+        merge_left: "merge_left 7s infinite",
+        merge_right: "merge_right 7s infinite",
+      },
+
+      keyframes: {
+        merge_left: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+
+        "50%": {
+            transform: "translate(75px, 0px) scale(1.1)",
+          },
+
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        },
+
+        merge_right: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+
+        "50%": {
+            transform: "translate(-75px, 0px) scale(1.1)",
+          },
+
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        }
+      },
     },
   },
   plugins: [],
