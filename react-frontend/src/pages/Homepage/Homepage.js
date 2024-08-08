@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import styles from "./Homepage.module.css";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
 import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
@@ -80,8 +81,8 @@ const Homepage = () => {
         <div className="particles absolute bottom-24 left-0 w-10 h-10 bg-purple-accent rounded-full filter blur-md lg:bottom-16 lg:-left-14 lg:w-16 lg:h-16 lg:blur-xl"></div>
         <div className="particles absolute top-0 left-8 w-4 h-4 bg-white rounded-full filter blur animate-pulse"></div>
         
-        <div className="particles absolute top-4 left-14 w-36 h-36 lg:top-24 lg:left-[14rem] lg:w-48 lg:h-48 bg-purple-900 rounded-full mix-blend-normal filter blur-2xl animate-merge_left"></div>
-        <div className="particles absolute top-4 left-56 w-36 h-36 lg:top-24 lg:left-[25rem] lg:w-48 lg:h-48 bg-slate-500 rounded-full mix-blend-normal filter blur-2xl animate-merge_right"></div>
+        <div className="particles absolute top-4 left-14 w-36 h-36 lg:top-24 lg:left-[14rem] lg:w-48 lg:h-48 bg-slate-500  rounded-full mix-blend-lighten filter blur-2xl animate-merge_left"></div>
+        <div className="particles absolute top-4 left-56 w-36 h-36 lg:top-24 lg:left-[25rem] lg:w-48 lg:h-48  bg-purple-900 rounded-full mix-blend-lighten filter blur-2xl animate-merge_right"></div>
 
         <div className="particles absolute -bottom-4 left-20 w-4 h-4 bg-white rounded-full filter blur-md"></div>
         <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
@@ -93,19 +94,31 @@ const Homepage = () => {
 
 
         <div className="visionSection overflow-auto flex flex-col lg:justify-center lg:p-20">    
-          <div className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8 z-10">
+          <motion.div 
+            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, x: -100}}
+            transition={{duration: 1}}
+            className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8 z-10">
             OUR VISION
-          </div>
-          <div className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2 z-10">
+          </motion.div>
+          <motion.div 
+            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, x: 0}}
+            transition={{duration: 1, delay: 0.9}}
+            className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2 z-10">
             Imagine a world where the lines between creator and player blur. Where
             the music you compose is the soundtrack to another’s personal journey.
-          </div>
+          </motion.div>
           {/* <div className={styles.bgimage} /> */}
         </div>
-        <div className="demoVideoContainer w-full h-auto flex justify-center z-10">
+        <motion.div 
+          whileInView={{opacity: 1, x: 0}}
+          initial={{opacity: 0, x: 100}}
+          transition={{duration: 1}}
+          className="demoVideoContainer w-full h-auto flex justify-center z-10">
           <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] z-10 object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
           {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
-        </div>
+        </motion.div>
       </div>
       <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[39rem]">
         <div className="signupContainer pt-8 lg:pt-12">
