@@ -87,7 +87,7 @@ const Homepage = () => {
       <img src={virtuososTitle} className="virtuososTitle absolute w-full h-20 top-28 bottom-0 z-2 flex justify-center lg:h-[35%] lg:top-[45%]" alt="" />
       <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
-      <div className="visionAndDemoContainer bg-page-accent-gray relative lg:flex-row lg:flex lg:pt-4">
+      <div className="visionAndDemoContainer justify-items-center bg-page-accent-gray pt-12 relative lg:flex-row lg:flex lg:pt-4">
 
         {/* below are just for the particles effect. order is left to right of page */}
         <div className="particles absolute bottom-24 left-0 w-10 h-10 bg-purple-accent rounded-full filter blur-md lg:bottom-16 lg:-left-14 lg:w-16 lg:h-16 lg:blur-xl"></div>
@@ -99,27 +99,26 @@ const Homepage = () => {
         <div className="particles absolute -bottom-4 left-20 w-4 h-4 bg-white rounded-full filter blur-md"></div>
         <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
 
-        <div className="particles absolute top-52 right-32 w-10 h-10 bg-purple-accent rounded-full filter blur-md"></div>
+        <div className="particles absolute top-48 right-32 w-10 h-10 bg-purple-accent rounded-full filter blur-md"></div>
         <div className="particles absolute top-4 right-4 w-2 h-2 bg-purple-accent rounded-full filter blur-sm"></div>
 
         <div className="particles absolute top-32 -right-6 w-10 h-10 bg-slate-200 rounded-full filter blur-md"></div>
 
 
-        <div className="visionSection overflow-auto flex flex-col lg:justify-center lg:p-20">    
-          <motion.div 
+        <div className="visionSection overflow-auto flex flex-col self-center lg:justify-center lg:p-20 lg:ml-12">    
+          {/* <motion.div 
             whileInView={{opacity: 1, x: 0}}
             initial={{opacity: 0, x: -100}}
             transition={{duration: 1}}
             className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8 z-10">
             OUR VISION
-          </motion.div>
+          </motion.div> */}
           <motion.div 
-            whileInView={{opacity: 1, x: 0}}
-            initial={{opacity: 0, x: 0}}
-            transition={{duration: 1, delay: 0.9}}
-            className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2 z-10">
-            Imagine a world where the lines between creator and player blur. Where
-            the music you compose is the soundtrack to another’s personal journey.
+            whileInView={{opacity: 1}}
+            initial={{opacity: 0}}
+            transition={{duration: 1}}
+            className="visionSectionBody leading-6 font-medium text-title-lexend-medium inline-block p-8 pt-2 z-10">
+            Transforming indie music into an interactive adventure—tap, swipe, and hold to the beat!
           </motion.div>
           {/* <div className={styles.bgimage} /> */}
         </div>
@@ -127,12 +126,12 @@ const Homepage = () => {
           whileInView={{opacity: 1, x: 0}}
           initial={{opacity: 0, x: 100}}
           transition={{duration: 1}}
-          className="demoVideoContainer w-full h-auto flex justify-center z-10">
+          className="demoVideoContainer w-full h-auto flex justify-center z-10 pt-4">
           <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] z-10 object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
           {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </motion.div>
       </div>
-      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[39rem]">
+      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[32rem]">
         <div className="signupContainer pt-8 lg:pt-12">
           <a href="https://forms.gle/pySBHibGemoQsA8J8">
           <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
@@ -143,7 +142,7 @@ const Homepage = () => {
         </div>
         <div className="downloadSection bg-page-accent-gray pt-8 h-24">
           <div className="downloadText leading-6 font-medium pb-2">Download for free</div>
-          <div className="downloadLinks flex justify-evenly lg:gap-16">
+          <div className="downloadLinks flex justify-evenly lg:gap-14">
             <img
               className="rounded overflow-hidden object-contain mix-blend-normal"
               alt="Download from the App Store"
