@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useMediaQuery from '@mui/material/useMediaQuery';
 // import styles from "./Homepage.module.css";
 
 import React from "react";
@@ -54,11 +55,22 @@ const getFeaturedArtists = () => {
 //   }
 // })
 
+
 const Homepage = () => {
   // let autoPlayDemoVideo = true;
   const appStoreDownloadLink = "https://gelzonexunsas.itch.io/virtuosos";
   const googlePlayDownloadLink = "https://gelzonexunsas.itch.io/virtuosos";
   const [featuredArtists, setFeaturedArtists] = useState([]);
+
+  let isLarge = useMediaQuery('(min-width: 1024px)');
+
+  const featured_artists_variants = isLarge ? {
+    initial: {opacity: 0, y: -100},
+    animate: {opacity: 1, y: 0},
+  } : {
+    initial: {opacity: 0, x: -100},
+    animate: {opacity: 1, x: 0},
+  }
 
   useEffect(() => {
     setFeaturedArtists(getFeaturedArtists());
@@ -159,7 +171,13 @@ const Homepage = () => {
           {
             featuredArtists.map((artist, index) => {
               return (
-                <div key={index} className="ArtistsAndDivider flex flex-col lg:flex-row">
+                <motion.div 
+                  key={index} 
+                  variants={featured_artists_variants}
+                  initial="initial"
+                  whileInView="animate"
+                  transition={{duration: 1}}
+                  className="ArtistsAndDivider flex flex-col lg:flex-row">
                   <div className="featuredArtistDetails flex flex-row justify-start px-9 py-0">
                     <div className="artistImgAndLinks flex-[0.25] flex justify-around p-2 flex-col">
                       <img 
@@ -195,7 +213,7 @@ const Homepage = () => {
                   {index !== featuredArtists.length - 1 && (
                     <hr className="flex my-2 border-b border-gray-300 lg:flex lg:w-14 lg:border-l lg:rotate-90 lg:border-gray-300" />
                   )}
-                </div>
+                </motion.div>
               );
             })
           }
