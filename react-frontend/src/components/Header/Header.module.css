@@ -22,8 +22,9 @@
   width: auto;
   height: 2rem;
   cursor: pointer;
-  margin-left: 40%;
+  margin-bottom: 10px;
   z-index: 2;
+  
   /* background-color: aliceblue; */
 }
 

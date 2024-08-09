@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Footer.module.css';
 
-import logoIcon from '../../assets/icons/logoIcon.svg';
+import logoIcon from '../../assets/icons/ongawaIconWhite.svg';
 // import instagramIcon from "../../assets/icons/instagramIcon.svg";
 // import xIcon from "../../assets/icons/xIcon.svg";
 // import tiktokIcon from "../../assets/icons/tiktokIcon.svg";
@@ -40,15 +40,11 @@ const Footer = () => {
             </div>
             </div>
             <div className={styles.footerSocials}>
-
-            <img
-              className={styles.footerSocialsItem}
-              alt="Virtuosos Logo"
-              src={logoIcon}
-              onClick={() => {
-                window.open(gameDownloadLink, "_blank");
-              }}
-            />
+            <button className={styles.footerSocialsItem}>
+            <a href={gameDownloadLink} target="_blank" rel="noreferrer">
+            <img className={styles.footerlogo} src={logoIcon} alt="Ongawa Logo"/>
+            </a>
+            </button>
             {/* <button className={styles.footerSocialsItem}>
                 <a href="https://www.linkedin.com/showcase/virtuososgame/?viewAsMember=true" target="_blank" rel="noreferrer">
                     <img src={logoIcon} alt="Virtuosos Logo" />

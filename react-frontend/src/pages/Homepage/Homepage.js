@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
-import virtuososTitle from '../../assets/icons/virtuososTitle.svg';
+import ongawaTitle from '../../assets/icons/ongawaTitle.svg';
 
 import appleDownloadIcon from "../../assets/icons/appleDownloadIcon.svg";
 import googlePlayDownloadIcon from "../../assets/icons/googlePlayDownloadIcon.svg";
@@ -65,18 +65,15 @@ const Homepage = () => {
       <div className="bgImgContainer w-full lg:-mt-64">
         <img src={headerBackgroundImg} className="headerBackgroundImg w-full relative object-cover" alt="" />
       </div>
-      
-      <img src={virtuososTitle} className="virtuososTitle absolute w-full h-20 top-28 bottom-0 z-2 flex justify-center lg:h-[35%] lg:top-[45%]" alt="" />
+      <div className="flex justify-center items-center">
+      <img src={ongawaTitle} className="absolute w-[17%] h- top-20 right-39 bottom-0 z-2  lg:h-[35%] lg:top-[45%]" alt="" />
+      </div>
       <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
       <div className="visionAndDemoContainer bg-page-accent-gray relative lg:flex-row lg:flex lg:pt-4"> 
         <div className="visionSection overflow-auto flex flex-col lg:justify-center lg:p-20">    
-          <div className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8">
-            OUR VISION
-          </div>
           <div className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2">
-            Imagine a world where the lines between creator and player blur. Where
-            the music you compose is the soundtrack to another’s personal journey.
+           Transforming indie music into an interactive adventure-tap, swipe, and hold to the Beat!
           </div>
           {/* <div className={styles.bgimage} /> */}
         </div>
@@ -172,7 +169,7 @@ const Homepage = () => {
         </div>
         <div className="aboutUsDescription leading-6 font-medium inline-block p-8 pt-2">
           <p>
-            Virtuosos is a rhythm game that goes beyond entertainment. We've
+            Ongawa is a rhythm game that goes beyond entertainment. We've
             crafted an experience that seamlessly weaves together immersive
             storytelling and game mechanics, placing music at the forefront. But
             we're not stopping there.

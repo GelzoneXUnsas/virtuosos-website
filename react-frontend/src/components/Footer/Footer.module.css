@@ -39,7 +39,12 @@
   color: transparent;
   background-color: transparent;
   border: none;
+  width: auto;
 }
+.footerlogo{
+  height: 3vh;
+}
+
 
 .footerEmail {
   color: var(--icon-color, #FFF);
