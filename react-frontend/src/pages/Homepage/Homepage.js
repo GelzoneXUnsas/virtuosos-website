@@ -84,7 +84,7 @@ const Homepage = () => {
         <img src={headerBackgroundImg} className="headerBackgroundImg w-full relative object-cover" alt="" />
       </div>
       <div className="flex justify-center items-center">
-      <img src={ongawaTitle} className="absolute w-[17%] h- top-20 right-39 bottom-0 z-2  lg:h-[35%] lg:top-[45%]" alt="" />
+      <img src={ongawaTitle} className="absolute w-[33%] top-28 z-2 lg:w-[12%] lg:top-[45%]" alt="" />
       </div>
       <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
