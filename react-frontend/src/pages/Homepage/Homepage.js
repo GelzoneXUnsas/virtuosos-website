@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import useMediaQuery from '@mui/material/useMediaQuery';
 // import styles from "./Homepage.module.css";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
 import ongawaTitle from '../../assets/icons/ongawaTitle.svg';
@@ -44,11 +46,31 @@ const getFeaturedArtists = () => {
 }];
 };
 
+// const sparkle =(delay, offset) => ({
+//   startingPos: {x: -100, opacity: 0},
+//   endingPos: {
+//       x: 0,
+//       opacity: 1,
+//       transition: {duration: 0.5, delay: delay}
+//   }
+// })
+
+
 const Homepage = () => {
   // let autoPlayDemoVideo = true;
   const appStoreDownloadLink = "https://gelzonexunsas.itch.io/virtuosos";
   const googlePlayDownloadLink = "https://gelzonexunsas.itch.io/virtuosos";
   const [featuredArtists, setFeaturedArtists] = useState([]);
+
+  let isLarge = useMediaQuery('(min-width: 1024px)');
+
+  const featured_artists_variants = isLarge ? {
+    initial: {opacity: 0, y: -100},
+    animate: {opacity: 1, y: 0},
+  } : {
+    initial: {opacity: 0, x: -100},
+    animate: {opacity: 1, x: 0},
+  }
 
   useEffect(() => {
     setFeaturedArtists(getFeaturedArtists());
@@ -56,10 +78,6 @@ const Homepage = () => {
 
   return (
     <>
-    {/* <div className="gradient-container">
-      <div className="div1">Content of Div 1</div>
-      <div className="div2">Content of Div 2</div>
-    </div> */}
     <div className="homepage flex flex-col w-full bg-page-accent-gray overflow-hidden text-center text-body-overpass-base text-white font-body-overpass">
     <div className="titleContainer relative h-60 z-0 overflow-hidden lg:h-80">
       <div className="bgImgContainer w-full lg:-mt-64">
@@ -70,19 +88,61 @@ const Homepage = () => {
       </div>
       <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
-      <div className="visionAndDemoContainer bg-page-accent-gray relative lg:flex-row lg:flex lg:pt-4"> 
-        <div className="visionSection overflow-auto flex flex-col lg:justify-center lg:p-20">    
-          <div className="visionSectionBody leading-6 font-medium inline-block p-8 pt-2">
-           Transforming indie music into an interactive adventure-tap, swipe, and hold to the Beat!
-          </div>
+      <div className="visionAndDemoContainer justify-items-center bg-page-accent-gray pt-12 relative lg:flex-row lg:flex lg:pt-4">
+
+        {/* below are just for the particles effect. order is left to right of page */}
+        <div className="particles absolute bottom-24 left-0 w-10 h-10 bg-purple-accent rounded-full filter blur-md lg:bottom-16 lg:-left-14 lg:w-16 lg:h-16 lg:blur-xl"></div>
+        <div className="particles absolute top-0 left-8 w-4 h-4 bg-white rounded-full filter blur animate-pulse"></div>
+        
+        <div className="particles absolute top-4 left-14 w-36 h-36 lg:top-24 lg:left-[14rem] lg:w-48 lg:h-48 bg-slate-500  rounded-full mix-blend-lighten filter blur-2xl animate-merge_left"></div>
+        <div className="particles absolute top-4 left-56 w-36 h-36 lg:top-24 lg:left-[25rem] lg:w-48 lg:h-48  bg-purple-900 rounded-full mix-blend-lighten filter blur-2xl animate-merge_right"></div>
+
+        <div className="particles absolute -bottom-4 left-20 w-4 h-4 bg-white rounded-full filter blur-md"></div>
+        <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
+
+        <div className="particles hidden lg:block absolute bottom-6 left-56 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
+        <div className="particles absolute -bottom-12 left-[22rem] w-8 h-8 bg-purple-accent rounded-full filter blur-lg"></div>
+
+        <div className="particles hidden lg:block absolute bottom-0 left-[46rem] w-2 h-2 bg-purple-accent rounded-full filter blur-sm"></div>
+        <div className="particles hidden lg:block absolute bottom-32 left-[44rem] w-8 h-8 bg-white rounded-full filter blur-xl"></div>
+        <div className="particles hidden lg:block absolute top-24 left-[53rem] w-8 h-8 bg-purple-accent rounded-full filter blur-xl"></div>
+
+
+        <div className="particles hidden lg:block absolute -bottom-4 right-[14rem] w-8 h-8 bg-white rounded-full filter blur-lg z-2"></div>
+
+        <div className="particles absolute top-48 right-32 w-10 h-10 bg-purple-accent rounded-full filter blur-md"></div>
+        <div className="particles absolute top-4 right-4 w-2 h-2 bg-purple-accent rounded-full filter blur-sm"></div>
+
+        <div className="particles absolute top-32 -right-6 w-10 h-10 bg-slate-200 rounded-full filter blur-md"></div>
+
+
+        <div className="visionSection overflow-auto flex flex-col self-center lg:justify-center lg:p-20 lg:ml-12">    
+          {/* <motion.div 
+            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, x: -100}}
+            transition={{duration: 1}}
+            className="visionSectionTitle text-center inline-block m-0 pb-1 font-title-lexend text-title-lexend-large leading-8 z-10">
+            OUR VISION
+          </motion.div> */}
+          <motion.div 
+            whileInView={{opacity: 1}}
+            initial={{opacity: 0}}
+            transition={{duration: 1}}
+            className="visionSectionBody leading-6 font-medium text-title-lexend-medium inline-block p-8 pt-2 z-10">
+            Transforming indie music into an interactive adventure—tap, swipe, and hold to the beat!
+          </motion.div>
           {/* <div className={styles.bgimage} /> */}
         </div>
-        <div className="demoVideoContainer w-full h-auto flex justify-center">
-          <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
+        <motion.div 
+          whileInView={{opacity: 1, x: 0}}
+          initial={{opacity: 0, x: 100}}
+          transition={{duration: 1}}
+          className="demoVideoContainer w-full h-auto flex justify-center z-10 pt-4">
+          <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] z-10 object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
           {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
-        </div>
+        </motion.div>
       </div>
-      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-30 lg:flex-row lg:gap-[39rem]">
+      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[32rem]">
         <div className="signupContainer pt-8 lg:pt-12">
           <a href="https://forms.gle/pySBHibGemoQsA8J8">
           <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
@@ -92,10 +152,10 @@ const Homepage = () => {
           <div>Subscribe to our newsletter!</div>
         </div>
         <div className="downloadSection bg-page-accent-gray pt-8 h-24">
-          <div className="downloadText leading-6 font-medium pb-2">Download for free</div>
-          <div className="downloadLinks flex justify-evenly lg:gap-16">
+          <div className="downloadText leading-6 font-medium pb-2 z-3">Download for free</div>
+          <div className="downloadLinks flex justify-center gap-2 lg:gap-14">
             <img
-              className="rounded overflow-hidden object-contain mix-blend-normal"
+              className="rounded overflow-hidden object-contain mix-blend-normal z-3"
               alt="Download from the App Store"
               src={appleDownloadIcon}
               onClick={() => {
@@ -103,7 +163,7 @@ const Homepage = () => {
               }}
             />
             <img
-              className="rounded overflow-hidden object-contain mix-blend-normal"
+              className="rounded overflow-hidden object-contain mix-blend-normal z-3"
               alt="Download from the Play Store"
               src={googlePlayDownloadIcon}
               onClick={() => {
@@ -121,7 +181,13 @@ const Homepage = () => {
           {
             featuredArtists.map((artist, index) => {
               return (
-                <div className="ArtistsAndDivider flex flex-col lg:flex-row">
+                <motion.div 
+                  key={index} 
+                  variants={featured_artists_variants}
+                  initial="initial"
+                  whileInView="animate"
+                  transition={{duration: 1}}
+                  className="ArtistsAndDivider flex flex-col lg:flex-row">
                   <div className="featuredArtistDetails flex flex-row justify-start px-9 py-0">
                     <div className="artistImgAndLinks flex-[0.25] flex justify-around p-2 flex-col">
                       <img 
@@ -157,7 +223,7 @@ const Homepage = () => {
                   {index !== featuredArtists.length - 1 && (
                     <hr className="flex my-2 border-b border-gray-300 lg:flex lg:w-14 lg:border-l lg:rotate-90 lg:border-gray-300" />
                   )}
-                </div>
+                </motion.div>
               );
             })
           }
