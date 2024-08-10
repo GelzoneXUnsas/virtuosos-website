@@ -99,6 +99,16 @@ const Homepage = () => {
         <div className="particles absolute -bottom-4 left-20 w-4 h-4 bg-white rounded-full filter blur-md"></div>
         <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
 
+        <div className="particles hidden lg:block absolute bottom-6 left-56 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
+        <div className="particles absolute -bottom-12 left-[22rem] w-8 h-8 bg-purple-accent rounded-full filter blur-lg"></div>
+
+        <div className="particles hidden lg:block absolute bottom-0 left-[46rem] w-2 h-2 bg-purple-accent rounded-full filter blur-sm"></div>
+        <div className="particles hidden lg:block absolute bottom-32 left-[44rem] w-8 h-8 bg-white rounded-full filter blur-xl"></div>
+        <div className="particles hidden lg:block absolute top-24 left-[53rem] w-8 h-8 bg-purple-accent rounded-full filter blur-xl"></div>
+
+
+        <div className="particles hidden lg:block absolute -bottom-4 right-[14rem] w-8 h-8 bg-white rounded-full filter blur-lg z-2"></div>
+
         <div className="particles absolute top-48 right-32 w-10 h-10 bg-purple-accent rounded-full filter blur-md"></div>
         <div className="particles absolute top-4 right-4 w-2 h-2 bg-purple-accent rounded-full filter blur-sm"></div>
 
@@ -141,10 +151,10 @@ const Homepage = () => {
           <div>Subscribe to our newsletter!</div>
         </div>
         <div className="downloadSection bg-page-accent-gray pt-8 h-24">
-          <div className="downloadText leading-6 font-medium pb-2">Download for free</div>
-          <div className="downloadLinks flex justify-evenly lg:gap-14">
+          <div className="downloadText leading-6 font-medium pb-2 z-3">Download for free</div>
+          <div className="downloadLinks flex justify-center gap-2 lg:gap-14">
             <img
-              className="rounded overflow-hidden object-contain mix-blend-normal"
+              className="rounded overflow-hidden object-contain mix-blend-normal z-3"
               alt="Download from the App Store"
               src={appleDownloadIcon}
               onClick={() => {
@@ -152,7 +162,7 @@ const Homepage = () => {
               }}
             />
             <img
-              className="rounded overflow-hidden object-contain mix-blend-normal"
+              className="rounded overflow-hidden object-contain mix-blend-normal z-3"
               alt="Download from the Play Store"
               src={googlePlayDownloadIcon}
               onClick={() => {
