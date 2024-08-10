@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useAuth } from '../../contexts/authContext';
 import { doSignOut } from '../../firebase/auth';
 
-import logoIcon from '../../assets/icons/logoIcon.svg';
+import logoIcon from '../../assets/icons/ongawaIconWhite.svg';
 // import closedMenuIcon from '../../assets/icons/closedMenuIcon.svg';
 
 const Header = () => {
