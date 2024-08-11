@@ -101,7 +101,7 @@ const Homepage = () => {
         <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur z-2"></div>
 
         <div className="particles hidden lg:block absolute bottom-6 left-56 w-2 h-2 bg-purple-accent rounded-full filter blur z-2"></div>
-        <div className="particles absolute -bottom-12 left-[22rem] w-8 h-8 bg-purple-accent rounded-full filter blur-lg z-2"></div>
+        <div className="particles absolute -bottom-12 left-[22rem] w-8 h-8 bg-purple-accent rounded-full filter blur-lg animate-pulse z-2"></div>
 
         <div className="particles hidden lg:block absolute bottom-0 left-[46rem] w-2 h-2 bg-purple-accent rounded-full filter blur-sm z-2"></div>
         <div className="particles hidden lg:block absolute bottom-32 left-[44rem] w-8 h-8 bg-white rounded-full filter blur-xl z-2"></div>
@@ -195,7 +195,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="aboutUsSection bg-page-accent-gray text-white pt-8 lg:px-52">
+      <div className="aboutUsSection bg-page-accent-gray text-white pt-12 lg:px-52">
         <div className="aboutUsTitle text-left inline-block mx-auto font-title-lexend text-title-lexend-medium leading-4 p-3 pb-1">
           About Us
         </div>

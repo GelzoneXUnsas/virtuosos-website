@@ -1,4 +1,4 @@
-.header {
+/* .header {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,19 +12,17 @@
   justify-content: space-between;
   align-items: center;
   overflow: visible;
-}
+} */
 
 
 
-.headerLogo {
+/* .headerLogo {
   width: auto;
   height: 2rem;
   cursor: pointer;
   margin-bottom: 10px;
   z-index: 2;
-  
-  /* background-color: aliceblue; */
-}
+} */
 
 .headerMenuButton {
   font-size: var(--title-lexend-medium-size);
