@@ -6,7 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
-import ongawaTitle from '../../assets/icons/ongawaTitle.svg';
+import ongawaTitle from '../../assets/icons/ongawaTitleModified.svg';
 
 import appleDownloadIcon from "../../assets/icons/appleDownloadIcon.svg";
 import googlePlayDownloadIcon from "../../assets/icons/googlePlayDownloadIcon.svg";
@@ -162,7 +162,7 @@ const Homepage = () => {
           <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] z-10 object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
         </motion.div>
       </div>
-      <div className="signupAndDownloadContainer w-full h-auto flex justify-center z-1 lg:justify-start lg:pl-[17rem] lg:-mt-28">
+      <div className="downloadSectionContainer w-full h-auto flex justify-center z-1 lg:justify-start lg:pl-[17rem] lg:-mt-28">
       {/* the old signupandDownloadContainer <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[32rem]"> */}
         {/* <div className="signupContainer pt-8 lg:pt-12">
           <a href="https://forms.gle/pySBHibGemoQsA8J8">
@@ -273,15 +273,24 @@ const Homepage = () => {
           }
         </div>
       </div>
-      <div className="newsletterSection bg-page-accent-gray text-white py-8 shadow-custom-inset-about-us">
-        <div className="signupContainer pt-8">
-          <a href="https://forms.gle/pySBHibGemoQsA8J8">
-          <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
-            Sign Up
-          </button>
-          </a>
-          <div className="font-bold">Subscribe to our newsletter!</div>
-        </div>
+      <div className="signupAndDiscordContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[15rem] py-8 shadow-custom-inset-about-us">
+          <div className="signupContainer pt-8">
+            <a href="https://forms.gle/pySBHibGemoQsA8J8">
+            <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
+              Sign Up
+            </button>
+            </a>
+            <div className="font-bold">Subscribe to our newsletter!</div>
+          </div>
+
+          <div className="discordContainer pt-8">
+            <a href="https://discord.gg/JEzqqj94Pn">
+            <button className="DiscordButton bg-white text-page-accent-gray rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
+              Ongawa
+            </button>
+            </a>
+            <div className="font-bold">Come join our discord community!</div>
+          </div>
         {/* <div className="aboutUsTitle text-left inline-block mx-auto font-title-lexend text-title-lexend-medium leading-4 p-3 pb-1">
           About Us
         </div>
