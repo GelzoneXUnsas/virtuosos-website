@@ -84,28 +84,28 @@ const Homepage = () => {
         <img src={headerBackgroundImg} className="headerBackgroundImg w-full relative object-cover" alt="" />
       </div>
       <div className="flex justify-center items-center">
-      <img src={ongawaTitle} className="absolute w-[17%] h- top-20 right-39 bottom-0 z-2  lg:h-[35%] lg:top-[45%]" alt="" />
+      <img src={ongawaTitle} className="absolute w-[33%] top-28 z-2 lg:w-[12%] lg:top-[45%]" alt="" />
       </div>
       <div className="gradientOverlay absolute bottom-0 w-full h-[70%] bg-gradient-overlay z-1"></div>
     </div>
       <div className="visionAndDemoContainer justify-items-center bg-page-accent-gray pt-12 relative lg:flex-row lg:flex lg:pt-4">
 
         {/* below are just for the particles effect. order is left to right of page */}
-        <div className="particles absolute bottom-24 left-0 w-10 h-10 bg-purple-accent rounded-full filter blur-md lg:bottom-16 lg:-left-14 lg:w-16 lg:h-16 lg:blur-xl"></div>
-        <div className="particles absolute top-0 left-8 w-4 h-4 bg-white rounded-full filter blur animate-pulse"></div>
+        <div className="particles absolute bottom-24 left-0 w-10 h-10 bg-purple-accent rounded-full filter blur-md lg:bottom-16 lg:-left-14 lg:w-16 lg:h-16 lg:blur-xl z-2"></div>
+        <div className="particles absolute top-0 left-8 w-4 h-4 bg-white rounded-full filter blur animate-pulse z-2"></div>
         
-        <div className="particles absolute top-4 left-14 w-36 h-36 lg:top-24 lg:left-[14rem] lg:w-48 lg:h-48 bg-slate-500  rounded-full mix-blend-lighten filter blur-2xl animate-merge_left"></div>
-        <div className="particles absolute top-4 left-56 w-36 h-36 lg:top-24 lg:left-[25rem] lg:w-48 lg:h-48  bg-purple-900 rounded-full mix-blend-lighten filter blur-2xl animate-merge_right"></div>
+        <div className="particles absolute top-4 left-14 w-36 h-36 lg:top-24 lg:left-[14rem] lg:w-48 lg:h-48 bg-slate-500  rounded-full mix-blend-lighten filter blur-2xl animate-merge_left z-2"></div>
+        <div className="particles absolute top-4 left-56 w-36 h-36 lg:top-24 lg:left-[25rem] lg:w-48 lg:h-48  bg-purple-900 rounded-full mix-blend-lighten filter blur-2xl animate-merge_right z-2"></div>
 
-        <div className="particles absolute -bottom-4 left-20 w-4 h-4 bg-white rounded-full filter blur-md"></div>
-        <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
+        <div className="particles absolute -bottom-4 left-20 w-4 h-4 bg-white rounded-full filter blur-md z-2"></div>
+        <div className="particles absolute top-44 left-28 w-2 h-2 bg-purple-accent rounded-full filter blur z-2"></div>
 
-        <div className="particles hidden lg:block absolute bottom-6 left-56 w-2 h-2 bg-purple-accent rounded-full filter blur"></div>
-        <div className="particles absolute -bottom-12 left-[22rem] w-8 h-8 bg-purple-accent rounded-full filter blur-lg"></div>
+        <div className="particles hidden lg:block absolute bottom-6 left-56 w-2 h-2 bg-purple-accent rounded-full filter blur z-2"></div>
+        <div className="particles absolute -bottom-12 left-[22rem] w-8 h-8 bg-purple-accent rounded-full filter blur-lg animate-pulse z-2"></div>
 
-        <div className="particles hidden lg:block absolute bottom-0 left-[46rem] w-2 h-2 bg-purple-accent rounded-full filter blur-sm"></div>
-        <div className="particles hidden lg:block absolute bottom-32 left-[44rem] w-8 h-8 bg-white rounded-full filter blur-xl"></div>
-        <div className="particles hidden lg:block absolute top-24 left-[53rem] w-8 h-8 bg-purple-accent rounded-full filter blur-xl"></div>
+        <div className="particles hidden lg:block absolute bottom-0 left-[46rem] w-2 h-2 bg-purple-accent rounded-full filter blur-sm z-2"></div>
+        <div className="particles hidden lg:block absolute bottom-32 left-[44rem] w-8 h-8 bg-white rounded-full filter blur-xl z-2"></div>
+        <div className="particles hidden lg:block absolute top-24 left-[53rem] w-8 h-8 bg-purple-accent rounded-full filter blur-xl z-2"></div>
 
 
         <div className="particles hidden lg:block absolute -bottom-4 right-[14rem] w-8 h-8 bg-white rounded-full filter blur-lg z-2"></div>
@@ -131,7 +131,28 @@ const Homepage = () => {
             className="visionSectionBody leading-6 font-medium text-title-lexend-medium inline-block p-8 pt-2 z-10">
             Transforming indie music into an interactive adventure—tap, swipe, and hold to the beat!
           </motion.div>
-          {/* <div className={styles.bgimage} /> */}
+          {/*
+           <div className="downloadSection bg-page-accent-gray pt-8 h-24">
+          <div className="downloadText leading-6 font-medium pb-2 z-3">Download for free</div>
+          <div className="downloadLinks flex justify-center gap-2 lg:gap-14">
+            <img
+              className="rounded overflow-hidden object-contain mix-blend-normal z-3"
+              alt="Download from the App Store"
+              src={appleDownloadIcon}
+              onClick={() => {
+                window.open(appStoreDownloadLink, "_blank");
+              }}
+            />
+            <img
+              className="rounded overflow-hidden object-contain mix-blend-normal z-3"
+              alt="Download from the Play Store"
+              src={googlePlayDownloadIcon}
+              onClick={() => {
+                window.open(googlePlayDownloadLink, "_blank");
+              }}
+            />
+          </div>
+        </div> */}
         </div>
         <motion.div 
           whileInView={{opacity: 1, x: 0}}
@@ -139,19 +160,19 @@ const Homepage = () => {
           transition={{duration: 1}}
           className="demoVideoContainer w-full h-auto flex justify-center z-10 pt-4">
           <img className="demoVideo w-[90%] h-auto py-[5vw] rounded-[2.5rem] z-10 object-contain 2xl:w-[70%] 2xl:py-0" width="562" height="316" src={Demogif} alt="Game demo gif" />
-          {/* <video src={demoVideo} className={styles.demoVideo} autoPlay={autoPlayDemoVideo}/> */}
         </motion.div>
       </div>
-      <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[32rem]">
-        <div className="signupContainer pt-8 lg:pt-12">
+      <div className="signupAndDownloadContainer w-full h-auto flex justify-center z-1 lg:justify-start lg:pl-[17rem] lg:-mt-28">
+      {/* the old signupandDownloadContainer <div className="signupAndDownloadContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[32rem]"> */}
+        {/* <div className="signupContainer pt-8 lg:pt-12">
           <a href="https://forms.gle/pySBHibGemoQsA8J8">
           <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
             Sign Up
           </button>
           </a>
           <div>Subscribe to our newsletter!</div>
-        </div>
-        <div className="downloadSection bg-page-accent-gray pt-8 h-24">
+        </div> */}
+        <div className="downloadSection bg-page-accent-gray pt-8 h-24 lg:pl-0 ">
           <div className="downloadText leading-6 font-medium pb-2 z-3">Download for free</div>
           <div className="downloadLinks flex justify-center gap-2 lg:gap-14">
             <img
@@ -173,6 +194,29 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+
+      <div className="aboutUsSection bg-page-accent-gray text-white pt-12 lg:px-52">
+        <div className="aboutUsTitle text-left inline-block mx-auto font-title-lexend text-title-lexend-medium leading-4 p-3 pb-1">
+          About Us
+        </div>
+        <div className="aboutUsDescription leading-6 font-medium inline-block p-8 pt-2">
+          <p>
+            Ongawa is a rhythm game that goes beyond entertainment. We've
+            crafted an experience that seamlessly weaves together immersive
+            storytelling and game mechanics, placing music at the forefront. But
+            we're not stopping there.
+          </p>
+          <p>
+            Our website platform is a collaborative space where creators can
+            share their compositions, their passions, and their stories. With
+            the ability to integrate music distribution services right into our
+            website, an artist’s creations won't just be confined to the game.
+            They'll reach a broader audience, helping them gain the recognition
+            they deserve.
+          </p>
+        </div>
+      </div>
+
       <div className="featuredArtistsSection bg-gradient-overlay-featured-artists shadow-custom-featured-artists bg-page-accent-gray pt-5 pb-3">
         <b className="featuredArtistsSectionTitle text-title-lexend-medium font-bold leading-8 font-title-lexend text-center inline-block mx-auto px-4 py-0">
           Meet our Featured Artists!
@@ -229,8 +273,16 @@ const Homepage = () => {
           }
         </div>
       </div>
-      <div className="aboutUsSection bg-page-accent-gray text-white pt-8 shadow-custom-inset-about-us lg:px-52">
-        <div className="aboutUsTitle text-left inline-block mx-auto font-title-lexend text-title-lexend-medium leading-4 p-3 pb-1">
+      <div className="newsletterSection bg-page-accent-gray text-white py-8 shadow-custom-inset-about-us">
+        <div className="signupContainer pt-8">
+          <a href="https://forms.gle/pySBHibGemoQsA8J8">
+          <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
+            Sign Up
+          </button>
+          </a>
+          <div className="font-bold">Subscribe to our newsletter!</div>
+        </div>
+        {/* <div className="aboutUsTitle text-left inline-block mx-auto font-title-lexend text-title-lexend-medium leading-4 p-3 pb-1">
           About Us
         </div>
         <div className="aboutUsDescription leading-6 font-medium inline-block p-8 pt-2">
@@ -248,7 +300,7 @@ const Homepage = () => {
             They'll reach a broader audience, helping them gain the recognition
             they deserve.
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
     </>
