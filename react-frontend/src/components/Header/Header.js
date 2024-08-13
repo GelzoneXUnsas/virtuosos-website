@@ -19,7 +19,7 @@ const Header = () => {
 
     return (
         <>
-        <Navbar variant="dark" expand="lg" 
+        <Navbar sticky="top" variant="dark" expand="lg" 
             className="header fixed top-0 left-0 w-full h-[75px] bg-header-gradient z-[10] mb-[-75px] flex justify-between items-center overflow-visible">
             <Container fluid>
                 <Navbar.Brand>

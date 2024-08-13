@@ -11,6 +11,7 @@ import ongawaTitle from '../../assets/icons/ongawaTitleModified.svg';
 import appleDownloadIcon from "../../assets/icons/appleDownloadIcon.svg";
 import googlePlayDownloadIcon from "../../assets/icons/googlePlayDownloadIcon.svg";
 import verifiedIcon from "../../assets/icons/verifiedIcon.svg";
+import discordLogo from "../../assets/icons/discordLogo.svg";
 
 import artist1Image from "../../assets/images/featuredArtists/artist1.jpg";
 import artist2Image from "../../assets/images/featuredArtists/artist2.jpg";
@@ -276,17 +277,22 @@ const Homepage = () => {
       <div className="signupAndDiscordContainer w-full h-auto flex flex-col justify-center z-1 lg:flex-row lg:gap-[15rem] py-8 shadow-custom-inset-about-us">
           <div className="signupContainer pt-8">
             <a href="https://forms.gle/pySBHibGemoQsA8J8">
-            <button className="SignUpbutton bg-page-background rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
+            <button className="SignUpbutton bg-page-background rounded-2xl py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
               Sign Up
             </button>
             </a>
             <div className="font-bold">Subscribe to our newsletter!</div>
           </div>
 
-          <div className="discordContainer pt-8">
-            <a href="https://discord.gg/JEzqqj94Pn">
-            <button className="DiscordButton bg-white text-page-accent-gray rounded py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
-              Ongawa
+          <div className="discordContainer pt-8 flex flex-col justify-center items-center">
+            <a href="https://discord.gg/JEzqqj94Pn" className="no-underline">
+            <button className="DiscordButton bg-white text-page-accent-gray rounded-2xl py-2 px-3 text-body-overpass-base font-body-overpass border-none cursor-pointer flex flex-row gap-2 items-center -mt-4 mb-2 hover:bg-custom-hover-blue transition-all duration-700">
+              <img
+                className="rounded overflow-hidden object-contain mix-blend-normal z-3 w-6"
+                alt="Download from the App Store"
+                src={discordLogo}
+              />
+              Click to Join!
             </button>
             </a>
             <div className="font-bold">Come join our discord community!</div>
