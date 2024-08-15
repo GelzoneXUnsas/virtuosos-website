@@ -1,35 +1,107 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import axios from "axios";
+// import axios from "axios";
 import GalleryGrid from "../../GalleryGrid";
 import styles from "./GalleryPage.module.css";
 import homeStyles from "../Homepage/Homepage.module.css";
 import headerBackgroundImg from '../../assets/images/headerBackground.png';
 
-const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
+// const BACKEND_URL = 'http://api-virtuosos.us-west-1.elasticbeanstalk.com';
 
 function GalleryPage() {
+    const defaultArt = {
+        screenart_list:
+        [
+            {
+                id: 1,
+                name: 'art1',
+                artType: 'screenart',
+                imagePath: '../src/assets/images/galleryArt/art1.png',
+                description: 'Test Description',
+                dateAdded : '2024-05-18'
+            },
+            {
+                id: 2,
+                name: 'art2',
+                artType: 'screenart',
+                imagePath: '../../assets/images/galleryArt/art2.png',
+                description: 'Test Description2',
+                dateAdded : '2024-05-11'
+            },
+            {
+                id: 3,
+                name: 'art3',
+                artType: 'screenart',
+                imagePath: '/../assets/images/galleryArt/art3.png',
+                description: 'Test Description',
+                dateAdded : '2024-05-18'
+            },
+            {
+                id: 4,
+                name: 'art4',
+                artType: 'screenart',
+                imagePath: '/../assets/images/galleryArt/art4.png',
+                description: 'Test Description',
+                dateAdded : '2024-05-18'
+            },
+            {
+                id: 5,
+                name: 'art5',
+                artType: 'screenart',
+                imagePath: '/../assets/images/galleryArt/art5.png',
+                description: 'Test Description',
+                dateAdded : '2024-05-18'
+            },
+            {
+                id: 6,
+                name: 'art6',
+                artType: 'screenart',
+                imagePath: '/../assets/images/galleryArt/art6.png',
+                description: 'Test Description',
+                dateAdded : '2024-05-18'
+            },
+            {
+                id: 7,
+                name: 'art7',
+                artType: 'screenart',
+                imagePath: '/../assets/images/galleryArt/art7.png',
+                description: 'Test Description',
+                dateAdded : '2024-05-18'
+            },
+            {
+                id: 8,
+                name: 'art8',
+                artType: 'screenart',
+                imagePath: '/../assets/images/galleryArt/art8.png',
+                description: 'Test Description',
+                dateAdded : '2024-05-18'
+            }
+        ],
+    }
     const [galleryImages, setGalleryImages] = useState([]);
     const [activeTab, setActiveTab] = useState('/gallery');
 
-    async function fetchAll() {
-        try {
-            const route = BACKEND_URL + '/gallery';
-            const response = await axios.get(route);
-            console.log(response.data);
-            return response.data.screenart_list;
-        } catch (error) {
-            console.log(error);
-            return false;
-        }
-    }
+    // async function fetchAll() {
+    //     try {
+    //         const route = BACKEND_URL + '/gallery';
+    //         const response = await axios.get(route);
+    //         console.log("trying to fetch art from backend");
+    //         console.log(response.data);
+    //         return response.data.screenart_list;
+    //     } catch (error) {
+    //         console.log("Error fetching gallery images, using default art instead:", error);
+    //         return defaultArt.screenart_list; // Return default images if the backend call fails
+    //     }
+    // }
 
     useEffect(() => {
-        fetchAll().then(result => {
-            console.log('RESULT', result);
-            if (result) setGalleryImages(result);
-        });
-    }, []);
+        // // uncomment this to start calling from backend
+        // fetchAll().then(result => {
+        //     console.log('RESULT', result);
+        //     if (result) setGalleryImages(result);
+        // });
+        setGalleryImages(defaultArt.screenart_list);
+    }, [defaultArt.screenart_list]);
 
     return (
         <div className={styles.gallerypage}>
